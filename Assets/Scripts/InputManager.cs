@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
         private InputSystem _inputSystem;
         private PlayerLocomotion _playerLococmotion;
         private PlayerInteraction _player;
+        private RoomController _room;
 
         public Vector2 movementInput;
         public float moveAmount;
@@ -73,7 +74,7 @@ public class InputManager : MonoBehaviour
             if (e_Input)
             {
                 e_Input = false;
-                _player.Interact();
+                //_room.SwitchRoom();
             }
         }
 }

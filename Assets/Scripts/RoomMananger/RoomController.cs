@@ -10,13 +10,13 @@ public class RoomController : MonoBehaviour
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.E))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             SwitchRoom();
-        }*/
+        }
     }
     
-    private void SwitchRoom()
+    public void SwitchRoom()
     {
         var rooms = Enumerable.Range(0, Rooms.Length).OrderBy(x => Random.value).ToArray();
     
