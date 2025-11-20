@@ -6,6 +6,7 @@ public class InputManager : MonoBehaviour
         private InputSystem _inputSystem;
         private PlayerLocomotion _playerLococmotion;
         private PlayerInteraction _player;
+        private RoomController _roomController;
 
         public Vector2 movementInput;
         public float moveAmount;
@@ -14,9 +15,11 @@ public class InputManager : MonoBehaviour
 
         public bool shift_Input;
         public bool e_Input;
+        public bool q_Input;
 
         private void Awake()
         {
+            _roomController = FindObjectOfType<RoomController>();
             _playerLococmotion = GetComponent<PlayerLocomotion>();
             _player = GetComponent<PlayerInteraction>();
         }
@@ -32,6 +35,7 @@ public class InputManager : MonoBehaviour
                 _inputSystem.PlayerActions.Shift.performed += i => shift_Input = true;
                 _inputSystem.PlayerActions.Shift.canceled += i => shift_Input = false;
                 _inputSystem.PlayerActions.Interaction.performed += i => e_Input = true;
+                _inputSystem.PlayerActions.Switch.performed += i => q_Input = true;
             }
             
             _inputSystem.Enable();
@@ -47,6 +51,7 @@ public class InputManager : MonoBehaviour
             HandleMovementInput();
             HandleSprintingInput();
             HandleInteractionInput();
+            HandleSwitchInput();
         }
 
         private void HandleMovementInput()
@@ -74,6 +79,15 @@ public class InputManager : MonoBehaviour
             {
                 e_Input = false;
                 _player.Interact();
+            }
+        }
+        
+        private void HandleSwitchInput()
+        {
+            if (q_Input)
+            {
+                q_Input = false;
+                _roomController.SwitchRoom();
             }
         }
 }

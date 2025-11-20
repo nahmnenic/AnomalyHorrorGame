@@ -16,7 +16,7 @@ public class RoomController : MonoBehaviour
         }*/
     }
     
-    private void SwitchRoom()
+    public void SwitchRoom()
     {
         var rooms = Enumerable.Range(0, Rooms.Length).OrderBy(x => Random.value).ToArray();
     
