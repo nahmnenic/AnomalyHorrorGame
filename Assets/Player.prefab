@@ -48,6 +48,7 @@ GameObject:
   - component: {fileID: 7712808121554452977}
   - component: {fileID: 8148108433551518687}
   - component: {fileID: 408218949809184373}
+  - component: {fileID: 4461746442068767276}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -240,6 +241,23 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 112
   m_CollisionDetection: 0
+--- !u!114 &4461746442068767276
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703859887912056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 41396f46859d54cbda18f2c7ddfcf375, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionRadius: 1.5
+  _interactionLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  _promt: {fileID: 0}
 --- !u!1 &6871000779097438100
 GameObject:
   m_ObjectHideFlags: 0
@@ -267,7 +285,7 @@ Transform:
   m_GameObject: {fileID: 6871000779097438100}
   serializedVersion: 2
   m_LocalRotation: {x: 0.13628006, y: -0, z: -0, w: 0.9906704}
-  m_LocalPosition: {x: 0, y: 0.95, z: 0.31}
+  m_LocalPosition: {x: 0, y: 0.972, z: -0.112}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
