@@ -3,6 +3,11 @@
 # Get latest from https://github.com/github/gitignore/blob/main/Unity.gitignore
 #
 .utmp/
+/Assets/Plugins/FMOD/platforms/
+/Assets/ProBuilder Data.meta
+/Assets/ProBuilder Data/
+/ProjectSettings/Packages/com.unity.probuilder/
+/ProjectSettings/Packages/com.unity.testtools.codecoverage/
 /[Ll]ibrary/
 /[Tt]emp/
 /[Oo]bj/
