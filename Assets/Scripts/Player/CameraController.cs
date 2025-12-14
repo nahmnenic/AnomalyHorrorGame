@@ -14,7 +14,7 @@ public class CameraController : MonoBehaviour
     {
         xAxis += rightStickInput.x * mouseSense;
         yAxis -= rightStickInput.y * mouseSense;
-        yAxis = Mathf.Clamp(yAxis,-16, 18);
+        yAxis = Mathf.Clamp(yAxis,-16, 32);
     }
 
     private void LateUpdate()

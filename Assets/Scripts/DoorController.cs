@@ -12,7 +12,7 @@ public class DoorController : MonoBehaviour
 
     public void ControlDoor()
     {
-        if (gameObject.transform.rotation.y == 0) OpenDoor();
+        if (_animator.GetCurrentAnimatorStateInfo(0).IsName("Idle")) OpenDoor();
         else CloseDoor();
     }
     
