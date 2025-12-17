@@ -643,7 +643,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: E
+  _displayName: open
   _isEnabled: 1
 --- !u!65 &7635814146981809297
 BoxCollider:
@@ -2778,7 +2778,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: E
+  _displayName: open
   _isEnabled: 1
 --- !u!65 &7229244973445132429
 BoxCollider:
