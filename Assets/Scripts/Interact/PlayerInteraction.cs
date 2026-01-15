@@ -10,6 +10,7 @@ namespace Interact
         [SerializeField] private float _interactionRadius;
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private InteractPromt _promt;
+        [SerializeField] private Transform _interactionPoint;
         private Collider[] _interactionResult = new Collider[32];
 
         private IInteractable _focused;
@@ -39,7 +40,7 @@ namespace Interact
         private IInteractable FindNearestInteractable()
         {
             int count = Physics.OverlapSphereNonAlloc(
-                transform.position,
+                _interactionPoint.position,
                 _interactionRadius,
                 _interactionResult,
                 _interactionLayer);
@@ -53,7 +54,7 @@ namespace Interact
                 IInteractable interactable = col.GetComponentInParent<IInteractable>();
                 if (interactable == null) continue;
                 if (!interactable.CanInteract()) continue;
-                float distSq = (col.transform.position - transform.position).sqrMagnitude;
+                float distSq = (col.transform.position - _interactionPoint.position).sqrMagnitude;
                 if (distSq < bestDistSq)
                 {
                     bestDistSq = distSq;
