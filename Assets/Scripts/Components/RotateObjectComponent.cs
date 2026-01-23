@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using System.Collections.Generic;
 using UnityEngine;
 
 namespace Components
@@ -8,6 +10,9 @@ namespace Components
         [SerializeField] private float _rotateSpeed;
         [SerializeField] private float _rotateTo;
         [SerializeField] private float _rotateFrom;
+        private float _copyTo;
+        private float _copyFrom;
+        public bool Stable;
         
         private bool movingToTarget = true;
 
@@ -20,7 +25,7 @@ namespace Components
 
         public Axis axis;
 
-        void Update()
+        private void Update()
         {
             float currentAngle;
             float target;
@@ -32,12 +37,14 @@ namespace Components
                     target = movingToTarget ? _rotateFrom : _rotateTo;
                     newAngle = Mathf.MoveTowardsAngle(currentAngle, target, _rotateSpeed * Time.deltaTime);
                     transform.localEulerAngles = new Vector3(newAngle, transform.localEulerAngles.y, transform.localEulerAngles.z);
+                    if(newAngle == target && Stable) Rotate();
                     break;
                 case Axis.Y:
                     currentAngle = transform.localEulerAngles.y;
                     target = movingToTarget ? _rotateFrom : _rotateTo;
                     newAngle = Mathf.MoveTowardsAngle(currentAngle, target, _rotateSpeed * Time.deltaTime);
                     transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, newAngle, transform.localEulerAngles.z);
+                    if(currentAngle == target && Stable) Rotate();
                     break;
                 case Axis.Z:
                     currentAngle = transform.localEulerAngles.z;
@@ -51,6 +58,17 @@ namespace Components
         public void Rotate()
         {
             movingToTarget = !movingToTarget;
+        }
+
+        public void BlockRotate()
+        {
+            _copyTo = _rotateTo;
+            _rotateTo = _rotateFrom;
+        }
+
+        public void UnblockRotate()
+        {
+            _rotateTo = _copyTo;
         }
     }
 }
