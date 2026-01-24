@@ -31,6 +31,9 @@
 		<relationship name="timeline">
 			<destination>{b5ca0c90-2949-4cfd-8b2a-643b3204a0ff}</destination>
 		</relationship>
+		<relationship name="parameters">
+			<destination>{b002d7ce-b085-49a4-aa94-2d27039526e5}</destination>
+		</relationship>
 		<relationship name="banks">
 			<destination>{568887d1-fee6-4685-8ebe-930fd0a1a004}</destination>
 		</relationship>
@@ -41,6 +44,11 @@
 		</relationship>
 	</object>
 	<object class="MasterTrack" id="{d270074b-1ad8-4dfe-896c-2e7416020877}">
+		<relationship name="automationTracks">
+			<destination>{e27ff4c9-386c-4f7c-b916-a3822edbc237}</destination>
+			<destination>{5ef44db2-4173-4452-95b5-62a31648db32}</destination>
+			<destination>{8ecd46f4-bf8e-4bfd-86fb-84ea5d2e8513}</destination>
+		</relationship>
 		<relationship name="mixerGroup">
 			<destination>{7df1956a-7913-4582-b229-c0de1cac5aca}</destination>
 		</relationship>
@@ -74,6 +82,11 @@
 			<destination>{457e6c53-b5f7-460e-8f18-feca0551053d}</destination>
 		</relationship>
 	</object>
+	<object class="ParameterProxy" id="{b002d7ce-b085-49a4-aa94-2d27039526e5}">
+		<relationship name="preset">
+			<destination>{0c9f7505-10d6-4545-a0b3-a3c777fbaeab}</destination>
+		</relationship>
+	</object>
 	<object class="EventMixerMaster" id="{7df1956a-7913-4582-b229-c0de1cac5aca}">
 		<relationship name="effectChain">
 			<destination>{505621a5-943a-4048-a048-4fc823e72ad2}</destination>
@@ -83,6 +96,21 @@
 		</relationship>
 		<relationship name="mixer">
 			<destination>{8407d00d-7297-46a2-a786-2daf8d5affde}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationTrack" id="{e27ff4c9-386c-4f7c-b916-a3822edbc237}">
+		<relationship name="automator">
+			<destination>{8d611abd-9c10-40e9-bf70-fa79044e60f8}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationTrack" id="{5ef44db2-4173-4452-95b5-62a31648db32}">
+		<relationship name="automator">
+			<destination>{7bbe8eed-05d4-40e8-986d-dd1be00b9f7c}</destination>
+		</relationship>
+	</object>
+	<object class="AutomationTrack" id="{8ecd46f4-bf8e-4bfd-86fb-84ea5d2e8513}">
+		<relationship name="automator">
+			<destination>{baa67cce-996e-4aec-a68e-79887c8b90fc}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{5123f752-ee88-4d68-b334-4163de0d97a7}">
