@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EffectPresetFolder" id="{d7cff2cb-d0cd-480d-8fd7-e9338566504e}">
+		<property name="name">
+			<value>env</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7ad12b66-0742-468f-b08f-2021a2eaf684}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{baeeecef-02aa-4a86-84eb-a9ce7cfa554f}">
+		<property name="assetPath">
+			<value>event_radio_anomaly.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>7.6494375000000003</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e6fc5940-303f-42cc-b53a-0bb4b014535b}</destination>
+		</relationship>
+	</object>
+</objects>

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f67c8d88-ff38-4df1-a0fd-eb8dc3471b6e}">
+		<property name="assetPath">
+			<value>event_clock_alarm_loop.wav</value>
+		</property>
+		<property name="isStreaming">
+			<value>true</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>11.5</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e6fc5940-303f-42cc-b53a-0bb4b014535b}</destination>
+		</relationship>
+	</object>
+</objects>

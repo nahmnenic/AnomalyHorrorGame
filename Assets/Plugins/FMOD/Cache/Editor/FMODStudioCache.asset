@@ -1,5 +1,288 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!114 &-9048075227435686759
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/baby_monitor/event_baby_monitor_anomaly
+  m_EditorClassIdentifier: 
+  Path: event:/event/baby_monitor/event_baby_monitor_anomaly
+  Guid:
+    Data1: -867036712
+    Data2: 1139383840
+    Data3: 1307809452
+    Data4: -1393400513
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-6462605035837569708
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/door/event_door_close
+  m_EditorClassIdentifier: 
+  Path: event:/event/door/event_door_close
+  Guid:
+    Data1: 1343565683
+    Data2: 1093130541
+    Data3: 1419055519
+    Data4: -592816614
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1207
+--- !u!114 &-4078504828315429448
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/vinyl/event_vinyl_anomaly
+  m_EditorClassIdentifier: 
+  Path: event:/event/vinyl/event_vinyl_anomaly
+  Guid:
+    Data1: 1406086466
+    Data2: 1114398874
+    Data3: -578303865
+    Data4: 1920049404
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-3696567937522335249
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/wall/event_wall_knock
+  m_EditorClassIdentifier: 
+  Path: event:/event/wall/event_wall_knock
+  Guid:
+    Data1: -795965676
+    Data2: 1268924741
+    Data3: 1517406894
+    Data4: -466178876
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-2309741094281182928
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/char/mov/char_mov_step
+  m_EditorClassIdentifier: 
+  Path: event:/char/mov/char_mov_step
+  Guid:
+    Data1: 956578798
+    Data2: 1202177501
+    Data3: 471491748
+    Data4: 1454079199
+  Banks:
+  - {fileID: 3451702627852572821}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &-2222220943805012431
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/window/event_window_brunch
+  m_EditorClassIdentifier: 
+  Path: event:/event/window/event_window_brunch
+  Guid:
+    Data1: -1648017299
+    Data2: 1210806552
+    Data3: 1385769602
+    Data4: 1366064612
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 8000
+--- !u!114 &-2014219133995426961
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/amb.bank
+  m_EditorClassIdentifier: 
+  Path: fmod/anomalyhorrorgame/Build/Desktop/amb.bank
+  Name: amb
+  StudioPath: bank:/amb
+  lastModified: 639048769900613548
+  FileSizes:
+  - Name: Desktop
+    Value: 884096
+  Exists: 1
+--- !u!114 &-1865815809751162043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/window/event_window_knock
+  m_EditorClassIdentifier: 
+  Path: event:/event/window/event_window_knock
+  Guid:
+    Data1: 1415817831
+    Data2: 1139693604
+    Data3: -1073518175
+    Data4: 1651378799
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &-1761885302283064530
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/door/event_door_open
+  m_EditorClassIdentifier: 
+  Path: event:/event/door/event_door_open
+  Guid:
+    Data1: 1591870439
+    Data2: 1187146357
+    Data3: 329062784
+    Data4: -1205517156
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &-1433611436058757933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/event.bank
+  m_EditorClassIdentifier: 
+  Path: fmod/anomalyhorrorgame/Build/Desktop/event.bank
+  Name: event
+  StudioPath: bank:/event
+  lastModified: 639048767546288110
+  FileSizes:
+  - Name: Desktop
+    Value: 828768
+  Exists: 1
+--- !u!114 &-193058101324207513
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/vinyl/event_vinyl_normal
+  m_EditorClassIdentifier: 
+  Path: event:/event/vinyl/event_vinyl_normal
+  Guid:
+    Data1: -1512820050
+    Data2: 1169361418
+    Data3: -427707715
+    Data4: -380181826
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 989
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -12,11 +295,396 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d32cf7c32a3ed8347bac48ef5ed56d82, type: 3}
   m_Name: FMODStudioCache
   m_EditorClassIdentifier: 
-  EditorBanks: []
-  EditorEvents: []
+  EditorBanks:
+  - {fileID: 1261199216906370086}
+  - {fileID: -2014219133995426961}
+  - {fileID: 3451702627852572821}
+  - {fileID: 1862610991540713533}
+  - {fileID: -1433611436058757933}
+  - {fileID: 3622129342007278926}
+  EditorEvents:
+  - {fileID: 348573007907840102}
+  - {fileID: -2309741094281182928}
+  - {fileID: 3924272665566953604}
+  - {fileID: -4078504828315429448}
+  - {fileID: -2222220943805012431}
+  - {fileID: -6462605035837569708}
+  - {fileID: -193058101324207513}
+  - {fileID: 1500150152882167298}
+  - {fileID: 6441533736759883349}
+  - {fileID: 9070890609539134414}
+  - {fileID: -9048075227435686759}
+  - {fileID: -1761885302283064530}
+  - {fileID: 5170602101532662779}
+  - {fileID: -3696567937522335249}
+  - {fileID: 4039910150774058902}
+  - {fileID: -1865815809751162043}
+  - {fileID: 948170110297652877}
+  - {fileID: 3991589115392838125}
   EditorParameters: []
-  MasterBanks: []
-  StringsBanks: []
+  MasterBanks:
+  - {fileID: 3622129342007278926}
+  StringsBanks:
+  - {fileID: 1261199216906370086}
   cacheVersion: 131857
-  cacheTime: 0
-  SerializableEventsDict: []
+  cacheTime: 639048769900803595
+  SerializableEventsDict:
+  - key: event:/amb/amb_roomtone_main
+    index: 0
+  - key: event:/char/mov/char_mov_step
+    index: 1
+  - key: event:/env/env_fridge
+    index: 2
+  - key: event:/event/vinyl/event_vinyl_anomaly
+    index: 3
+  - key: event:/event/window/event_window_brunch
+    index: 4
+  - key: event:/event/door/event_door_close
+    index: 5
+  - key: event:/event/vinyl/event_vinyl_normal
+    index: 6
+  - key: event:/event/tv/event_tv_anomaly
+    index: 7
+  - key: event:/event/tv/event_tv_normal
+    index: 8
+  - key: event:/event/radio/event_radio_normal
+    index: 9
+  - key: event:/event/baby_monitor/event_baby_monitor_anomaly
+    index: 10
+  - key: event:/event/door/event_door_open
+    index: 11
+  - key: event:/event/radio/event_radio_anomaly
+    index: 12
+  - key: event:/event/wall/event_wall_knock
+    index: 13
+  - key: event:/event/children_toy/event_children_toy_anomaly
+    index: 14
+  - key: event:/event/window/event_window_knock
+    index: 15
+  - key: event:/event/clock_alarm/event_clock_alarm_anomaly
+    index: 16
+  - key: event:/event/cabinet/event_cabinet_fall_inside
+    index: 17
+--- !u!114 &348573007907840102
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/amb_roomtone_main
+  m_EditorClassIdentifier: 
+  Path: event:/amb/amb_roomtone_main
+  Guid:
+    Data1: -577038008
+    Data2: 1231251983
+    Data3: -1447078782
+    Data4: 944689393
+  Banks:
+  - {fileID: -2014219133995426961}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &948170110297652877
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/clock_alarm/event_clock_alarm_anomaly
+  m_EditorClassIdentifier: 
+  Path: event:/event/clock_alarm/event_clock_alarm_anomaly
+  Guid:
+    Data1: 1571256233
+    Data2: 1112080466
+    Data3: 588667525
+    Data4: 1107539141
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 14000
+--- !u!114 &1261199216906370086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.strings.bank
+  m_EditorClassIdentifier: 
+  Path: fmod/anomalyhorrorgame/Build/Desktop/Master.strings.bank
+  Name: Master.strings
+  StudioPath: bank:/Master.strings
+  lastModified: 639048767546348120
+  FileSizes:
+  - Name: Desktop
+    Value: 2216
+  Exists: 1
+--- !u!114 &1500150152882167298
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/tv/event_tv_anomaly
+  m_EditorClassIdentifier: 
+  Path: event:/event/tv/event_tv_anomaly
+  Guid:
+    Data1: -2023973200
+    Data2: 1286817449
+    Data3: 1832605852
+    Data4: 1465262074
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &1862610991540713533
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/env.bank
+  m_EditorClassIdentifier: 
+  Path: fmod/anomalyhorrorgame/Build/Desktop/env.bank
+  Name: env
+  StudioPath: bank:/env
+  lastModified: 639048769900803595
+  FileSizes:
+  - Name: Desktop
+    Value: 180256
+  Exists: 1
+--- !u!114 &3451702627852572821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/char.bank
+  m_EditorClassIdentifier: 
+  Path: fmod/anomalyhorrorgame/Build/Desktop/char.bank
+  Name: char
+  StudioPath: bank:/char
+  lastModified: 639048730257665391
+  FileSizes:
+  - Name: Desktop
+    Value: 21632
+  Exists: 1
+--- !u!114 &3622129342007278926
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Master.bank
+  m_EditorClassIdentifier: 
+  Path: fmod/anomalyhorrorgame/Build/Desktop/Master.bank
+  Name: Master
+  StudioPath: bank:/Master
+  lastModified: 639048767546338115
+  FileSizes:
+  - Name: Desktop
+    Value: 2334
+  Exists: 1
+--- !u!114 &3924272665566953604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/env/env_fridge
+  m_EditorClassIdentifier: 
+  Path: event:/env/env_fridge
+  Guid:
+    Data1: -539716947
+    Data2: 1213953281
+    Data3: -255391616
+    Data4: -20457979
+  Banks:
+  - {fileID: 1862610991540713533}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 6000
+--- !u!114 &3991589115392838125
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/cabinet/event_cabinet_fall_inside
+  m_EditorClassIdentifier: 
+  Path: event:/event/cabinet/event_cabinet_fall_inside
+  Guid:
+    Data1: 537433282
+    Data2: 1116325518
+    Data3: -632398970
+    Data4: -462306341
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &4039910150774058902
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/children_toy/event_children_toy_anomaly
+  m_EditorClassIdentifier: 
+  Path: event:/event/children_toy/event_children_toy_anomaly
+  Guid:
+    Data1: -1748390854
+    Data2: 1260880369
+    Data3: 226732221
+    Data4: -843460266
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 12992
+--- !u!114 &5170602101532662779
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/radio/event_radio_anomaly
+  m_EditorClassIdentifier: 
+  Path: event:/event/radio/event_radio_anomaly
+  Guid:
+    Data1: -781424149
+    Data2: 1226739449
+    Data3: -1665242978
+    Data4: 1395716463
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000
+--- !u!114 &6441533736759883349
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/tv/event_tv_normal
+  m_EditorClassIdentifier: 
+  Path: event:/event/tv/event_tv_normal
+  Guid:
+    Data1: -317849161
+    Data2: 1094495948
+    Data3: 440662676
+    Data4: -715127460
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &9070890609539134414
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/radio/event_radio_normal
+  m_EditorClassIdentifier: 
+  Path: event:/event/radio/event_radio_normal
+  Guid:
+    Data1: 1876516289
+    Data2: 1102222301
+    Data3: 1964499605
+    Data4: -1255447698
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 4000

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="EffectPresetFolder" id="{010c61fc-9586-4b46-b112-0413b1f123a0}">
+		<property name="name">
+			<value>event</value>
+		</property>
+		<relationship name="folder">
+			<destination>{7ad12b66-0742-468f-b08f-2021a2eaf684}</destination>
+		</relationship>
+	</object>
+</objects>
