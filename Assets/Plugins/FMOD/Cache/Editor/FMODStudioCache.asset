@@ -177,10 +177,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/amb.bank
   Name: amb
   StudioPath: bank:/amb
-  lastModified: 639048769900613548
+  lastModified: 639048932579575952
   FileSizes:
   - Name: Desktop
-    Value: 884096
+    Value: 884384
   Exists: 1
 --- !u!114 &-1865815809751162043
 MonoBehaviour:
@@ -251,10 +251,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/event.bank
   Name: event
   StudioPath: bank:/event
-  lastModified: 639048767546288110
+  lastModified: 639048932580846262
   FileSizes:
   - Name: Desktop
-    Value: 828768
+    Value: 829664
   Exists: 1
 --- !u!114 &-193058101324207513
 MonoBehaviour:
@@ -327,7 +327,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1261199216906370086}
   cacheVersion: 131857
-  cacheTime: 639048769900803595
+  cacheTime: 639048932580936278
   SerializableEventsDict:
   - key: event:/amb/amb_roomtone_main
     index: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639048767546348120
+  lastModified: 639048932580936278
   FileSizes:
   - Name: Desktop
     Value: 2216
@@ -481,10 +481,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/env.bank
   Name: env
   StudioPath: bank:/env
-  lastModified: 639048769900803595
+  lastModified: 639048932579765991
   FileSizes:
   - Name: Desktop
-    Value: 180256
+    Value: 180864
   Exists: 1
 --- !u!114 &3451702627852572821
 MonoBehaviour:
@@ -521,10 +521,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639048767546338115
+  lastModified: 639048932580926272
   FileSizes:
   - Name: Desktop
-    Value: 2334
+    Value: 2094
   Exists: 1
 --- !u!114 &3924272665566953604
 MonoBehaviour:
@@ -548,7 +548,7 @@ MonoBehaviour:
   - {fileID: 1862610991540713533}
   IsStream: 1
   Is3D: 1
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
