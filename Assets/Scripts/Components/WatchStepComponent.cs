@@ -8,6 +8,7 @@ namespace Components
     {
         [SerializeField] private Transform _minuts;
         [SerializeField] private Transform _seconds;
+        public bool Back;
         private int _allSec = 0;
 
         private void Start()
@@ -19,8 +20,16 @@ namespace Components
         {
             while (true)
             {
-                _seconds.localEulerAngles = new Vector3(0, _allSec*6, 0);
-                if (_allSec%60 == 0) _minuts.localEulerAngles = new Vector3(0, _allSec/60 * 6, 0);
+                if (Back)
+                {
+                    _seconds.localEulerAngles = new Vector3(0, _allSec*-6, 0);
+                    if (_allSec%60 == 0) _minuts.localEulerAngles = new Vector3(0, _allSec/60 * -6, 0);
+                }
+                else
+                {
+                    _seconds.localEulerAngles = new Vector3(0, _allSec*6, 0);
+                    if (_allSec%60 == 0) _minuts.localEulerAngles = new Vector3(0, _allSec/60 * 6, 0);
+                }
                 _allSec++;
                 yield return new WaitForSeconds(1f);
             }
