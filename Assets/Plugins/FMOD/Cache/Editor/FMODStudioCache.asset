@@ -177,7 +177,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/amb.bank
   Name: amb
   StudioPath: bank:/amb
-  lastModified: 639048932579575952
+  lastModified: 639050298430573928
   FileSizes:
   - Name: Desktop
     Value: 884384
@@ -251,7 +251,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/event.bank
   Name: event
   StudioPath: bank:/event
-  lastModified: 639048932580846262
+  lastModified: 639050298430632477
   FileSizes:
   - Name: Desktop
     Value: 829664
@@ -327,7 +327,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1261199216906370086}
   cacheVersion: 131857
-  cacheTime: 639048932580936278
+  cacheTime: 639050298430632477
   SerializableEventsDict:
   - key: event:/amb/amb_roomtone_main
     index: 0
@@ -434,7 +434,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639048932580936278
+  lastModified: 639050298430533917
   FileSizes:
   - Name: Desktop
     Value: 2216
@@ -481,7 +481,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/env.bank
   Name: env
   StudioPath: bank:/env
-  lastModified: 639048932579765991
+  lastModified: 639050298430592464
   FileSizes:
   - Name: Desktop
     Value: 180864
@@ -501,7 +501,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/char.bank
   Name: char
   StudioPath: bank:/char
-  lastModified: 639048730257665391
+  lastModified: 639050298430581782
   FileSizes:
   - Name: Desktop
     Value: 21632
@@ -521,7 +521,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639048932580926272
+  lastModified: 639050298430533917
   FileSizes:
   - Name: Desktop
     Value: 2094
