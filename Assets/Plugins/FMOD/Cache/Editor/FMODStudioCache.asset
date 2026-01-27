@@ -285,7 +285,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/amb.bank
   Name: amb
   StudioPath: bank:/amb
-  lastModified: 639051009637323482
+  lastModified: 639051297517276057
   FileSizes:
   - Name: Desktop
     Value: 2952192
@@ -332,7 +332,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/event.bank
   Name: event
   StudioPath: bank:/event
-  lastModified: 639051070780456375
+  lastModified: 639051297517407798
   FileSizes:
   - Name: Desktop
     Value: 841728
@@ -456,7 +456,7 @@ MonoBehaviour:
   StringsBanks:
   - {fileID: 1261199216906370086}
   cacheVersion: 131857
-  cacheTime: 639051080116697076
+  cacheTime: 639051297517419393
   SerializableEventsDict:
   - key: event:/amb/amb_roomtone_main
     index: 0
@@ -480,56 +480,60 @@ MonoBehaviour:
     index: 9
   - key: event:/event/radio/event_radio_anomaly
     index: 10
-  - key: event:/event/wall/event_wall_knock
-    index: 11
   - key: event:/event/children_toy/event_children_toy_anomaly
-    index: 12
+    index: 11
   - key: event:/event/window/event_window_knock
-    index: 13
+    index: 12
   - key: event:/event/clock_alarm/event_clock_alarm_anomaly
-    index: 14
+    index: 13
   - key: event:/event/cabinet/event_cabinet_fall_inside
-    index: 15
+    index: 14
   - key: event:/amb/amb_roomtone_storage
-    index: 16
+    index: 15
   - key: event:/amb/amb_roomtone_kitchen
-    index: 17
+    index: 16
   - key: event:/amb/amb_roomtone_children
-    index: 18
+    index: 17
   - key: event:/amb/amb_roomtone_bedroom
-    index: 19
+    index: 18
   - key: event:/amb/amb_roomtone_bathroom
-    index: 20
+    index: 19
   - key: event:/interaction/door/interaction_door_close
-    index: 21
+    index: 20
   - key: event:/interaction/door/interaction_door_open
-    index: 22
+    index: 21
   - key: snapshot:/Reverb_storage
-    index: 23
+    index: 22
   - key: snapshot:/Reverb_bedroom
-    index: 24
+    index: 23
   - key: snapshot:/Reverb_kitchen
-    index: 25
+    index: 24
   - key: snapshot:/Reverb_main
-    index: 26
+    index: 25
   - key: snapshot:/Reverb_bathroom
-    index: 27
+    index: 26
   - key: snapshot:/Reverb_children
-    index: 28
+    index: 27
   - key: event:/env/env_clock
-    index: 29
+    index: 28
   - key: event:/interaction/door/interaction_furniture_door_open
-    index: 30
+    index: 29
   - key: event:/interaction/door/interaction_furniture_door_close
-    index: 31
+    index: 30
   - key: event:/interaction/door/interaction_furniture_door_slide_open
-    index: 32
+    index: 31
   - key: event:/interaction/door/interaction_furniture_door_slide_close
-    index: 33
+    index: 32
   - key: event:/interaction/switch/interaction_light_switch
-    index: 34
+    index: 33
   - key: event:/interaction/door/interaction_locked_door
+    index: 34
+  - key: event:/event/pipe/event_pipe_hit
     index: 35
+  - key: event:/env/env_lamp_bedroom
+    index: 36
+  - key: event:/env/env_lamp_kitchen
+    index: 37
 --- !u!114 &10893301021541479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -626,7 +630,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/interaction.bank
   Name: interaction
   StudioPath: bank:/interaction
-  lastModified: 639051070780776465
+  lastModified: 639051297517419393
   FileSizes:
   - Name: Desktop
     Value: 188576
@@ -727,7 +731,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639051080116697076
+  lastModified: 639051297517146699
   FileSizes:
   - Name: Desktop
     Value: 3458
@@ -801,7 +805,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/env.bank
   Name: env
   StudioPath: bank:/env
-  lastModified: 639051080116557115
+  lastModified: 639051297517366079
   FileSizes:
   - Name: Desktop
     Value: 1821024
@@ -929,7 +933,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/char.bank
   Name: char
   StudioPath: bank:/char
-  lastModified: 639048730257665391
+  lastModified: 639050298430581782
   FileSizes:
   - Name: Desktop
     Value: 21632
@@ -976,7 +980,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639051080116687075
+  lastModified: 639051297517136694
   FileSizes:
   - Name: Desktop
     Value: 9576
