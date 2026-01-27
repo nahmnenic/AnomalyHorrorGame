@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="Snapshot" id="{5c78ca92-e267-4ebc-8125-9eba3c27d0f2}">
+		<property name="name">
+			<value>Reverb_children</value>
+		</property>
+		<relationship name="mixer">
+			<destination>{69501e9a-cd4d-416c-82f6-4fdd89e58c7f}</destination>
+		</relationship>
+		<relationship name="automatableProperties">
+			<destination>{1b8ab6b2-dec4-4d22-a67c-c3d5e9d43341}</destination>
+		</relationship>
+		<relationship name="markerTracks">
+			<destination>{6e8a2365-a781-45ed-816b-279bc71bd517}</destination>
+		</relationship>
+		<relationship name="timeline">
+			<destination>{fd279e49-09f5-44c3-96da-b4f21bed1e88}</destination>
+		</relationship>
+		<relationship name="snapshotMasterTrack">
+			<destination>{3c160211-43fe-4bbe-ab07-8bd09f694e67}</destination>
+		</relationship>
+		<relationship name="snapshotProperties">
+			<destination>{94328624-e734-4f1f-998a-f02987ce4bbc}</destination>
+			<destination>{9687a1a2-88db-45d2-b398-8d364c210e16}</destination>
+			<destination>{a574b948-3ef0-4769-8e94-86eefb61e8a7}</destination>
+			<destination>{f17a4da2-d1b1-4c9e-b564-323a88906faf}</destination>
+			<destination>{74d8c921-5a99-4f73-bde4-2f70eb7f5ea4}</destination>
+			<destination>{7cb62d50-93c8-4067-86c3-eb758debca3d}</destination>
+		</relationship>
+		<relationship name="snapshotTracks">
+			<destination>{32fda6d2-0985-473b-a9a5-70cd9a9a8a48}</destination>
+			<destination>{70100214-bad1-4aac-94d8-df28b9bb6b4d}</destination>
+			<destination>{073ec13c-2453-4afb-8e65-1b98e431e1dd}</destination>
+			<destination>{9f641ab0-1afa-41ee-aa2c-53d0401cd9fa}</destination>
+			<destination>{ff387c9b-109a-45f0-bf75-e0c1cdb6e6a7}</destination>
+			<destination>{5ec22222-6b98-42cd-825e-ec262e14ffce}</destination>
+		</relationship>
+	</object>
+	<object class="EventAutomatableProperties" id="{1b8ab6b2-dec4-4d22-a67c-c3d5e9d43341}" />
+	<object class="MarkerTrack" id="{6e8a2365-a781-45ed-816b-279bc71bd517}" />
+	<object class="Timeline" id="{fd279e49-09f5-44c3-96da-b4f21bed1e88}" />
+	<object class="SnapshotMasterTrack" id="{3c160211-43fe-4bbe-ab07-8bd09f694e67}" />
+	<object class="SnapshotProperty" id="{94328624-e734-4f1f-998a-f02987ce4bbc}">
+		<property name="propertyName">
+			<value>volume</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+		<relationship name="automatableObject">
+			<destination>{641ec6fd-63c6-4f24-913c-e32467bace5a}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotProperty" id="{9687a1a2-88db-45d2-b398-8d364c210e16}">
+		<property name="propertyName">
+			<value>volume</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+		<relationship name="automatableObject">
+			<destination>{a8d5cd08-e981-4731-b0c6-8e1f4dfa9a5c}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotProperty" id="{a574b948-3ef0-4769-8e94-86eefb61e8a7}">
+		<property name="propertyName">
+			<value>volume</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+		<relationship name="automatableObject">
+			<destination>{b548e72e-ff29-445f-8709-7e2bc0ba7050}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotProperty" id="{f17a4da2-d1b1-4c9e-b564-323a88906faf}">
+		<property name="propertyName">
+			<value>volume</value>
+		</property>
+		<property name="value">
+			<value>-78</value>
+		</property>
+		<relationship name="automatableObject">
+			<destination>{756aa45d-1948-47c4-b9dd-0e82f8eebd7d}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotProperty" id="{74d8c921-5a99-4f73-bde4-2f70eb7f5ea4}">
+		<property name="propertyName">
+			<value>volume</value>
+		</property>
+		<property name="value">
+			<value>-80</value>
+		</property>
+		<relationship name="automatableObject">
+			<destination>{f07a8056-2c15-4e35-bcab-a972e1f4bfe9}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotProperty" id="{7cb62d50-93c8-4067-86c3-eb758debca3d}">
+		<property name="propertyName">
+			<value>volume</value>
+		</property>
+		<property name="value">
+			<value>0</value>
+		</property>
+		<relationship name="automatableObject">
+			<destination>{640d20c2-aef6-48e0-95b6-f69a5ea86b90}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotTrack" id="{32fda6d2-0985-473b-a9a5-70cd9a9a8a48}">
+		<relationship name="mixerStrip">
+			<destination>{641ec6fd-63c6-4f24-913c-e32467bace5a}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotTrack" id="{70100214-bad1-4aac-94d8-df28b9bb6b4d}">
+		<relationship name="mixerStrip">
+			<destination>{a8d5cd08-e981-4731-b0c6-8e1f4dfa9a5c}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotTrack" id="{073ec13c-2453-4afb-8e65-1b98e431e1dd}">
+		<relationship name="mixerStrip">
+			<destination>{b548e72e-ff29-445f-8709-7e2bc0ba7050}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotTrack" id="{9f641ab0-1afa-41ee-aa2c-53d0401cd9fa}">
+		<relationship name="mixerStrip">
+			<destination>{756aa45d-1948-47c4-b9dd-0e82f8eebd7d}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotTrack" id="{ff387c9b-109a-45f0-bf75-e0c1cdb6e6a7}">
+		<relationship name="mixerStrip">
+			<destination>{f07a8056-2c15-4e35-bcab-a972e1f4bfe9}</destination>
+		</relationship>
+	</object>
+	<object class="SnapshotTrack" id="{5ec22222-6b98-42cd-825e-ec262e14ffce}">
+		<relationship name="mixerStrip">
+			<destination>{640d20c2-aef6-48e0-95b6-f69a5ea86b90}</destination>
+		</relationship>
+	</object>
+</objects>

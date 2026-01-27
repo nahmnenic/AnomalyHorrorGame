@@ -556,6 +556,7 @@ MonoBehaviour:
   - char
   - env
   - event
+  - interaction
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0

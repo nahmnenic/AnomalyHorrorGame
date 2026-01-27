@@ -2,7 +2,7 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{5ee203e7-6a75-46c2-8019-9d139c4425b8}">
 		<property name="name">
-			<value>event_door_open</value>
+			<value>interaction_door_open</value>
 		</property>
 		<property name="outputFormat">
 			<value>0</value>
@@ -32,7 +32,7 @@
 			<destination>{112d2670-84d0-437d-86d5-d2b992b57f2c}</destination>
 		</relationship>
 		<relationship name="banks">
-			<destination>{568887d1-fee6-4685-8ebe-930fd0a1a004}</destination>
+			<destination>{4020292c-2a77-4409-9c0c-385fae6849d9}</destination>
 		</relationship>
 	</object>
 	<object class="EventMixer" id="{32cf5a87-bc34-4798-9b82-1a26d1cdd864}">
@@ -53,7 +53,7 @@
 			<destination>{ac130f03-0dad-4d94-8389-bd690ac9ad78}</destination>
 		</relationship>
 		<relationship name="output">
-			<destination>{f03e686b-482a-43e0-8201-3d37d3fc5a83}</destination>
+			<destination>{d39a9a14-acc2-4f93-8ae5-88411e0b05f0}</destination>
 		</relationship>
 	</object>
 	<object class="EventAutomatableProperties" id="{d4e713b9-2156-4c4b-a118-677a6ec14eae}" />

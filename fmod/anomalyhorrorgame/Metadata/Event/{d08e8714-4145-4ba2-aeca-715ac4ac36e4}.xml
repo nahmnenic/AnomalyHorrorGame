@@ -2,13 +2,13 @@
 <objects serializationModel="Studio.02.03.00">
 	<object class="Event" id="{d08e8714-4145-4ba2-aeca-715ac4ac36e4}">
 		<property name="name">
-			<value>event_wall_knock</value>
+			<value>event_window_knock</value>
 		</property>
 		<property name="outputFormat">
 			<value>2</value>
 		</property>
 		<relationship name="folder">
-			<destination>{c2661aa4-6e7d-4d06-ba1a-d028b071bb84}</destination>
+			<destination>{4bc28d88-6e0d-40a9-9605-40535e4aa614}</destination>
 		</relationship>
 		<relationship name="mixer">
 			<destination>{b1d03252-5a34-4bfa-ae1c-10a5e8cadcc7}</destination>

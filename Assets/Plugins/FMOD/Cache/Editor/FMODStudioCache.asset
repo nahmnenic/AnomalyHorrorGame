@@ -27,7 +27,7 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6000
---- !u!114 &-6462605035837569708
+--- !u!114 &-7382497240048800196
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -37,23 +37,158 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/event/door/event_door_close
+  m_Name: event:/amb/amb_roomtone_bathroom
   m_EditorClassIdentifier: 
-  Path: event:/event/door/event_door_close
+  Path: event:/amb/amb_roomtone_bathroom
   Guid:
-    Data1: 1343565683
-    Data2: 1093130541
-    Data3: 1419055519
-    Data4: -592816614
+    Data1: 1922252278
+    Data2: 1288306281
+    Data3: -1149972329
+    Data4: 756627161
   Banks:
-  - {fileID: -1433611436058757933}
+  - {fileID: -2014219133995426961}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &-7212557960708820369
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/env/env_clock
+  m_EditorClassIdentifier: 
+  Path: event:/env/env_clock
+  Guid:
+    Data1: 1625177576
+    Data2: 1176625880
+    Data3: 1396478866
+    Data4: -2138341605
+  Banks:
+  - {fileID: 1862610991540713533}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1000
+--- !u!114 &-6931142339720550024
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/door/interaction_furniture_door_close
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/door/interaction_furniture_door_close
+  Guid:
+    Data1: 1107649330
+    Data2: 1214565937
+    Data3: 1078598297
+    Data4: -235117750
+  Banks:
+  - {fileID: 865833748765135958}
   IsStream: 0
   Is3D: 0
   IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 1207
+  Length: 2000
+--- !u!114 &-5424349529938589680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/env/env_lamp_bedroom
+  m_EditorClassIdentifier: 
+  Path: event:/env/env_lamp_bedroom
+  Guid:
+    Data1: -755947153
+    Data2: 1113151262
+    Data3: -1768217416
+    Data4: 1189533669
+  Banks:
+  - {fileID: 1862610991540713533}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &-4249786098472193375
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Reverb_children
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Reverb_children
+  Guid:
+    Data1: 1551420050
+    Data2: 1321001575
+    Data3: -1164040831
+    Data4: -221239492
+  Banks:
+  - {fileID: 3622129342007278926}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &-4152593346856649691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Reverb_main
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Reverb_main
+  Guid:
+    Data1: -484323240
+    Data2: 1332394407
+    Data3: -276678229
+    Data4: 576429526
+  Banks:
+  - {fileID: 3622129342007278926}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-4078504828315429448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -75,33 +210,6 @@ MonoBehaviour:
   Banks:
   - {fileID: -1433611436058757933}
   IsStream: 1
-  Is3D: 1
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 6000
---- !u!114 &-3696567937522335249
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/event/wall/event_wall_knock
-  m_EditorClassIdentifier: 
-  Path: event:/event/wall/event_wall_knock
-  Guid:
-    Data1: -795965676
-    Data2: 1268924741
-    Data3: 1517406894
-    Data4: -466178876
-  Banks:
-  - {fileID: -1433611436058757933}
-  IsStream: 0
   Is3D: 1
   IsOneShot: 0
   Parameters: []
@@ -177,10 +285,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/amb.bank
   Name: amb
   StudioPath: bank:/amb
-  lastModified: 639050298430573928
+  lastModified: 639051009637323482
   FileSizes:
   - Name: Desktop
-    Value: 884384
+    Value: 2952192
   Exists: 1
 --- !u!114 &-1865815809751162043
 MonoBehaviour:
@@ -196,10 +304,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Path: event:/event/window/event_window_knock
   Guid:
-    Data1: 1415817831
-    Data2: 1139693604
-    Data3: -1073518175
-    Data4: 1651378799
+    Data1: -795965676
+    Data2: 1268924741
+    Data3: 1517406894
+    Data4: -466178876
   Banks:
   - {fileID: -1433611436058757933}
   IsStream: 0
@@ -209,33 +317,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 6000
---- !u!114 &-1761885302283064530
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/event/door/event_door_open
-  m_EditorClassIdentifier: 
-  Path: event:/event/door/event_door_open
-  Guid:
-    Data1: 1591870439
-    Data2: 1187146357
-    Data3: 329062784
-    Data4: -1205517156
-  Banks:
-  - {fileID: -1433611436058757933}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 1500
 --- !u!114 &-1433611436058757933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -251,11 +332,38 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/event.bank
   Name: event
   StudioPath: bank:/event
-  lastModified: 639050298430632477
+  lastModified: 639051070780456375
   FileSizes:
   - Name: Desktop
-    Value: 829664
+    Value: 841728
   Exists: 1
+--- !u!114 &-1242220699119545000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Reverb_storage
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Reverb_storage
+  Guid:
+    Data1: -287084517
+    Data2: 1232766248
+    Data3: -808745085
+    Data4: 1383945304
+  Banks:
+  - {fileID: 3622129342007278926}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &-193058101324207513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -302,32 +410,53 @@ MonoBehaviour:
   - {fileID: 1862610991540713533}
   - {fileID: -1433611436058757933}
   - {fileID: 3622129342007278926}
+  - {fileID: 865833748765135958}
   EditorEvents:
   - {fileID: 348573007907840102}
   - {fileID: -2309741094281182928}
   - {fileID: 3924272665566953604}
   - {fileID: -4078504828315429448}
   - {fileID: -2222220943805012431}
-  - {fileID: -6462605035837569708}
   - {fileID: -193058101324207513}
   - {fileID: 1500150152882167298}
   - {fileID: 6441533736759883349}
   - {fileID: 9070890609539134414}
   - {fileID: -9048075227435686759}
-  - {fileID: -1761885302283064530}
   - {fileID: 5170602101532662779}
-  - {fileID: -3696567937522335249}
   - {fileID: 4039910150774058902}
   - {fileID: -1865815809751162043}
   - {fileID: 948170110297652877}
   - {fileID: 3991589115392838125}
+  - {fileID: 7282129027862973510}
+  - {fileID: 447039786445056506}
+  - {fileID: 949930230411312660}
+  - {fileID: 3615039881573376783}
+  - {fileID: -7382497240048800196}
+  - {fileID: 1228967157544176577}
+  - {fileID: 2052359370869668138}
+  - {fileID: -1242220699119545000}
+  - {fileID: 1407545500320063866}
+  - {fileID: 6830936682089250000}
+  - {fileID: -4152593346856649691}
+  - {fileID: 2124134454852433285}
+  - {fileID: -4249786098472193375}
+  - {fileID: -7212557960708820369}
+  - {fileID: 8763641574386080852}
+  - {fileID: -6931142339720550024}
+  - {fileID: 4511021746287604700}
+  - {fileID: 5849669526487944282}
+  - {fileID: 10893301021541479}
+  - {fileID: 6756247702638371172}
+  - {fileID: 1880253252982165086}
+  - {fileID: -5424349529938589680}
+  - {fileID: 3209177367019324910}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3622129342007278926}
   StringsBanks:
   - {fileID: 1261199216906370086}
   cacheVersion: 131857
-  cacheTime: 639050298430632477
+  cacheTime: 639051080116697076
   SerializableEventsDict:
   - key: event:/amb/amb_roomtone_main
     index: 0
@@ -339,32 +468,95 @@ MonoBehaviour:
     index: 3
   - key: event:/event/window/event_window_brunch
     index: 4
-  - key: event:/event/door/event_door_close
-    index: 5
   - key: event:/event/vinyl/event_vinyl_normal
-    index: 6
+    index: 5
   - key: event:/event/tv/event_tv_anomaly
-    index: 7
+    index: 6
   - key: event:/event/tv/event_tv_normal
-    index: 8
+    index: 7
   - key: event:/event/radio/event_radio_normal
-    index: 9
+    index: 8
   - key: event:/event/baby_monitor/event_baby_monitor_anomaly
-    index: 10
-  - key: event:/event/door/event_door_open
-    index: 11
+    index: 9
   - key: event:/event/radio/event_radio_anomaly
-    index: 12
+    index: 10
   - key: event:/event/wall/event_wall_knock
-    index: 13
+    index: 11
   - key: event:/event/children_toy/event_children_toy_anomaly
-    index: 14
+    index: 12
   - key: event:/event/window/event_window_knock
-    index: 15
+    index: 13
   - key: event:/event/clock_alarm/event_clock_alarm_anomaly
-    index: 16
+    index: 14
   - key: event:/event/cabinet/event_cabinet_fall_inside
+    index: 15
+  - key: event:/amb/amb_roomtone_storage
+    index: 16
+  - key: event:/amb/amb_roomtone_kitchen
     index: 17
+  - key: event:/amb/amb_roomtone_children
+    index: 18
+  - key: event:/amb/amb_roomtone_bedroom
+    index: 19
+  - key: event:/amb/amb_roomtone_bathroom
+    index: 20
+  - key: event:/interaction/door/interaction_door_close
+    index: 21
+  - key: event:/interaction/door/interaction_door_open
+    index: 22
+  - key: snapshot:/Reverb_storage
+    index: 23
+  - key: snapshot:/Reverb_bedroom
+    index: 24
+  - key: snapshot:/Reverb_kitchen
+    index: 25
+  - key: snapshot:/Reverb_main
+    index: 26
+  - key: snapshot:/Reverb_bathroom
+    index: 27
+  - key: snapshot:/Reverb_children
+    index: 28
+  - key: event:/env/env_clock
+    index: 29
+  - key: event:/interaction/door/interaction_furniture_door_open
+    index: 30
+  - key: event:/interaction/door/interaction_furniture_door_close
+    index: 31
+  - key: event:/interaction/door/interaction_furniture_door_slide_open
+    index: 32
+  - key: event:/interaction/door/interaction_furniture_door_slide_close
+    index: 33
+  - key: event:/interaction/switch/interaction_light_switch
+    index: 34
+  - key: event:/interaction/door/interaction_locked_door
+    index: 35
+--- !u!114 &10893301021541479
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/switch/interaction_light_switch
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/switch/interaction_light_switch
+  Guid:
+    Data1: -18365318
+    Data2: 1280524060
+    Data3: -589906532
+    Data4: 1386690316
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
 --- !u!114 &348573007907840102
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -392,6 +584,53 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10000
+--- !u!114 &447039786445056506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/amb_roomtone_kitchen
+  m_EditorClassIdentifier: 
+  Path: event:/amb/amb_roomtone_kitchen
+  Guid:
+    Data1: -1629082496
+    Data2: 1136874213
+    Data3: -1893345350
+    Data4: -135385349
+  Banks:
+  - {fileID: -2014219133995426961}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &865833748765135958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/interaction.bank
+  m_EditorClassIdentifier: 
+  Path: fmod/anomalyhorrorgame/Build/Desktop/interaction.bank
+  Name: interaction
+  StudioPath: bank:/interaction
+  lastModified: 639051070780776465
+  FileSizes:
+  - Name: Desktop
+    Value: 188576
+  Exists: 1
 --- !u!114 &948170110297652877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -419,6 +658,60 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 14000
+--- !u!114 &949930230411312660
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/amb_roomtone_children
+  m_EditorClassIdentifier: 
+  Path: event:/amb/amb_roomtone_children
+  Guid:
+    Data1: -867059325
+    Data2: 1170574694
+    Data3: 347382661
+    Data4: 1774991937
+  Banks:
+  - {fileID: -2014219133995426961}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &1228967157544176577
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/door/interaction_door_close
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/door/interaction_door_close
+  Guid:
+    Data1: 1343565683
+    Data2: 1093130541
+    Data3: 1419055519
+    Data4: -592816614
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1207
 --- !u!114 &1261199216906370086
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -434,11 +727,38 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639050298430533917
+  lastModified: 639051080116697076
   FileSizes:
   - Name: Desktop
-    Value: 2216
+    Value: 3458
   Exists: 1
+--- !u!114 &1407545500320063866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Reverb_bedroom
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Reverb_bedroom
+  Guid:
+    Data1: 1682918943
+    Data2: 1113940346
+    Data3: 689172897
+    Data4: -265157477
+  Banks:
+  - {fileID: 3622129342007278926}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
 --- !u!114 &1500150152882167298
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -481,11 +801,119 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/env.bank
   Name: env
   StudioPath: bank:/env
-  lastModified: 639050298430592464
+  lastModified: 639051080116557115
   FileSizes:
   - Name: Desktop
-    Value: 180864
+    Value: 1821024
   Exists: 1
+--- !u!114 &1880253252982165086
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/pipe/event_pipe_hit
+  m_EditorClassIdentifier: 
+  Path: event:/event/pipe/event_pipe_hit
+  Guid:
+    Data1: 1921353882
+    Data2: 1162549411
+    Data3: -885551445
+    Data4: -564711761
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 3000
+--- !u!114 &2052359370869668138
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/door/interaction_door_open
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/door/interaction_door_open
+  Guid:
+    Data1: 1591870439
+    Data2: 1187146357
+    Data3: 329062784
+    Data4: -1205517156
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
+--- !u!114 &2124134454852433285
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Reverb_bathroom
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Reverb_bathroom
+  Guid:
+    Data1: 1575841666
+    Data2: 1200716056
+    Data3: 1833967293
+    Data4: 669707693
+  Banks:
+  - {fileID: 3622129342007278926}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &3209177367019324910
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/env/env_lamp_kitchen
+  m_EditorClassIdentifier: 
+  Path: event:/env/env_lamp_kitchen
+  Guid:
+    Data1: -304019243
+    Data2: 1140011591
+    Data3: 1223128725
+    Data4: 1847199631
+  Banks:
+  - {fileID: 1862610991540713533}
+  IsStream: 1
+  Is3D: 1
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
 --- !u!114 &3451702627852572821
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -501,11 +929,38 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/char.bank
   Name: char
   StudioPath: bank:/char
-  lastModified: 639050298430581782
+  lastModified: 639048730257665391
   FileSizes:
   - Name: Desktop
     Value: 21632
   Exists: 1
+--- !u!114 &3615039881573376783
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/amb_roomtone_bedroom
+  m_EditorClassIdentifier: 
+  Path: event:/amb/amb_roomtone_bedroom
+  Guid:
+    Data1: -1487444581
+    Data2: 1319233206
+    Data3: 1518886563
+    Data4: -732253679
+  Banks:
+  - {fileID: -2014219133995426961}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
 --- !u!114 &3622129342007278926
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -521,10 +976,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639050298430533917
+  lastModified: 639051080116687075
   FileSizes:
   - Name: Desktop
-    Value: 2094
+    Value: 9576
   Exists: 1
 --- !u!114 &3924272665566953604
 MonoBehaviour:
@@ -607,6 +1062,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 12992
+--- !u!114 &4511021746287604700
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/door/interaction_furniture_door_slide_open
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/door/interaction_furniture_door_slide_open
+  Guid:
+    Data1: -50123936
+    Data2: 1080795988
+    Data3: 613113003
+    Data4: 1911374607
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1694
 --- !u!114 &5170602101532662779
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -634,6 +1116,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
+--- !u!114 &5849669526487944282
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/door/interaction_furniture_door_slide_close
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/door/interaction_furniture_door_slide_close
+  Guid:
+    Data1: -1478157682
+    Data2: 1259138653
+    Data3: 1631201198
+    Data4: 2005382805
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1230
 --- !u!114 &6441533736759883349
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -657,6 +1166,114 @@ MonoBehaviour:
   IsStream: 0
   Is3D: 1
   IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 2000
+--- !u!114 &6756247702638371172
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/door/interaction_locked_door
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/door/interaction_locked_door
+  Guid:
+    Data1: 912033441
+    Data2: 1183955191
+    Data3: 1439922828
+    Data4: 339307545
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1250
+--- !u!114 &6830936682089250000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: snapshot:/Reverb_kitchen
+  m_EditorClassIdentifier: 
+  Path: snapshot:/Reverb_kitchen
+  Guid:
+    Data1: -1657155553
+    Data2: 1321000245
+    Data3: 591525778
+    Data4: 1383520650
+  Banks:
+  - {fileID: 3622129342007278926}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 0
+  MaxDistance: 0
+  Length: 0
+--- !u!114 &7282129027862973510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/amb/amb_roomtone_storage
+  m_EditorClassIdentifier: 
+  Path: event:/amb/amb_roomtone_storage
+  Guid:
+    Data1: -779674012
+    Data2: 1081982063
+    Data3: -1852159611
+    Data4: 1534785408
+  Banks:
+  - {fileID: -2014219133995426961}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 10000
+--- !u!114 &8763641574386080852
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/door/interaction_furniture_door_open
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/door/interaction_furniture_door_open
+  Guid:
+    Data1: -1847883259
+    Data2: 1204757433
+    Data3: -1124697209
+    Data4: -1138195246
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
