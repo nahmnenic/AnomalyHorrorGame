@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{aca7610e-cd4a-49ac-9680-0f75ef10c908}">
+		<property name="assetPath">
+			<value>event_big_chair_fall.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>1</value>
+		</property>
+		<property name="length">
+			<value>1.8600000000000001</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e6fc5940-303f-42cc-b53a-0bb4b014535b}</destination>
+		</relationship>
+	</object>
+</objects>

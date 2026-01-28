@@ -285,7 +285,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/amb.bank
   Name: amb
   StudioPath: bank:/amb
-  lastModified: 639051297517276057
+  lastModified: 639051009637323482
   FileSizes:
   - Name: Desktop
     Value: 2952192
@@ -332,7 +332,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/event.bank
   Name: event
   StudioPath: bank:/event
-  lastModified: 639051297517407798
+  lastModified: 639051070780456375
   FileSizes:
   - Name: Desktop
     Value: 841728
@@ -450,13 +450,14 @@ MonoBehaviour:
   - {fileID: 1880253252982165086}
   - {fileID: -5424349529938589680}
   - {fileID: 3209177367019324910}
+  - {fileID: 1068850426107222843}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3622129342007278926}
   StringsBanks:
   - {fileID: 1261199216906370086}
   cacheVersion: 131857
-  cacheTime: 639051297517419393
+  cacheTime: 639051895450255225
   SerializableEventsDict:
   - key: event:/amb/amb_roomtone_main
     index: 0
@@ -534,6 +535,8 @@ MonoBehaviour:
     index: 36
   - key: event:/env/env_lamp_kitchen
     index: 37
+  - key: event:/interaction/knob/interaction_knob
+    index: 38
 --- !u!114 &10893301021541479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -630,10 +633,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/interaction.bank
   Name: interaction
   StudioPath: bank:/interaction
-  lastModified: 639051297517419393
+  lastModified: 639051895450165205
   FileSizes:
   - Name: Desktop
-    Value: 188576
+    Value: 212096
   Exists: 1
 --- !u!114 &948170110297652877
 MonoBehaviour:
@@ -689,6 +692,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 10000
+--- !u!114 &1068850426107222843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/knob/interaction_knob
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/knob/interaction_knob
+  Guid:
+    Data1: -797205794
+    Data2: 1272115768
+    Data3: -1572404833
+    Data4: -1691597184
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
 --- !u!114 &1228967157544176577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -731,10 +761,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639051297517146699
+  lastModified: 639051895450255225
   FileSizes:
   - Name: Desktop
-    Value: 3458
+    Value: 3510
   Exists: 1
 --- !u!114 &1407545500320063866
 MonoBehaviour:
@@ -805,7 +835,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/env.bank
   Name: env
   StudioPath: bank:/env
-  lastModified: 639051297517366079
+  lastModified: 639051080308486754
   FileSizes:
   - Name: Desktop
     Value: 1821024
@@ -933,7 +963,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/char.bank
   Name: char
   StudioPath: bank:/char
-  lastModified: 639050298430581782
+  lastModified: 639048730257665391
   FileSizes:
   - Name: Desktop
     Value: 21632
@@ -980,7 +1010,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639051297517136694
+  lastModified: 639051895450245224
   FileSizes:
   - Name: Desktop
     Value: 9576
