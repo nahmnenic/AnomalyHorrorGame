@@ -12,6 +12,11 @@ public class SoundController : MonoBehaviour
         StartCoroutine(PlaySoundWithDelay());
     }
 
+    public void StopSound()
+    {
+        _fmod.Stop();
+    }
+
     private IEnumerator PlaySoundWithDelay()
     {
         yield return new WaitForSeconds(Delay);
