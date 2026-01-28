@@ -75,6 +75,9 @@
 		</relationship>
 	</object>
 	<object class="EventMixerMaster" id="{3daa7236-2924-4fe6-978c-adedad218e3d}">
+		<relationship name="modulators">
+			<destination>{b9962522-8c45-45ed-b65c-8bc57ff04cf8}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{08cc71af-499b-42a3-93a1-20b4a9229c6e}</destination>
 		</relationship>
@@ -100,7 +103,6 @@
 		</property>
 		<relationship name="modulators">
 			<destination>{9c49ba5e-3609-46a7-b967-1f39c93cc18a}</destination>
-			<destination>{8e011e03-598f-4f20-a0f0-6a5d0a0af920}</destination>
 		</relationship>
 		<relationship name="event">
 			<destination>{c93589bc-b1cb-4efe-a0f6-da7afe092ccc}</destination>
@@ -134,6 +136,23 @@
 			<destination>{4fb85241-2a7e-4293-9c65-666ac2b91148}</destination>
 		</relationship>
 	</object>
+	<object class="ADSRModulator" id="{b9962522-8c45-45ed-b65c-8bc57ff04cf8}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>2000</value>
+		</property>
+		<property name="releaseTime">
+			<value>2000</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{08cc71af-499b-42a3-93a1-20b4a9229c6e}">
 		<relationship name="effects">
 			<destination>{45b90462-aec4-42c2-87d4-9826e6356e6c}</destination>
@@ -147,23 +166,6 @@
 		</property>
 		<property name="amount">
 			<value>100</value>
-		</property>
-	</object>
-	<object class="ADSRModulator" id="{8e011e03-598f-4f20-a0f0-6a5d0a0af920}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>volume</value>
-		</property>
-		<property name="initialValue">
-			<value>-80</value>
-		</property>
-		<property name="attackTime">
-			<value>3000</value>
-		</property>
-		<property name="releaseTime">
-			<value>3000</value>
-		</property>
-		<property name="finalValue">
-			<value>-80</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{ea890d87-9cb0-4fc1-bc29-e800f7903998}">

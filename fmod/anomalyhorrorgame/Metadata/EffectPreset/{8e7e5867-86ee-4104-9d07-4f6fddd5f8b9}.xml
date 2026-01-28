@@ -25,9 +25,6 @@
 		</relationship>
 	</object>
 	<object class="SpatialiserEffect" id="{f67daf83-06e8-4424-93fd-1d0cadaff785}">
-		<property name="minimumDistance">
-			<value>0</value>
-		</property>
 		<property name="maximumDistance">
 			<value>10</value>
 		</property>

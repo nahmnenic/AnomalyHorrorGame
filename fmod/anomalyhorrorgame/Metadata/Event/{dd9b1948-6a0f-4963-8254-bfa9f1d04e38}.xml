@@ -78,6 +78,9 @@
 		<property name="volume">
 			<value>-16.5</value>
 		</property>
+		<relationship name="modulators">
+			<destination>{8347ce3e-1a74-4270-96e3-02a7d8847e5a}</destination>
+		</relationship>
 		<relationship name="effectChain">
 			<destination>{435e677c-562c-4de5-b336-d32b2aa37bdd}</destination>
 		</relationship>
@@ -103,7 +106,6 @@
 		</property>
 		<relationship name="modulators">
 			<destination>{613d5fbd-cfe1-42b0-8ffd-20865082ae5f}</destination>
-			<destination>{78ffcfbc-20ec-44af-97a2-b35fc684b614}</destination>
 		</relationship>
 		<relationship name="event">
 			<destination>{ff0d9389-ecca-490b-a419-d12940795c2a}</destination>
@@ -137,6 +139,23 @@
 			<destination>{9c135052-dcf5-487d-a5c2-cce7a796fb84}</destination>
 		</relationship>
 	</object>
+	<object class="ADSRModulator" id="{8347ce3e-1a74-4270-96e3-02a7d8847e5a}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>volume</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>2000</value>
+		</property>
+		<property name="releaseTime">
+			<value>2000</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 	<object class="MixerBusEffectChain" id="{435e677c-562c-4de5-b336-d32b2aa37bdd}">
 		<relationship name="effects">
 			<destination>{1f9a49ce-916b-415e-aa22-42022b81c24e}</destination>
@@ -150,23 +169,6 @@
 		</property>
 		<property name="amount">
 			<value>100</value>
-		</property>
-	</object>
-	<object class="ADSRModulator" id="{78ffcfbc-20ec-44af-97a2-b35fc684b614}">
-		<property name="nameOfPropertyBeingModulated">
-			<value>volume</value>
-		</property>
-		<property name="initialValue">
-			<value>-80</value>
-		</property>
-		<property name="attackTime">
-			<value>3000</value>
-		</property>
-		<property name="releaseTime">
-			<value>3000</value>
-		</property>
-		<property name="finalValue">
-			<value>-80</value>
 		</property>
 	</object>
 	<object class="MixerBusEffectChain" id="{4885b89b-25db-44cc-9367-648e8b033cdb}">

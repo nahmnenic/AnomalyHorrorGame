@@ -285,10 +285,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/amb.bank
   Name: amb
   StudioPath: bank:/amb
-  lastModified: 639051009637323482
+  lastModified: 639051913146965604
   FileSizes:
   - Name: Desktop
-    Value: 2952192
+    Value: 2952288
   Exists: 1
 --- !u!114 &-1865815809751162043
 MonoBehaviour:
@@ -332,10 +332,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/event.bank
   Name: event
   StudioPath: bank:/event
-  lastModified: 639051070780456375
+  lastModified: 639051905179358549
   FileSizes:
   - Name: Desktop
-    Value: 841728
+    Value: 849120
   Exists: 1
 --- !u!114 &-1242220699119545000
 MonoBehaviour:
@@ -451,13 +451,14 @@ MonoBehaviour:
   - {fileID: -5424349529938589680}
   - {fileID: 3209177367019324910}
   - {fileID: 1068850426107222843}
+  - {fileID: 1134300137282142551}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3622129342007278926}
   StringsBanks:
   - {fileID: 1261199216906370086}
   cacheVersion: 131857
-  cacheTime: 639051895450255225
+  cacheTime: 639051913147123306
   SerializableEventsDict:
   - key: event:/amb/amb_roomtone_main
     index: 0
@@ -537,6 +538,8 @@ MonoBehaviour:
     index: 37
   - key: event:/interaction/knob/interaction_knob
     index: 38
+  - key: event:/event/chair/event_big_chair_fall
+    index: 39
 --- !u!114 &10893301021541479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -719,6 +722,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 500
+--- !u!114 &1134300137282142551
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/event/chair/event_big_chair_fall
+  m_EditorClassIdentifier: 
+  Path: event:/event/chair/event_big_chair_fall
+  Guid:
+    Data1: 474677664
+    Data2: 1109007281
+    Data3: 2060206987
+    Data4: -1210945552
+  Banks:
+  - {fileID: -1433611436058757933}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1860
 --- !u!114 &1228967157544176577
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -761,10 +791,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639051895450255225
+  lastModified: 639051913147123306
   FileSizes:
   - Name: Desktop
-    Value: 3510
+    Value: 3576
   Exists: 1
 --- !u!114 &1407545500320063866
 MonoBehaviour:
@@ -1010,10 +1040,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639051895450245224
+  lastModified: 639051913147105652
   FileSizes:
   - Name: Desktop
-    Value: 9576
+    Value: 10784
   Exists: 1
 --- !u!114 &3924272665566953604
 MonoBehaviour:
