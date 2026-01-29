@@ -478,7 +478,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 793
+  m_VersionIndex: 796
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -730,8 +730,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotateSpeed: 200
-  _rotateTo: 0
-  _rotateFrom: 90
+  _rotateTo: 90
+  _rotateFrom: 0
   Stable: 0
   axis: 1
 --- !u!1 &5320383521225478535
@@ -1464,8 +1464,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotateSpeed: 200
-  _rotateTo: 0
-  _rotateFrom: 90
+  _rotateTo: 90
+  _rotateFrom: 0
   Stable: 0
   axis: 1
 --- !u!1 &8026688216849585920

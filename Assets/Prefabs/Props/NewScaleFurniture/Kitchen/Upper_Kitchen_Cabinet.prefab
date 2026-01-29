@@ -630,8 +630,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotateSpeed: 200
-  _rotateTo: 0
-  _rotateFrom: 90
+  _rotateTo: 90
+  _rotateFrom: 0
   Stable: 0
   axis: 1
 --- !u!1 &8442116947158630697

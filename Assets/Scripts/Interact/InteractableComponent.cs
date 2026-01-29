@@ -30,7 +30,7 @@ namespace Interact
 
         public void Interact()
         {
-            if (On)
+            if (!On)
             {
                 if(_supBlock) return;
                 _actionsOn?.Invoke();
@@ -39,7 +39,7 @@ namespace Interact
                     _supBlock = true;
                     return;
                 }
-                On = false;
+                On = true;
             }
             else
             {
@@ -50,7 +50,7 @@ namespace Interact
                     _supBlock = true;
                     return;
                 }
-                On = true;
+                On = false;
             }
         }
 

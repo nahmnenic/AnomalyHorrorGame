@@ -10,7 +10,7 @@ namespace Components
         [SerializeField] private float _rotateSpeed;
         [SerializeField] private float _rotateTo;
         [SerializeField] private float _rotateFrom;
-        private float _copyTo;
+        public float _copyTo;
         private float _copyFrom;
         public bool Stable;
         
@@ -51,6 +51,7 @@ namespace Components
                     target = movingToTarget ? _rotateFrom : _rotateTo;
                     newAngle = Mathf.MoveTowardsAngle(currentAngle, target, _rotateSpeed * Time.deltaTime);
                     transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, newAngle);
+                    if(currentAngle == target && Stable) Rotate();
                     break;
             }
         }
