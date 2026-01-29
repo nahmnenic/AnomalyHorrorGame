@@ -630,8 +630,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _rotateSpeed: 200
-  _rotateFrom: 90
   _rotateTo: 0
+  _rotateFrom: 90
+  Stable: 0
   axis: 1
 --- !u!1 &8442116947158630697
 GameObject:
@@ -2029,7 +2030,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 10f3d256b75a54a54b6b151ceffd9710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _actions:
+  _actionsOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4726977872231703086}
+        m_TargetAssemblyTypeName: Components.RotateObjectComponent, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionsOff:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 4726977872231703086}
@@ -2046,3 +2062,5 @@ MonoBehaviour:
         m_CallState: 2
   _displayName: E
   _isEnabled: 1
+  On: 0
+  BlockSwitch: 0

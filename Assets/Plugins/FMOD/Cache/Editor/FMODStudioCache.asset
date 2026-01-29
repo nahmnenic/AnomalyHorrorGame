@@ -285,7 +285,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/amb.bank
   Name: amb
   StudioPath: bank:/amb
-  lastModified: 639051913146965604
+  lastModified: 639052230573888253
   FileSizes:
   - Name: Desktop
     Value: 2952288
@@ -332,7 +332,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/event.bank
   Name: event
   StudioPath: bank:/event
-  lastModified: 639051915398296673
+  lastModified: 639052230573908259
   FileSizes:
   - Name: Desktop
     Value: 849120
@@ -452,13 +452,15 @@ MonoBehaviour:
   - {fileID: 3209177367019324910}
   - {fileID: 1068850426107222843}
   - {fileID: 1134300137282142551}
+  - {fileID: 1651108204342504288}
+  - {fileID: 4829090163937169945}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3622129342007278926}
   StringsBanks:
   - {fileID: 1261199216906370086}
   cacheVersion: 131857
-  cacheTime: 639051915398296673
+  cacheTime: 639052961868175416
   SerializableEventsDict:
   - key: event:/amb/amb_roomtone_main
     index: 0
@@ -540,6 +542,10 @@ MonoBehaviour:
     index: 38
   - key: event:/event/chair/event_big_chair_fall
     index: 39
+  - key: event:/env/env_faucet
+    index: 40
+  - key: event:/interaction/faucet/interaction_faucet_handle
+    index: 41
 --- !u!114 &10893301021541479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -636,10 +642,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/interaction.bank
   Name: interaction
   StudioPath: bank:/interaction
-  lastModified: 639051895450165205
+  lastModified: 639052961868175416
   FileSizes:
   - Name: Desktop
-    Value: 212096
+    Value: 243584
   Exists: 1
 --- !u!114 &948170110297652877
 MonoBehaviour:
@@ -791,10 +797,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639051913147123306
+  lastModified: 639052961868059842
   FileSizes:
   - Name: Desktop
-    Value: 3576
+    Value: 3688
   Exists: 1
 --- !u!114 &1407545500320063866
 MonoBehaviour:
@@ -850,6 +856,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
+--- !u!114 &1651108204342504288
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/env/env_faucet
+  m_EditorClassIdentifier: 
+  Path: event:/env/env_faucet
+  Guid:
+    Data1: -1767366015
+    Data2: 1246245089
+    Data3: -233427529
+    Data4: 1592678216
+  Banks:
+  - {fileID: 1862610991540713533}
+  IsStream: 0
+  Is3D: 1
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 9219
 --- !u!114 &1862610991540713533
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -865,10 +898,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/env.bank
   Name: env
   StudioPath: bank:/env
-  lastModified: 639051080308486754
+  lastModified: 639052961868155686
   FileSizes:
   - Name: Desktop
-    Value: 1821024
+    Value: 1903328
   Exists: 1
 --- !u!114 &1880253252982165086
 MonoBehaviour:
@@ -993,7 +1026,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/char.bank
   Name: char
   StudioPath: bank:/char
-  lastModified: 639048730257665391
+  lastModified: 639050298430581782
   FileSizes:
   - Name: Desktop
     Value: 21632
@@ -1040,7 +1073,7 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 639051913147105652
+  lastModified: 639052230573747960
   FileSizes:
   - Name: Desktop
     Value: 10784
@@ -1153,6 +1186,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1694
+--- !u!114 &4829090163937169945
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/faucet/interaction_faucet_handle
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/faucet/interaction_faucet_handle
+  Guid:
+    Data1: 1857359133
+    Data2: 1201806808
+    Data3: 1992329103
+    Data4: -1179151951
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1118
 --- !u!114 &5170602101532662779
 MonoBehaviour:
   m_ObjectHideFlags: 0
