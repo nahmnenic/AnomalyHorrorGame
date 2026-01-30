@@ -15,6 +15,8 @@ namespace Interact
 
         private IInteractable _focused;
 
+        [SerializeField] private GameObject _flash;
+
         private void Update()
         {
             IInteractable nearest = FindNearestInteractable();
@@ -70,6 +72,12 @@ namespace Interact
             {
                 if (_focused.CanInteract()) _focused.Interact();
             }
+        }
+
+        public void Flash()
+        {
+            if (_flash.activeSelf == false) _flash.SetActive(true);
+            else _flash.SetActive(false);
         }
     }
 }

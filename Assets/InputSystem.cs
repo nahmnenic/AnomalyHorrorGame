@@ -299,6 +299,15 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Flash"",
+                    ""type"": ""Button"",
+                    ""id"": ""cc524c1d-3aa0-4715-bcdd-d1b5af770116"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -356,6 +365,17 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Switch"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""03393765-e77f-4dab-a5fa-71cec2b56c20"",
+                    ""path"": ""<Keyboard>/f"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -371,6 +391,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_PlayerActions_Shift = m_PlayerActions.FindAction("Shift", throwIfNotFound: true);
         m_PlayerActions_Interaction = m_PlayerActions.FindAction("Interaction", throwIfNotFound: true);
         m_PlayerActions_Switch = m_PlayerActions.FindAction("Switch", throwIfNotFound: true);
+        m_PlayerActions_Flash = m_PlayerActions.FindAction("Flash", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -489,6 +510,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Shift;
     private readonly InputAction m_PlayerActions_Interaction;
     private readonly InputAction m_PlayerActions_Switch;
+    private readonly InputAction m_PlayerActions_Flash;
     public struct PlayerActionsActions
     {
         private @InputSystem m_Wrapper;
@@ -496,6 +518,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @Shift => m_Wrapper.m_PlayerActions_Shift;
         public InputAction @Interaction => m_Wrapper.m_PlayerActions_Interaction;
         public InputAction @Switch => m_Wrapper.m_PlayerActions_Switch;
+        public InputAction @Flash => m_Wrapper.m_PlayerActions_Flash;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -514,6 +537,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Switch.started += instance.OnSwitch;
             @Switch.performed += instance.OnSwitch;
             @Switch.canceled += instance.OnSwitch;
+            @Flash.started += instance.OnFlash;
+            @Flash.performed += instance.OnFlash;
+            @Flash.canceled += instance.OnFlash;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -527,6 +553,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Switch.started -= instance.OnSwitch;
             @Switch.performed -= instance.OnSwitch;
             @Switch.canceled -= instance.OnSwitch;
+            @Flash.started -= instance.OnFlash;
+            @Flash.performed -= instance.OnFlash;
+            @Flash.canceled -= instance.OnFlash;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -554,5 +583,6 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnShift(InputAction.CallbackContext context);
         void OnInteraction(InputAction.CallbackContext context);
         void OnSwitch(InputAction.CallbackContext context);
+        void OnFlash(InputAction.CallbackContext context);
     }
 }

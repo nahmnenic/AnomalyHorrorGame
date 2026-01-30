@@ -17,6 +17,7 @@ public class InputManager : MonoBehaviour
 
         public bool shift_Input;
         public bool e_Input;
+        public bool f_Input;
         public bool q_Input;
 
         private void Awake()
@@ -37,6 +38,7 @@ public class InputManager : MonoBehaviour
                 _inputSystem.PlayerActions.Shift.performed += i => shift_Input = true;
                 _inputSystem.PlayerActions.Shift.canceled += i => shift_Input = false;
                 _inputSystem.PlayerActions.Interaction.performed += i => e_Input = true;
+                _inputSystem.PlayerActions.Flash.performed += i => f_Input = true;
                 _inputSystem.PlayerActions.Switch.performed += i => q_Input = true;
             }
             
@@ -54,6 +56,7 @@ public class InputManager : MonoBehaviour
             HandleSprintingInput();
             HandleInteractionInput();
             HandleSwitchInput();
+            HandleFlashLightInput();
         }
 
         private void HandleMovementInput()
@@ -81,6 +84,15 @@ public class InputManager : MonoBehaviour
             {
                 e_Input = false;
                 _player.Interact();
+            }
+        }
+        
+        private void HandleFlashLightInput()
+        {
+            if (f_Input)
+            {
+                f_Input = false;
+                _player.Flash();
             }
         }
         
