@@ -10,9 +10,11 @@ namespace Components
         [SerializeField] private float _rotateSpeed;
         [SerializeField] private float _rotateTo;
         [SerializeField] private float _rotateFrom;
-        public float _copyTo;
-        private float _copyFrom;
+        [SerializeField] private float _delay;
+        private bool _delayApproved = true;
+        private Coroutine _rotationCoroutine;
         public bool Stable;
+        public bool Spin;
         
         private bool movingToTarget = true;
 
@@ -27,12 +29,20 @@ namespace Components
 
         private void Update()
         {
+            if (_delay != 0)
+            {
+                _delayApproved = false;
+                StartCoroutine(DelayImitate());
+            }
+            if (!_delayApproved) return;
             float currentAngle;
             float target;
             float newAngle;
             switch (axis)
             {
                 case Axis.X:
+                    if (Spin && !movingToTarget && _rotationCoroutine == null) _rotationCoroutine = StartCoroutine(RotateContinuously(0));
+                    if (Spin) return;
                     currentAngle = transform.localEulerAngles.x;
                     target = movingToTarget ? _rotateFrom : _rotateTo;
                     newAngle = Mathf.MoveTowardsAngle(currentAngle, target, _rotateSpeed * Time.deltaTime);
@@ -40,6 +50,8 @@ namespace Components
                     if(newAngle == target && Stable) Rotate();
                     break;
                 case Axis.Y:
+                    if (Spin && !movingToTarget && _rotationCoroutine == null) _rotationCoroutine = StartCoroutine(RotateContinuously(1));
+                    if (Spin) return;
                     currentAngle = transform.localEulerAngles.y;
                     target = movingToTarget ? _rotateFrom : _rotateTo;
                     newAngle = Mathf.MoveTowardsAngle(currentAngle, target, _rotateSpeed * Time.deltaTime);
@@ -47,6 +59,8 @@ namespace Components
                     if(currentAngle == target && Stable) Rotate();
                     break;
                 case Axis.Z:
+                    if (Spin && !movingToTarget && _rotationCoroutine == null) _rotationCoroutine = StartCoroutine(RotateContinuously(2));
+                    if (Spin) return;
                     currentAngle = transform.localEulerAngles.z;
                     target = movingToTarget ? _rotateFrom : _rotateTo;
                     newAngle = Mathf.MoveTowardsAngle(currentAngle, target, _rotateSpeed * Time.deltaTime);
@@ -59,17 +73,40 @@ namespace Components
         public void Rotate()
         {
             movingToTarget = !movingToTarget;
+            if (Spin && movingToTarget)
+            {
+                StopCoroutine(RotateContinuously(1));
+                _rotationCoroutine = null;
+            }
         }
 
-        public void BlockRotate()
+        private IEnumerator DelayImitate()
         {
-            _copyTo = _rotateTo;
-            _rotateTo = _rotateFrom;
+            yield return new WaitForSeconds(_delay);
+            _delay = 0;
+            _delayApproved = true;
         }
-
-        public void UnblockRotate()
+        
+        private IEnumerator RotateContinuously(int axis)
         {
-            _rotateTo = _copyTo;
+            while (!movingToTarget)
+            {
+                switch (axis)
+                {
+                    case 0:
+                        transform.Rotate(_rotateSpeed * Time.deltaTime, 0, 0);
+                        yield return null;
+                        break;
+                    case 1:
+                        transform.Rotate(0, _rotateSpeed * Time.deltaTime, 0);
+                        yield return null;
+                        break;
+                    case 2:
+                        transform.Rotate(0, 0, _rotateSpeed * Time.deltaTime);
+                        yield return null;
+                        break;
+                }
+            }
         }
     }
 }

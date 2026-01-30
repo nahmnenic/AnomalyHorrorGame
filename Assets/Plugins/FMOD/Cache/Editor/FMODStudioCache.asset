@@ -332,10 +332,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/event.bank
   Name: event
   StudioPath: bank:/event
-  lastModified: 639052230573908259
+  lastModified: 639053743965269777
   FileSizes:
   - Name: Desktop
-    Value: 849120
+    Value: 912992
   Exists: 1
 --- !u!114 &-1242220699119545000
 MonoBehaviour:
@@ -364,6 +364,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &-200347545879635129
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/barricades/interaction_barricades_chair_put
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/barricades/interaction_barricades_chair_put
+  Guid:
+    Data1: 514931878
+    Data2: 1141462064
+    Data3: -749735266
+    Data4: -1834723152
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 850
 --- !u!114 &-193058101324207513
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -454,13 +481,18 @@ MonoBehaviour:
   - {fileID: 1134300137282142551}
   - {fileID: 1651108204342504288}
   - {fileID: 4829090163937169945}
+  - {fileID: 5671241507224914999}
+  - {fileID: 1577759945735330840}
+  - {fileID: 275976461198941441}
+  - {fileID: -200347545879635129}
+  - {fileID: 7249524616181709052}
   EditorParameters: []
   MasterBanks:
   - {fileID: 3622129342007278926}
   StringsBanks:
   - {fileID: 1261199216906370086}
   cacheVersion: 131857
-  cacheTime: 639052961868175416
+  cacheTime: 639053743965289784
   SerializableEventsDict:
   - key: event:/amb/amb_roomtone_main
     index: 0
@@ -546,6 +578,16 @@ MonoBehaviour:
     index: 40
   - key: event:/interaction/faucet/interaction_faucet_handle
     index: 41
+  - key: event:/interaction/barricades/interaction_barricades_boards_put
+    index: 42
+  - key: event:/interaction/barricades/interaction_barricades_chair_take
+    index: 43
+  - key: event:/interaction/barricades/interaction_barricades_boards_take
+    index: 44
+  - key: event:/interaction/barricades/interaction_barricades_chair_put
+    index: 45
+  - key: event:/interaction/barricades/interaction_barricades_sofa_put
+    index: 46
 --- !u!114 &10893301021541479
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -564,6 +606,33 @@ MonoBehaviour:
     Data2: 1280524060
     Data3: -589906532
     Data4: 1386690316
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 500
+--- !u!114 &275976461198941441
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/barricades/interaction_barricades_boards_take
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/barricades/interaction_barricades_boards_take
+  Guid:
+    Data1: -2040024468
+    Data2: 1084783504
+    Data3: 204528523
+    Data4: -2140680651
   Banks:
   - {fileID: 865833748765135958}
   IsStream: 0
@@ -642,10 +711,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/interaction.bank
   Name: interaction
   StudioPath: bank:/interaction
-  lastModified: 639052961868175416
+  lastModified: 639053743965289784
   FileSizes:
   - Name: Desktop
-    Value: 243584
+    Value: 290144
   Exists: 1
 --- !u!114 &948170110297652877
 MonoBehaviour:
@@ -797,10 +866,10 @@ MonoBehaviour:
   Path: fmod/anomalyhorrorgame/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 639052961868059842
+  lastModified: 639053743965217002
   FileSizes:
   - Name: Desktop
-    Value: 3688
+    Value: 3948
   Exists: 1
 --- !u!114 &1407545500320063866
 MonoBehaviour:
@@ -856,6 +925,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
+--- !u!114 &1577759945735330840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/barricades/interaction_barricades_chair_take
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/barricades/interaction_barricades_chair_take
+  Guid:
+    Data1: 1650815836
+    Data2: 1078155580
+    Data3: -2037265496
+    Data4: -1548220745
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 489
 --- !u!114 &1651108204342504288
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1240,6 +1336,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 4000
+--- !u!114 &5671241507224914999
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/barricades/interaction_barricades_boards_put
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/barricades/interaction_barricades_boards_put
+  Guid:
+    Data1: 853160278
+    Data2: 1189699717
+    Data3: 310473377
+    Data4: 751111194
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1500
 --- !u!114 &5849669526487944282
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1348,6 +1471,33 @@ MonoBehaviour:
   MinDistance: 0
   MaxDistance: 0
   Length: 0
+--- !u!114 &7249524616181709052
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/interaction/barricades/interaction_barricades_sofa_put
+  m_EditorClassIdentifier: 
+  Path: event:/interaction/barricades/interaction_barricades_sofa_put
+  Guid:
+    Data1: 572105918
+    Data2: 1240941677
+    Data3: 1845683131
+    Data4: -674301315
+  Banks:
+  - {fileID: 865833748765135958}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 1188
 --- !u!114 &7282129027862973510
 MonoBehaviour:
   m_ObjectHideFlags: 0
