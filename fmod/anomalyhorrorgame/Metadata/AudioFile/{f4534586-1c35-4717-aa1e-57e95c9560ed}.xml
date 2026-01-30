@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f4534586-1c35-4717-aa1e-57e95c9560ed}">
+		<property name="assetPath">
+			<value>interaction_barricades_sofa_put.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>48</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>1.1886666666666668</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{e6fc5940-303f-42cc-b53a-0bb4b014535b}</destination>
+		</relationship>
+	</object>
+</objects>
