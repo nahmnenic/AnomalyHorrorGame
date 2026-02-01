@@ -1,4 +1,5 @@
 using Interact;
+using Player;
 using RoomMananger;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,6 +8,7 @@ public class InputManager : MonoBehaviour
 {
         private InputSystem _inputSystem;
         private PlayerLocomotion _playerLococmotion;
+        private PlayerLighter _playerLighter;
         private PlayerInteraction _player;
         private RoomController _roomController;
 
@@ -23,6 +25,7 @@ public class InputManager : MonoBehaviour
         private void Awake()
         {
             _roomController = FindObjectOfType<RoomController>();
+            _playerLighter = GetComponent<PlayerLighter>();
             _playerLococmotion = GetComponent<PlayerLocomotion>();
             _player = GetComponent<PlayerInteraction>();
         }
@@ -92,7 +95,7 @@ public class InputManager : MonoBehaviour
             if (f_Input)
             {
                 f_Input = false;
-                _player.Flash();
+                _playerLighter.Flash();
             }
         }
         
