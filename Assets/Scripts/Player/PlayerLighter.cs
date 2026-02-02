@@ -6,11 +6,13 @@ namespace Player
     public class PlayerLighter : MonoBehaviour
     {
         [SerializeField] private GameObject _flash;
+        [SerializeField] private FMODUnity.StudioEventEmitter _fmod;
         private bool Block = false;
         
         public void Flash()
         {
             if (Block) return;
+            _fmod.Play();
             if (_flash.activeSelf == false) _flash.SetActive(true);
             else _flash.SetActive(false);
         }

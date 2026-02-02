@@ -306,6 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flash: {fileID: 7695349057012409110}
+  _fmod: {fileID: 1926400785658858645}
 --- !u!1 &6871000779097438100
 GameObject:
   m_ObjectHideFlags: 0
@@ -509,6 +510,8 @@ GameObject:
   m_Component:
   - component: {fileID: 6674730104029195323}
   - component: {fileID: 7369818695938474179}
+  - component: {fileID: 2126248163099154281}
+  - component: {fileID: 1926400785658858645}
   m_Layer: 6
   m_Name: FlashLight
   m_TagString: Untagged
@@ -593,3 +596,50 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!114 &2126248163099154281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7695349057012409110}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac3c18a66c8081b428b0deaa591897a3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _minLightIntensity: 1
+  _maxLightIntensity: 1.4
+  _speed: 0.1
+  _delay: 0
+--- !u!114 &1926400785658858645
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7695349057012409110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 418791219
+      Data2: 1228724338
+      Data3: 1701651614
+      Data4: 1040947617
+    Path: event:/interaction/flashlight/interaction_flashlight
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
