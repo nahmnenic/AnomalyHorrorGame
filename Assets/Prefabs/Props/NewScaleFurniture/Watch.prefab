@@ -1142,6 +1142,7 @@ GameObject:
   - component: {fileID: 3992891439403176221}
   - component: {fileID: 909457106180375167}
   - component: {fileID: 7152184081388757029}
+  - component: {fileID: 7361275709503712456}
   m_Layer: 0
   m_Name: Watch
   m_TagString: Untagged
@@ -1523,7 +1524,39 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _minuts: {fileID: 516364807061115158}
   _seconds: {fileID: 1272411646220096603}
+  _fmod: {fileID: 7361275709503712456}
   Back: 0
+--- !u!114 &7361275709503712456
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6984942945837031540}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1625177576
+      Data2: 1176625880
+      Data3: 1396478866
+      Data4: -2138341605
+    Path: event:/env/env_clock
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1001 &541161409737224329
 PrefabInstance:
   m_ObjectHideFlags: 0

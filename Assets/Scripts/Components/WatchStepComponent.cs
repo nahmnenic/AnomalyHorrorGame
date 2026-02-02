@@ -8,6 +8,7 @@ namespace Components
     {
         [SerializeField] private Transform _minuts;
         [SerializeField] private Transform _seconds;
+        [SerializeField] private FMODUnity.StudioEventEmitter _fmod;
         public bool Back;
         private int _allSec = 0;
 
@@ -30,6 +31,7 @@ namespace Components
                     _seconds.localEulerAngles = new Vector3(0, _allSec*6, 0);
                     if (_allSec%60 == 0) _minuts.localEulerAngles = new Vector3(0, _allSec/60 * 6, 0);
                 }
+                _fmod.Play();
                 _allSec++;
                 yield return new WaitForSeconds(1f);
             }
