@@ -63,5 +63,11 @@ namespace Interact
         {
             _outline.enabled = false;
         }
+
+        public void SwitchOn()
+        {
+            if(On) On = false;
+            else On = true;
+        }
     }
 }

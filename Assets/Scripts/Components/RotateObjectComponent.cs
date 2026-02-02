@@ -11,11 +11,13 @@ namespace Components
         [SerializeField] private float _rotateTo;
         [SerializeField] private float _rotateFrom;
         [SerializeField] private float _delay;
-        private bool _delayApproved = true;
+        
         private Coroutine _rotationCoroutine;
+        
         public bool Stable;
         public bool Spin;
         
+        private bool _delayApproved = true;
         private bool movingToTarget = true;
 
         public enum Axis
