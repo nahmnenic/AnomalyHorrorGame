@@ -7,6 +7,7 @@ public class SoundController : MonoBehaviour
     [SerializeField] private FMODUnity.StudioEventEmitter _fmod;
     public float Delay;
 
+    [ContextMenu("PlaySound")]
     public void PlaySound()
     {
         StartCoroutine(PlaySoundWithDelay());
@@ -15,6 +16,11 @@ public class SoundController : MonoBehaviour
     public void StopSound()
     {
         _fmod.Stop();
+    }
+
+    public bool IsPlaying()
+    {
+        return _fmod.IsPlaying();
     }
 
     private IEnumerator PlaySoundWithDelay()

@@ -1,3 +1,4 @@
+using FMOD;
 using Interact;
 using Player;
 using RoomMananger;
@@ -8,6 +9,7 @@ public class InputManager : MonoBehaviour
 {
         private InputSystem _inputSystem;
         private PlayerLocomotion _playerLococmotion;
+        private SoundController _soundController;
         private PlayerLighter _playerLighter;
         private PlayerInteraction _player;
         private RoomController _roomController;
@@ -25,6 +27,7 @@ public class InputManager : MonoBehaviour
         private void Awake()
         {
             _roomController = FindObjectOfType<RoomController>();
+            _soundController = GetComponentInChildren<SoundController>();
             _playerLighter = GetComponent<PlayerLighter>();
             _playerLococmotion = GetComponent<PlayerLocomotion>();
             _player = GetComponent<PlayerInteraction>();
@@ -67,6 +70,7 @@ public class InputManager : MonoBehaviour
             verticalInput = movementInput.y;
             horizontalalInput = movementInput.x;
             moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalalInput) + Mathf.Abs(verticalInput));
+            if(moveAmount!=0 && !_soundController.IsPlaying()) _soundController.PlaySound();
         }
 
         private void HandleSprintingInput()
