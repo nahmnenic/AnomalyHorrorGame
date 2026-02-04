@@ -13,6 +13,7 @@ namespace Interact
         [SerializeField] private Transform _interactionPoint;
         private Collider[] _interactionResult = new Collider[32];
 
+        [SerializeField] private GameObject _gameWindow;
         private IInteractable _focused;
 
         private void Update()
@@ -70,6 +71,11 @@ namespace Interact
             {
                 if (_focused.CanInteract()) _focused.Interact();
             }
+        }
+        
+        public void ShowGameWindow()
+        {
+            _gameWindow.SetActive(true);
         }
     }
 }

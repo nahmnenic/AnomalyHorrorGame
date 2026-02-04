@@ -308,6 +308,15 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""cd4c6705-4be9-48e3-81ff-ac6ee0578dc0"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -347,7 +356,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f12ac650-1baa-4f53-b016-ed95b7c34701"",
-                    ""path"": ""<NimbusGamepadHid>/buttonNorth"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": """",
@@ -376,6 +385,28 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""action"": ""Flash"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""591869ea-cde5-498e-b60b-b8a7b7e4db01"",
+                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Flash"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a5783080-50c4-4e31-97e7-0c285c8033da"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -392,6 +423,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_PlayerActions_Interaction = m_PlayerActions.FindAction("Interaction", throwIfNotFound: true);
         m_PlayerActions_Switch = m_PlayerActions.FindAction("Switch", throwIfNotFound: true);
         m_PlayerActions_Flash = m_PlayerActions.FindAction("Flash", throwIfNotFound: true);
+        m_PlayerActions_Escape = m_PlayerActions.FindAction("Escape", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -511,6 +543,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Interaction;
     private readonly InputAction m_PlayerActions_Switch;
     private readonly InputAction m_PlayerActions_Flash;
+    private readonly InputAction m_PlayerActions_Escape;
     public struct PlayerActionsActions
     {
         private @InputSystem m_Wrapper;
@@ -519,6 +552,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @Interaction => m_Wrapper.m_PlayerActions_Interaction;
         public InputAction @Switch => m_Wrapper.m_PlayerActions_Switch;
         public InputAction @Flash => m_Wrapper.m_PlayerActions_Flash;
+        public InputAction @Escape => m_Wrapper.m_PlayerActions_Escape;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -540,6 +574,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Flash.started += instance.OnFlash;
             @Flash.performed += instance.OnFlash;
             @Flash.canceled += instance.OnFlash;
+            @Escape.started += instance.OnEscape;
+            @Escape.performed += instance.OnEscape;
+            @Escape.canceled += instance.OnEscape;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -556,6 +593,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Flash.started -= instance.OnFlash;
             @Flash.performed -= instance.OnFlash;
             @Flash.canceled -= instance.OnFlash;
+            @Escape.started -= instance.OnEscape;
+            @Escape.performed -= instance.OnEscape;
+            @Escape.canceled -= instance.OnEscape;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -584,5 +624,6 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnInteraction(InputAction.CallbackContext context);
         void OnSwitch(InputAction.CallbackContext context);
         void OnFlash(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
 }

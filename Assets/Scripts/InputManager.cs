@@ -21,6 +21,7 @@ public class InputManager : MonoBehaviour
 
         public bool shift_Input;
         public bool e_Input;
+        public bool esc_Input;
         public bool f_Input;
         public bool q_Input;
 
@@ -44,6 +45,7 @@ public class InputManager : MonoBehaviour
                 _inputSystem.PlayerActions.Shift.performed += i => shift_Input = true;
                 _inputSystem.PlayerActions.Shift.canceled += i => shift_Input = false;
                 _inputSystem.PlayerActions.Interaction.performed += i => e_Input = true;
+                _inputSystem.PlayerActions.Escape.performed += i => esc_Input = true;
                 _inputSystem.PlayerActions.Flash.performed += i => f_Input = true;
                 _inputSystem.PlayerActions.Switch.performed += i => q_Input = true;
             }
@@ -61,6 +63,7 @@ public class InputManager : MonoBehaviour
             HandleMovementInput();
             HandleSprintingInput();
             HandleInteractionInput();
+            HandleEscapeInput();
             HandleSwitchInput();
             HandleFlashLightInput();
         }
@@ -91,6 +94,15 @@ public class InputManager : MonoBehaviour
             {
                 e_Input = false;
                 _player.Interact();
+            }
+        }
+        
+        private void HandleEscapeInput()
+        {
+            if (esc_Input)
+            {
+                esc_Input = false;
+                _player.ShowGameWindow();
             }
         }
         
