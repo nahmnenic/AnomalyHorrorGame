@@ -1,4 +1,3 @@
-using System;
 using Interact.UI;
 using UnityEngine;
 
@@ -13,6 +12,10 @@ namespace Interact
         [SerializeField] private Transform _interactionPoint;
         private Collider[] _interactionResult = new Collider[32];
 
+        [Header("Raycast")] 
+        [SerializeField] private float _maxDistance = 100f;
+        [SerializeField] private LayerMask _layerMask = ~0;
+        
         [SerializeField] private GameObject _gameWindow;
         private IInteractable _focused;
 
@@ -63,6 +66,19 @@ namespace Interact
                 }
             }
             return nearst;
+        }
+        
+        private bool PerformRaycast()
+        {
+            Vector3 screenCenter = new Vector3(Screen.width * 0.5f, Screen.height * 0.5f, 0f);
+            Ray ray = Camera.main.ScreenPointToRay(screenCenter);
+            var hasHit = Physics.Raycast(ray, out RaycastHit currentHit, _maxDistance, _layerMask);
+        
+            if (currentHit.collider.gameObject.TryGetComponent(out InteractableComponent interactable))
+            {
+                return true;
+            }
+            return false;
         }
 
         public void Interact()

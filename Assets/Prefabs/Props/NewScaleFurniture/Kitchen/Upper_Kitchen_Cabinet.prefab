@@ -632,7 +632,9 @@ MonoBehaviour:
   _rotateSpeed: 200
   _rotateTo: 90
   _rotateFrom: 0
+  _delay: 0
   Stable: 0
+  Spin: 0
   axis: 1
 --- !u!1 &8442116947158630697
 GameObject:
@@ -2025,7 +2027,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8926783507497700013}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10f3d256b75a54a54b6b151ceffd9710, type: 3}
   m_Name: 
@@ -2060,7 +2062,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: E
+  _displayName: To open door
   _isEnabled: 1
   On: 0
   BlockSwitch: 0
