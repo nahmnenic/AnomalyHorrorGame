@@ -6,17 +6,13 @@ namespace RoomMananger
     {
         [SerializeField] private GameObject[] _roomsPrefabs;
 
+        private GameObject _currentRoom = null;
+        
         public void SpawnRoom(int roomNumber)
         {
-            foreach (GameObject room in _roomsPrefabs)
-            {
-                if (room.activeSelf) room.SetActive(false);
-            }
+            if(_currentRoom != null) Destroy(_currentRoom);
             
-            
-            _roomsPrefabs[roomNumber].SetActive(true);
-            _roomsPrefabs[roomNumber].transform.position = transform.position;
-            _roomsPrefabs[roomNumber].transform.rotation = transform.rotation;
+            _currentRoom = Instantiate(_roomsPrefabs[roomNumber], transform.position, transform.rotation);
         }
     }
 }

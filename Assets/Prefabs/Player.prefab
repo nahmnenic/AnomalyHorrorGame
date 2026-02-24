@@ -159,6 +159,7 @@ GameObject:
   - component: {fileID: 4461746442068767276}
   - component: {fileID: 408218949809184373}
   - component: {fileID: 2903423893563434416}
+  - component: {fileID: 3305773182156856167}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -295,6 +296,7 @@ MonoBehaviour:
   horizontalalInput: 0
   shift_Input: 0
   e_Input: 0
+  esc_Input: 0
   f_Input: 0
   q_Input: 0
 --- !u!114 &7712808121554452977
@@ -345,6 +347,11 @@ MonoBehaviour:
     m_Bits: 128
   _promt: {fileID: 0}
   _interactionPoint: {fileID: 2857607277478432434}
+  _maxDistance: 100
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 128
+  _gameWindow: {fileID: 0}
 --- !u!54 &408218949809184373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -386,6 +393,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _flash: {fileID: 7695349057012409110}
   _fmod: {fileID: 1926400785658858645}
+--- !u!114 &3305773182156856167
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703859887912056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 96c2039f8f58b8b41b405414ca11100c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Sofa: 0
+  Chair: 0
+  Boards: 0
 --- !u!1 &6871000779097438100
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,5 +1,7 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 namespace RoomMananger
 {
@@ -13,7 +15,12 @@ namespace RoomMananger
         [SerializeField] private SpawnerRoom _redSpawner;
 
         private const int RoomsCount = 5;
-        
+
+        private void Start()
+        {
+            SwitchRoom();
+        }
+
         public void SwitchRoom()
         {
             Transform[] shuffledPositions = (Transform[])_roomPos.Clone();
@@ -25,17 +32,17 @@ namespace RoomMananger
                     (shuffledPositions[randomIndex], shuffledPositions[i]);
             }
             
-            _blackSpawner.transform.position  = shuffledPositions[0].position;
-            _blackSpawner.transform.rotation  = shuffledPositions[0].rotation;
+            _blackSpawner.transform.position = shuffledPositions[0].position;
+            _blackSpawner.transform.rotation = shuffledPositions[0].rotation;
             
-            _greenSpawner.transform.position  = shuffledPositions[1].position;
-            _greenSpawner.transform.rotation  = shuffledPositions[1].rotation;
+            _greenSpawner.transform.position = shuffledPositions[1].position;
+            _greenSpawner.transform.rotation = shuffledPositions[1].rotation;
             
             _yellowSpawner.transform.position = shuffledPositions[2].position;
             _yellowSpawner.transform.rotation = shuffledPositions[2].rotation;
             
-            _redSpawner.transform.position    = shuffledPositions[3].position;
-            _redSpawner.transform.rotation    = shuffledPositions[3].rotation;
+            _redSpawner.transform.position = shuffledPositions[3].position;
+            _redSpawner.transform.rotation = shuffledPositions[3].rotation;
             
             Spawn();
         }
