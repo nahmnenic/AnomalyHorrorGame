@@ -4,6 +4,23 @@ namespace RoomMananger
 {
     public class Room : MonoBehaviour
     {
-        public Transform SpawnPos;
+        private bool _closeDoor;
+        public bool EntranceRoom = false;
+
+        public Transform Door;
+
+        public bool CloseDoor()
+        {
+            if (Door.localEulerAngles.y == 0) return true;
+            
+            return false;
+        }
+        
+        public void Entrance()
+        {
+            EntranceRoom = true;
+        }
+        
+        
     }
 }
