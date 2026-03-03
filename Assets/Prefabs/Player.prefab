@@ -160,6 +160,7 @@ GameObject:
   - component: {fileID: 408218949809184373}
   - component: {fileID: 2903423893563434416}
   - component: {fileID: 3305773182156856167}
+  - component: {fileID: 1475423911516671340}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -405,9 +406,36 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c2039f8f58b8b41b405414ca11100c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Sofa: 0
+  ChairPrefab: {fileID: 0}
+  BoardPrefab: {fileID: 0}
+  _playerInteraction: {fileID: 4461746442068767276}
+  _doorInteraction: {fileID: 0}
+  Skip: 1
   Chair: 0
   Boards: 0
+--- !u!114 &1475423911516671340
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703859887912056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 61cd802f77d175d4aa5e8ce87a662fc0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _interactionRadius: 1
+  _interactionLayer:
+    serializedVersion: 2
+    m_Bits: 512
+  _promt: {fileID: 0}
+  _interactionPoint: {fileID: 2857607277478432434}
+  _maxDistance: 100
+  _layerMask:
+    serializedVersion: 2
+    m_Bits: 512
+  _gameWindow: {fileID: 0}
 --- !u!1 &6871000779097438100
 GameObject:
   m_ObjectHideFlags: 0

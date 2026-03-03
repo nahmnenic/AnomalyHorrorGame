@@ -4,6 +4,7 @@ using Player;
 using RoomMananger;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using Debug = UnityEngine.Debug;
 
 public class InputManager : MonoBehaviour
 {
@@ -12,6 +13,7 @@ public class InputManager : MonoBehaviour
         private SoundController _soundController;
         private PlayerLighter _playerLighter;
         private PlayerInteraction _player;
+        private PlayerInteractionDoor _doorInteraction;
         private RoomController _roomController;
 
         public Vector2 movementInput;
@@ -32,6 +34,7 @@ public class InputManager : MonoBehaviour
             _playerLighter = GetComponent<PlayerLighter>();
             _playerLococmotion = GetComponent<PlayerLocomotion>();
             _player = GetComponent<PlayerInteraction>();
+            _doorInteraction = GetComponent<PlayerInteractionDoor>();
         }
 
         private void OnEnable()
@@ -94,6 +97,7 @@ public class InputManager : MonoBehaviour
             {
                 e_Input = false;
                 _player.Interact();
+                _doorInteraction.Interact();
             }
         }
         

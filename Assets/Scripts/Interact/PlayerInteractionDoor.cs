@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace Interact
 {
-    public class PlayerInteraction : MonoBehaviour
+    public class PlayerInteractionDoor : MonoBehaviour
     {
         [Header("Interaction")] 
         [SerializeField] private float _interactionRadius;
@@ -73,6 +73,7 @@ namespace Interact
             if (_focused != null)
             {
                 if (_focused.CanInteract()) _focused.Interact();
+                Debug.Log("Interacting");
             }
         }
         
