@@ -96,8 +96,8 @@ public class InputManager : MonoBehaviour
             if (e_Input)
             {
                 e_Input = false;
-                _player.Interact();
-                _doorInteraction.Interact();
+                if(_player.enabled)_player.Interact();
+                if(_doorInteraction.enabled)_doorInteraction.Interact();
             }
         }
         

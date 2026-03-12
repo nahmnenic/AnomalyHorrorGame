@@ -27,6 +27,7 @@ namespace Interact
 
         private void UpdateFocus(IInteractable nearest)
         {
+            
             if (ReferenceEquals(nearest, _focused)) return;
             _focused?.OnFocusExit();
             _focused = nearest;
@@ -57,6 +58,7 @@ namespace Interact
                 if (col == null) continue;
                 IInteractable interactable = col.GetComponentInParent<IInteractable>();
                 if (interactable == null) continue;
+                if(!interactable.Enabled()) continue;
                 if (!interactable.CanInteract()) continue;
                 float distSq = (col.transform.position - _interactionPoint.position).sqrMagnitude;
                 if (distSq < bestDistSq)
@@ -73,13 +75,18 @@ namespace Interact
             if (_focused != null)
             {
                 if (_focused.CanInteract()) _focused.Interact();
-                Debug.Log("Interacting");
             }
         }
         
         public void ShowGameWindow()
         {
             _gameWindow.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            _focused.OnFocusExit();
+            _promt.Hide();
         }
     }
 }

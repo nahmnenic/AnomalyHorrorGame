@@ -46,10 +46,12 @@ namespace Player
             if (Chair || Boards)
             {
                 _playerInteraction.enabled = false;
+                _playerInteraction.Hide();
                 _doorInteraction.enabled = true;
             }
             else
             {
+                _doorInteraction.Hide();
                 _playerInteraction.enabled = true;
                 _doorInteraction.enabled = false;
             }

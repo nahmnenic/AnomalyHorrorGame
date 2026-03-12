@@ -10,5 +10,6 @@ namespace Interact
         void Interact();
         void OnFocusEnter();
         void OnFocusExit();
+        bool Enabled();
     }
 }

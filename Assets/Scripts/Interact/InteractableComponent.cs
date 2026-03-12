@@ -30,6 +30,7 @@ namespace Interact
 
         public void Interact()
         {
+            if (!Enabled()) return;
             if (!On)
             {
                 if(_supBlock) return;
@@ -68,6 +69,11 @@ namespace Interact
         {
             if(On) On = false;
             else On = true;
+        }
+
+        public bool Enabled()
+        {
+            return gameObject.GetComponent<InteractableComponent>().enabled;
         }
     }
 }

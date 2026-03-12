@@ -3385,7 +3385,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7460127423905923094, guid: 8a90fa9afca3d7744956be533277e7d3, type: 3}
       propertyPath: m_VersionIndex
-      value: 4769
+      value: 4772
       objectReference: {fileID: 0}
     - target: {fileID: 7460127423905923094, guid: 8a90fa9afca3d7744956be533277e7d3, type: 3}
       propertyPath: m_SelectedEdges.Array.size
@@ -3414,10 +3414,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 8685579631278344050, guid: 8a90fa9afca3d7744956be533277e7d3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7359332648597330671}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8a90fa9afca3d7744956be533277e7d3, type: 3}
 --- !u!4 &4427646475631158279 stripped
 Transform:
@@ -3429,40 +3426,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8685579631278344050, guid: 8a90fa9afca3d7744956be533277e7d3, type: 3}
   m_PrefabInstance: {fileID: 3037777478534819105}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7359332648597330671
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5954104149792074323}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10f3d256b75a54a54b6b151ceffd9710, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _actionsOn:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: Player.Inventory, Assembly-CSharp
-        m_MethodName: AddChair
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-  _actionsOff:
-    m_PersistentCalls:
-      m_Calls: []
-  _displayName: To inventory
-  _isEnabled: 1
-  On: 0
-  BlockSwitch: 0
 --- !u!1001 &4487923306144909421
 PrefabInstance:
   m_ObjectHideFlags: 0

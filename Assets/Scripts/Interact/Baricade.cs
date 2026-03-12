@@ -10,7 +10,6 @@ namespace Interact
         [SerializeField] private GameObject BoardPrefab;
         [SerializeField] private InteractableComponent _doorHandle1;
         [SerializeField] private InteractableComponent _doorHandle2;
-        
 
         public bool Bariccade;
         
@@ -23,13 +22,15 @@ namespace Interact
 
         public void Barricade()
         {
-            Debug.Log("Barricade");
+            if (gameObject.GetComponent<Baricade>().Bariccade) return;
             if (_inventory.Boards)
             {
                 BoardPrefab.SetActive(true);
                 _doorHandle1.enabled = false;
                 _doorHandle2.enabled = false;
                 DropBoard();
+                gameObject.GetComponent<Baricade>().enabled = false;
+                gameObject.GetComponent<InteractableComponent>().enabled = false;
             }
             else
             {
@@ -37,6 +38,8 @@ namespace Interact
                 _doorHandle1.enabled = false;
                 _doorHandle2.enabled = false;
                 DropChair();
+                gameObject.GetComponent<Baricade>().enabled = false;
+                gameObject.GetComponent<InteractableComponent>().enabled = false;
             }
 
             Bariccade = true;

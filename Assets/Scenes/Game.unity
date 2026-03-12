@@ -4733,10 +4733,6 @@ PrefabInstance:
       propertyPath: ChairPrefab
       value: 
       objectReference: {fileID: 5465662419352815143}
-    - target: {fileID: 3305773182156856167, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
-      propertyPath: _doorInteraction
-      value: 
-      objectReference: {fileID: 2073382059}
     - target: {fileID: 4461746442068767276, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: _promt
       value: 
@@ -4759,17 +4755,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 96c2039f8f58b8b41b405414ca11100c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &2073382059 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1475423911516671340, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
-  m_PrefabInstance: {fileID: 2073382045}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 61cd802f77d175d4aa5e8ce87a662fc0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!43 &2110932231
