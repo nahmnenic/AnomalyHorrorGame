@@ -18,7 +18,7 @@ namespace Player
         public bool Boards;
 
 
-        private bool CheckRooms()
+        public bool CheckRooms()
         {
             bool flag = true;
             if(Skip) return true;

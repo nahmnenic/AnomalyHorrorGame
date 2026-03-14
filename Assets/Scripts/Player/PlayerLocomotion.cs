@@ -1,7 +1,9 @@
 using UnityEngine;
 
-public class PlayerLocomotion : MonoBehaviour
+namespace Player
 {
+    public class PlayerLocomotion : MonoBehaviour
+    {
         private PlayerManager _palyerManager;
         private InputManager inputManager;
         private Vector3 _moveDirection;
@@ -68,4 +70,5 @@ public class PlayerLocomotion : MonoBehaviour
             Vector3 movementVelocity = _moveDirection;
             _rb.velocity = movementVelocity;
         }
+    }
 }
