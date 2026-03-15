@@ -1,5 +1,6 @@
 using System;
 using System.Collections;
+using Interact;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -9,9 +10,12 @@ namespace UI
     {
         [SerializeField] private Text _timerText;
         [SerializeField] private float _time;
+        
+        private PlayerInteraction _playerInteraction;
 
         private void Start()
         {
+            _playerInteraction =  FindObjectOfType<PlayerInteraction>();
             StartCoroutine(Timer());
         }
 
@@ -22,8 +26,11 @@ namespace UI
                 float minutes = Mathf.FloorToInt(_time / 60);
                 float seconds = Mathf.FloorToInt(_time % 60);
                 _timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
+
                 yield return new WaitForSeconds(1f);
-                _time--;  
+
+                if (!_playerInteraction.BlockMove)
+                    _time--; 
             }
         }
     }

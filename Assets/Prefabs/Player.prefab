@@ -330,6 +330,8 @@ MonoBehaviour:
   mouseSense: 0.05
   xAxis: 0
   yAxis: 0
+  minCam: -16
+  maxCam: 32
 --- !u!114 &4461746442068767276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,6 +355,8 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   _gameWindow: {fileID: 0}
+  _settingWindow: {fileID: 0}
+  BlockMove: 0
 --- !u!54 &408218949809184373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -410,7 +414,7 @@ MonoBehaviour:
   BoardPrefab: {fileID: 0}
   _playerInteraction: {fileID: 4461746442068767276}
   _doorInteraction: {fileID: 1475423911516671340}
-  Skip: 1
+  Skip: 0
   Chair: 0
   Boards: 0
 --- !u!114 &1475423911516671340

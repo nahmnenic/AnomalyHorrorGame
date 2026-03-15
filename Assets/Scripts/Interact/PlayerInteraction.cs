@@ -1,3 +1,4 @@
+using System;
 using Interact.UI;
 using UnityEngine;
 
@@ -16,8 +17,11 @@ namespace Interact
         [SerializeField] private float _maxDistance = 100f;
         [SerializeField] private LayerMask _layerMask = ~0;
         
-        [SerializeField] private GameObject _gameWindow;
+        public GameObject _gameWindow;
+        public GameObject _settingWindow;
         private IInteractable _focused;
+        
+        public bool BlockMove = false;
 
         private void Update()
         {
@@ -40,8 +44,6 @@ namespace Interact
             {
                 _promt.Hide();
             }
-            
-            
         }
 
         private IInteractable FindNearestInteractable()
@@ -88,7 +90,32 @@ namespace Interact
         
         public void ShowGameWindow()
         {
-            _gameWindow.SetActive(true);
+            if(_gameWindow == null) return;
+            if (_gameWindow.activeSelf)
+            {
+                BlockMove = false;
+                _gameWindow.SetActive(false);
+            }
+            else
+            {
+                BlockMove = true;
+                _gameWindow.SetActive(true);
+            }
+        }
+        
+        public void ShowSettingWindow()
+        {
+            if(_settingWindow == null) return;
+            if (_settingWindow.activeSelf)
+            {
+                BlockMove = false;
+                _settingWindow.SetActive(false);
+            }
+            else
+            {
+                _settingWindow.SetActive(true);
+                BlockMove = true;
+            }
         }
     }
 }

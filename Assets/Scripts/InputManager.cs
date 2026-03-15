@@ -12,7 +12,7 @@ public class InputManager : MonoBehaviour
         private PlayerLocomotion _playerLococmotion;
         private SoundController _soundController;
         private PlayerLighter _playerLighter;
-        private PlayerInteraction _player;
+        private PlayerInteraction _playerInteraction;
         private PlayerInteractionDoor _doorInteraction;
         private RoomController _roomController;
 
@@ -33,7 +33,7 @@ public class InputManager : MonoBehaviour
             _soundController = GetComponentInChildren<SoundController>();
             _playerLighter = GetComponent<PlayerLighter>();
             _playerLococmotion = GetComponent<PlayerLocomotion>();
-            _player = GetComponent<PlayerInteraction>();
+            _playerInteraction = GetComponent<PlayerInteraction>();
             _doorInteraction = GetComponent<PlayerInteractionDoor>();
         }
 
@@ -63,10 +63,11 @@ public class InputManager : MonoBehaviour
 
         public void HandleAllInput()
         {
+            HandleEscapeInput();
+            if(_playerInteraction.BlockMove) return;
             HandleMovementInput();
             HandleSprintingInput();
             HandleInteractionInput();
-            HandleEscapeInput();
             HandleSwitchInput();
             HandleFlashLightInput();
         }
@@ -96,7 +97,7 @@ public class InputManager : MonoBehaviour
             if (e_Input)
             {
                 e_Input = false;
-                if(_player.enabled)_player.Interact();
+                if(_playerInteraction.enabled)_playerInteraction.Interact();
                 if(_doorInteraction.enabled)_doorInteraction.Interact();
             }
         }
@@ -106,7 +107,16 @@ public class InputManager : MonoBehaviour
             if (esc_Input)
             {
                 esc_Input = false;
-                _player.ShowGameWindow();
+                if(_playerInteraction._gameWindow.activeSelf) _playerInteraction.ShowGameWindow();
+                else if (_playerInteraction._settingWindow.activeSelf)
+                {
+                    _playerInteraction.ShowSettingWindow();
+                    _playerInteraction.ShowGameWindow();
+                }
+                else
+                {
+                    _playerInteraction.ShowGameWindow();
+                }
             }
         }
         

@@ -1,3 +1,5 @@
+using System;
+using Player;
 using UnityEngine;
 
 namespace Components
@@ -8,6 +10,7 @@ namespace Components
         [SerializeField] private Transform _objToMove;
         [SerializeField] private SoundController _soundController;
         private int _currentPos;
+        
         public bool Disposable;
         private bool _supDispos =false;
 
