@@ -87,6 +87,6 @@ namespace Player
         {
             Boards = false;
             ChangeMode();
-        }
+        } 
     }
 }

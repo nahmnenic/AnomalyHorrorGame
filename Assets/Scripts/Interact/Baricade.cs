@@ -1,6 +1,6 @@
-using System;
 using Components;
 using Player;
+using UI;
 using UnityEngine;
 
 namespace Interact
@@ -14,6 +14,7 @@ namespace Interact
         
         private Baricade _baricade;
         private InteractableComponent _interactableComponent;
+        private GameUI _gameUI;
         
         public bool Bariccade;
         
@@ -23,7 +24,8 @@ namespace Interact
         {
             _inventory = FindObjectOfType<Inventory>();
             _baricade = GetComponent<Baricade>();
-            _interactableComponent =  GetComponent<InteractableComponent>();
+            _gameUI = FindObjectOfType<GameUI>();
+            _interactableComponent = GetComponent<InteractableComponent>();
         }
 
         public void Barricade()
@@ -32,12 +34,16 @@ namespace Interact
             if (_inventory.Boards)
             {
                 BoardPrefab.SetActive(true);
+                _gameUI.Board = true;
+                if(color == ColorOption.Red) _gameUI.BoardTrue = true;
                 DropBoard();
                 DisableBaricade();
             }
             else
             {
                 ChairPrefab.SetActive(true);
+                _gameUI.Chair = true;
+                if(color == ColorOption.Yellow) _gameUI.ChairTrue = true;
                 DropChair();
                 DisableBaricade();
             }
@@ -66,5 +72,15 @@ namespace Interact
         {
             _inventory.DeleteChair();
         }
+        
+        public enum ColorOption
+        {
+            Green,
+            Red,
+            Black,
+            Yellow
+        }
+        
+        public ColorOption color;
     }
 }

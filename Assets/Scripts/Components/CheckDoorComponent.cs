@@ -1,6 +1,7 @@
 using System;
 using Interact;
 using Player;
+using UI;
 using UnityEngine;
 
 namespace Components
@@ -11,6 +12,7 @@ namespace Components
 
         private bool _moving = false;
         private Inventory _inventory;
+        private GameUI _gameUI;
         
         [Header("Object to hide")]
         [SerializeField] private GameObject Pos;
@@ -20,17 +22,14 @@ namespace Components
         private void Awake()
         {
             _inventory = FindObjectOfType<Inventory>();
+            _gameUI =  FindObjectOfType<GameUI>();
         }
 
         public void CheckDoor()
         {
             _inventory.CheckRooms();
             if(!_inventory.CheckRooms()) return;
-            int count = Physics.OverlapSphereNonAlloc(
-                _interactionPoint.position,
-                5,
-                _interactionResult);
-        
+            int count = Physics.OverlapSphereNonAlloc(_interactionPoint.position, 5, _interactionResult);
 
             for (int i = 0; i < count; i++)
             {
@@ -62,6 +61,20 @@ namespace Components
         private void DeleteChance()
         {
             Pos.SetActive(false);
+        }
+
+        public void ColorDoor()
+        {
+            int count = Physics.OverlapSphereNonAlloc(_interactionPoint.position, 5, _interactionResult);
+
+            for (int i = 0; i < count; i++)
+            {
+                Collider col = _interactionResult[i];
+                Baricade baricade = col.GetComponent<Baricade>();
+                if (col == null) continue;
+                if(baricade == null) continue;
+                if (baricade.color == Baricade.ColorOption.Black) _gameUI.SofaTrue = true;
+            }
         }
     }
 }
