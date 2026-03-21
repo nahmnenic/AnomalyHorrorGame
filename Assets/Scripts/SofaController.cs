@@ -63,4 +63,12 @@ public class SofaController : MonoBehaviour
         _pos3.SetActive(false);
         _pos4.SetActive(false);
     }
+
+    public void ReloadRound()
+    {
+        _pos1.SetActive(true);
+        _pos2.SetActive(true);
+        _pos3.SetActive(true);
+        _pos4.SetActive(true);
+    }
 }

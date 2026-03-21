@@ -84,7 +84,7 @@ namespace Interact
         
         public void Hide()
         {
-            _focused.OnFocusExit();
+            //_focused.OnFocusExit();
             _promt.Hide();
         }
         

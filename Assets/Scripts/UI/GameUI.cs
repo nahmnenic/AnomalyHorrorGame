@@ -1,6 +1,8 @@
 using System;
 using System.Collections;
+using Components;
 using Interact;
+using RoomMananger;
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
@@ -10,10 +12,12 @@ namespace UI
     public class GameUI : MonoBehaviour
     {
         [SerializeField] private Text _timerText;
-        [SerializeField] private float _time;
+        [SerializeField] public float _time;
         private bool _timerFlag;
         
         private PlayerInteraction _playerInteraction;
+        private RoomController _roomController;
+        private LoadObjectGameComponent _loadObjectGameComponent;
 
         [SerializeField] private TMP_Text _promtInteract;
         [SerializeField] private Image _blackScreen;
@@ -30,6 +34,8 @@ namespace UI
         private void Start()
         {
             _playerInteraction =  FindObjectOfType<PlayerInteraction>();
+            _roomController =  FindObjectOfType<RoomController>();
+            _loadObjectGameComponent = GetComponent<LoadObjectGameComponent>();
             StartCoroutine(Timer());
         }
         
@@ -53,12 +59,14 @@ namespace UI
         {
             _promtInteract.gameObject.SetActive(false);
             _blackScreen.gameObject.SetActive(true);
+            ReloadGame();
         }
         
         private void WhiteScreen()
         {
             _promtInteract.gameObject.SetActive(false);
             _whiteScreen.gameObject.SetActive(true);
+            ReloadGame();
         }
 
         private void CheckTimeRound()
@@ -72,12 +80,46 @@ namespace UI
             if (_time == 0 && BoardTrue && ChairTrue && SofaTrue)
             {
                 WhiteScreen();
-                
             }
             else if (_time == 0)
             {
                 BlackScreen();
             }
+        }
+
+        private void ReloadGame()
+        {
+            StopAllCoroutines();
+            StartCoroutine(LoadGame());
+        }
+
+        private void ReturnBool()
+        {
+            Sofa = false;
+            Board =  false;
+            Chair = false;
+            SofaTrue = false;
+            ChairTrue = false;
+            BoardTrue = false;
+            _timerFlag = false;
+        }
+        
+        private IEnumerator LoadGame()
+        {
+            _roomController.SwitchRoom();
+            ReturnBool();
+            _time = 300f;
+            _loadObjectGameComponent.LoadObject();
+            _playerInteraction.BlockMove = true;
+            
+            yield return new WaitForSeconds(2f);
+
+            _playerInteraction.BlockMove = false;
+            _blackScreen.gameObject.SetActive(false);
+            _whiteScreen.gameObject.SetActive(false);
+            _playerInteraction.Hide();
+            StartCoroutine(Timer());
+            yield return null;
         }
     }
 }

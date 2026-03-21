@@ -10,7 +10,7 @@ namespace Components
     {
         [SerializeField] private Transform _interactionPoint;
 
-        private bool _moving = false;
+        public bool _moving = false;
         private Inventory _inventory;
         private GameUI _gameUI;
         

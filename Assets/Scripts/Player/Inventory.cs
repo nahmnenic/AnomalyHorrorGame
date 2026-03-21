@@ -1,4 +1,6 @@
+using System;
 using Interact;
+using Props;
 using RoomMananger;
 using UnityEngine;
 
@@ -6,8 +8,8 @@ namespace Player
 {
     public class Inventory : MonoBehaviour
     {
-        [SerializeField] private GameObject ChairPrefab;
-        [SerializeField] private GameObject BoardPrefab;
+        public GameObject ChairPrefab;
+        public GameObject BoardPrefab;
 
         [SerializeField] private PlayerInteraction _playerInteraction;
         [SerializeField] private PlayerInteractionDoor _doorInteraction;
@@ -17,6 +19,11 @@ namespace Player
         public bool Chair;
         public bool Boards;
 
+
+        private void Start()
+        {
+            UpdateProps();
+        }
 
         public bool CheckRooms()
         {
@@ -87,6 +94,12 @@ namespace Player
         {
             Boards = false;
             ChangeMode();
-        } 
+        }
+
+        public void UpdateProps()
+        {
+            BoardPrefab = FindObjectOfType<Boards>().gameObject;
+            ChairPrefab = FindObjectOfType<Chair>().gameObject;
+        }
     }
 }
