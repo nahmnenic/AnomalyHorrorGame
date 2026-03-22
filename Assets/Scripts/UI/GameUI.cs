@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using Components;
 using Interact;
@@ -14,6 +13,8 @@ namespace UI
         [SerializeField] private Text _timerText;
         [SerializeField] public float _time;
         private bool _timerFlag;
+        
+        [SerializeField] private TMP_Text _roomName;
         
         private PlayerInteraction _playerInteraction;
         private RoomController _roomController;
@@ -120,6 +121,11 @@ namespace UI
             _playerInteraction.Hide();
             StartCoroutine(Timer());
             yield return null;
+        }
+
+        public void ChengeRoomName(GameObject room)
+        {
+            _roomName.text = room.name;
         }
     }
 }

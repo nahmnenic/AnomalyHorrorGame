@@ -1,3 +1,5 @@
+using System;
+using UI;
 using UnityEngine;
 
 namespace RoomMananger
@@ -8,6 +10,13 @@ namespace RoomMananger
         public bool EntranceRoom = false;
 
         public Transform Door;
+        
+        private GameUI _gameUI;
+
+        private void Awake()
+        {
+            _gameUI = FindObjectOfType<GameUI>();
+        }
 
         public bool CloseDoor()
         {
@@ -20,7 +29,10 @@ namespace RoomMananger
         {
             EntranceRoom = true;
         }
-        
-        
+
+        public void ChengeNameRoom(GameObject room)
+        {
+            _gameUI.ChengeRoomName(room);
+        }
     }
 }

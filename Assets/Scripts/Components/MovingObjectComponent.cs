@@ -18,7 +18,6 @@ namespace Components
         {
             if(_supDispos) return;
             _objToMove.position = _allPos[_currentPos+1].position;
-            Debug.Log(_allPos[_currentPos+1].name);
             _objToMove.rotation = _allPos[_currentPos+1].rotation;
             if(_soundController!=null) _soundController.PlaySound();
             if(Disposable) _supDispos = true;

@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8112123844821307016}
   - component: {fileID: 6145229680591329714}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Bathroom_Closet_Door_Pos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3145,7 +3145,7 @@ GameObject:
   - component: {fileID: 2829427732746428140}
   - component: {fileID: 1510134550679761210}
   - component: {fileID: 3609172198745337085}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Sink_Handle_Water
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4260,7 +4260,7 @@ GameObject:
   - component: {fileID: 5721401587877729594}
   - component: {fileID: 982414229805490418}
   - component: {fileID: 4665761053648262233}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}

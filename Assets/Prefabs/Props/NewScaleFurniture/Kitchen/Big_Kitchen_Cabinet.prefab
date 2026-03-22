@@ -10,7 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2815220384535918714}
   - component: {fileID: 3040388412094420529}
-  m_Layer: 7
+  - component: {fileID: 6460675327510854799}
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -53,6 +54,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.031300068, y: 0.025624871, z: 0.13101959}
   m_Center: {x: -0.00021624565, y: 0.0005695224, z: 0.005138397}
+--- !u!114 &6460675327510854799
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1685098698758934912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f3d256b75a54a54b6b151ceffd9710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actionsOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7970806600204330275}
+        m_TargetAssemblyTypeName: Components.RotateObjectComponent, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionsOff:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7970806600204330275}
+        m_TargetAssemblyTypeName: Components.RotateObjectComponent, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _displayName: To open
+  _isEnabled: 1
+  On: 0
+  BlockSwitch: 0
 --- !u!1 &3344064360705698786
 GameObject:
   m_ObjectHideFlags: 0
@@ -646,7 +693,8 @@ GameObject:
   m_Component:
   - component: {fileID: 364293781254063384}
   - component: {fileID: 3170968834156813691}
-  m_Layer: 7
+  - component: {fileID: 6586382114304500972}
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -689,6 +737,52 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.031300068, y: 0.025624871, z: 0.13101959}
   m_Center: {x: -0.00021624565, y: 0.0005695224, z: 0.005138397}
+--- !u!114 &6586382114304500972
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4373048682274957110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f3d256b75a54a54b6b151ceffd9710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actionsOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4973526435197541526}
+        m_TargetAssemblyTypeName: Components.RotateObjectComponent, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionsOff:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4973526435197541526}
+        m_TargetAssemblyTypeName: Components.RotateObjectComponent, Assembly-CSharp
+        m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _displayName: To open
+  _isEnabled: 1
+  On: 0
+  BlockSwitch: 0
 --- !u!1 &5339935407114186265
 GameObject:
   m_ObjectHideFlags: 0
@@ -703,7 +797,7 @@ GameObject:
   - component: {fileID: 1114145756829303225}
   - component: {fileID: 1654070569216203337}
   - component: {fileID: 8767026765942453985}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Kitchen_Cabinet_Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1713,7 +1807,7 @@ GameObject:
   - component: {fileID: 4850323626147499711}
   - component: {fileID: 5454261745234751534}
   - component: {fileID: 5842884182996554064}
-  m_Layer: 7
+  m_Layer: 0
   m_Name: Handle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
