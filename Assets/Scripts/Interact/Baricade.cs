@@ -11,6 +11,9 @@ namespace Interact
         [SerializeField] private GameObject BoardPrefab;
         [SerializeField] private InteractableComponent _doorHandle1;
         [SerializeField] private InteractableComponent _doorHandle2;
+
+        [SerializeField] private FMODUnity.StudioEventEmitter _chairSound;
+        [SerializeField] private FMODUnity.StudioEventEmitter _boardSound;
         
         private Baricade _baricade;
         private InteractableComponent _interactableComponent;
@@ -65,11 +68,13 @@ namespace Interact
         
         private void DropBoard()
         {
+            _boardSound.Play();
             _inventory.DeleteBoards();
         }
         
         private void DropChair()
         {
+            _chairSound.Play();
             _inventory.DeleteChair();
         }
         
