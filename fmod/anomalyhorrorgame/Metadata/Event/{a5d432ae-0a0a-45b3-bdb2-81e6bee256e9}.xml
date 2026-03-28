@@ -5,7 +5,7 @@
 			<value>event_vinyl_normal</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{ddb841b0-be1f-46e0-bb20-1946d5a6f1ca}</destination>
@@ -116,7 +116,11 @@
 			<destination>{f5f33fc4-a73b-4426-9f50-311c993f4001}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{90f72cce-9545-45eb-934e-c9d91df9d09d}" />
+	<object class="MixerBusPanner" id="{90f72cce-9545-45eb-934e-c9d91df9d09d}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{a88ae19e-2b1a-451f-8dc0-6491e711964c}" />
 	<object class="MixerBusEffectChain" id="{4eb48a93-3aba-4691-bf09-d2f5c0458f82}">
 		<relationship name="effects">

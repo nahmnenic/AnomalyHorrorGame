@@ -5,7 +5,7 @@
 			<value>event_tv_normal</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{f7103581-070d-43e9-b819-4cc46c6f6e70}</destination>
@@ -139,7 +139,11 @@
 			<destination>{dad45116-d65e-43a3-812d-3ad7f6d155f6}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{10a63349-33dc-456b-af1d-1359c1f36519}" />
+	<object class="MixerBusPanner" id="{10a63349-33dc-456b-af1d-1359c1f36519}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{0194ec7c-5cf1-4ac7-adb5-987a9872a6d7}" />
 	<object class="RandomizerModulator" id="{d2e50bc8-9f1b-47ad-90cc-19a1df6e1cf1}">
 		<property name="nameOfPropertyBeingModulated">

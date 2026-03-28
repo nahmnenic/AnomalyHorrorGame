@@ -5,7 +5,7 @@
 			<value>event_children_toy_anomaly</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{30a69d01-6676-4c18-9634-56ce588aad1d}</destination>
@@ -133,7 +133,11 @@
 			<destination>{1d3b2c84-2f8c-4797-b014-9c07ffb5439d}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{fa13551a-26e0-48ba-aad4-778e50f21858}" />
+	<object class="MixerBusPanner" id="{fa13551a-26e0-48ba-aad4-778e50f21858}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{7e404d1c-b98c-429b-8436-fe0bc8d983f4}" />
 	<object class="MixerBusEffectChain" id="{bb8d5c5b-5b05-4b06-9bc7-d4d17e6a26b3}">
 		<relationship name="effects">

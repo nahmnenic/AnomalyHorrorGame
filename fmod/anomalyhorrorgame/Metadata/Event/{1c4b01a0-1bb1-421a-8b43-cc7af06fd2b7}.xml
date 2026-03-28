@@ -5,7 +5,7 @@
 			<value>event_big_chair_fall</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{aa4656c0-00e9-439d-b928-4670f95cb4c7}</destination>
@@ -116,7 +116,11 @@
 			<destination>{01e75f8b-1a5d-4467-96ac-100d5be9fe12}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{d271c209-d999-4a9b-b45e-c28767a74e4e}" />
+	<object class="MixerBusPanner" id="{d271c209-d999-4a9b-b45e-c28767a74e4e}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{9fe47f60-2390-4b12-bc5f-f53e520911bf}" />
 	<object class="MixerBusEffectChain" id="{0f29408c-62e4-4af2-bd39-4007bb290933}">
 		<relationship name="effects">

@@ -5,7 +5,7 @@
 			<value>env_fridge</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{912d9ea5-c05e-4034-913b-1f1f8a5db53d}</destination>
@@ -161,7 +161,11 @@
 			<destination>{03bacf2e-e3ee-46e7-ac3b-203327310c82}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{f0ac7e5d-8461-43c7-a406-b6c480d810b4}" />
+	<object class="MixerBusPanner" id="{f0ac7e5d-8461-43c7-a406-b6c480d810b4}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{2016cecc-d8dd-4eb9-b52c-864d47663bf0}" />
 	<object class="MixerBusEffectChain" id="{99b14304-f8bc-4e33-88de-2cf3e1ba81ac}">
 		<relationship name="effects">

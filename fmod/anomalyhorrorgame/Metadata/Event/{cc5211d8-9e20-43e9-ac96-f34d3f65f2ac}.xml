@@ -5,7 +5,7 @@
 			<value>event_baby_monitor_anomaly</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{1cf552e8-9d40-469e-bbff-fdec2d82cbbb}</destination>
@@ -162,7 +162,11 @@
 			<destination>{72e117af-c757-4509-99f4-ddd9093e4870}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{cbfa9845-825e-4a48-9725-45810359979b}" />
+	<object class="MixerBusPanner" id="{cbfa9845-825e-4a48-9725-45810359979b}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{44f4d0c1-cbe7-4da7-a913-a48ff5235c74}" />
 	<object class="RandomizerModulator" id="{fdba5773-f359-4c30-bc15-3f103da9f135}">
 		<property name="nameOfPropertyBeingModulated">

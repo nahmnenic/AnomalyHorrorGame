@@ -5,7 +5,7 @@
 			<value>env_faucet</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{912d9ea5-c05e-4034-913b-1f1f8a5db53d}</destination>
@@ -116,7 +116,11 @@
 			<destination>{b1a9314b-6ba6-4971-b78d-0e3d6e38c9cd}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{98b88073-d3fa-452a-8ebc-e813206ad077}" />
+	<object class="MixerBusPanner" id="{98b88073-d3fa-452a-8ebc-e813206ad077}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{ad38d4f4-6b40-4f3a-a8c6-43629b43a3d7}" />
 	<object class="MixerBusEffectChain" id="{0f96dc3f-a3b3-417e-932b-c95867ffc743}">
 		<relationship name="effects">

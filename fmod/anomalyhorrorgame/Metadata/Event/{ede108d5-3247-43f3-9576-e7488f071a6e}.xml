@@ -5,7 +5,7 @@
 			<value>env_lamp_kitchen</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{912d9ea5-c05e-4034-913b-1f1f8a5db53d}</destination>
@@ -139,7 +139,11 @@
 			<destination>{65ea6b5b-6995-4f2e-9fd6-f33b57be2222}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{53fa3a41-fea7-4c31-863c-6b33aa9b6359}" />
+	<object class="MixerBusPanner" id="{53fa3a41-fea7-4c31-863c-6b33aa9b6359}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{b2acb1f0-9c39-4567-aa78-f6f8773b0946}" />
 	<object class="RandomizerModulator" id="{5e382040-e1d4-4bcd-8c0e-e08d8b98ed9c}">
 		<property name="nameOfPropertyBeingModulated">

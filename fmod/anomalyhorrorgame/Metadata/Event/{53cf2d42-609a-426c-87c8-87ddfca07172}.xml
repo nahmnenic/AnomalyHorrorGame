@@ -5,7 +5,7 @@
 			<value>event_vinyl_anomaly</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{ddb841b0-be1f-46e0-bb20-1946d5a6f1ca}</destination>
@@ -140,7 +140,11 @@
 			<destination>{b0764329-4fb0-465b-a82a-6a6758358b29}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{33e4cbab-9089-463a-985a-d43adf7c6622}" />
+	<object class="MixerBusPanner" id="{33e4cbab-9089-463a-985a-d43adf7c6622}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{1d7d9151-e8ea-4caf-ad28-9f5edc138efc}" />
 	<object class="RandomizerModulator" id="{08b81858-9535-4159-b027-e0f2cd09bc48}">
 		<property name="nameOfPropertyBeingModulated">

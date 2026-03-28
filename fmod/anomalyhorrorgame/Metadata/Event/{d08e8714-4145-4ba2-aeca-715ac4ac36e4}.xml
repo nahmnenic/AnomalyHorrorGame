@@ -5,7 +5,7 @@
 			<value>event_window_knock</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{4bc28d88-6e0d-40a9-9605-40535e4aa614}</destination>
@@ -145,7 +145,11 @@
 			<destination>{00aecee0-65e2-463c-88cc-c58bd5843a78}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{5c93789d-b6c2-4398-8170-675569a048ad}" />
+	<object class="MixerBusPanner" id="{5c93789d-b6c2-4398-8170-675569a048ad}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{56adb889-223b-4e0b-804a-d91f7c494bbb}" />
 	<object class="MultiSound" id="{10ffd785-b5f3-4327-9724-c63e64c3f815}">
 		<relationship name="sounds">

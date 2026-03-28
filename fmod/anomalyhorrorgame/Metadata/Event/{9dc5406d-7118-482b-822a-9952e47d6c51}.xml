@@ -5,7 +5,7 @@
 			<value>event_window_brunch</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{4bc28d88-6e0d-40a9-9605-40535e4aa614}</destination>
@@ -170,7 +170,11 @@
 			<destination>{b7ec02d4-09bb-4f16-8757-ce5dde128f33}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{e8b79af3-a750-4afa-af2c-e10f1335e535}" />
+	<object class="MixerBusPanner" id="{e8b79af3-a750-4afa-af2c-e10f1335e535}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{dd8c5493-3ca4-474a-8a20-54263a5dfa01}" />
 	<object class="MultiSound" id="{4e037e6a-36ab-4278-a0c9-135219c112eb}">
 		<relationship name="sounds">

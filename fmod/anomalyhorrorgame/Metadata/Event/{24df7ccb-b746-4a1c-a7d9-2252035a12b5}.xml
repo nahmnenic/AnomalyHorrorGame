@@ -5,7 +5,7 @@
 			<value>event_furniture_falling</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{35c0218e-785e-4d20-8490-4ddc0569f490}</destination>
@@ -116,7 +116,11 @@
 			<destination>{b1ef270d-39c2-4cef-a8a8-70b1e921d79b}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{ca92b0f8-846c-432c-8788-4c4c3c5ad577}" />
+	<object class="MixerBusPanner" id="{ca92b0f8-846c-432c-8788-4c4c3c5ad577}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{a459c827-7ce1-4c6c-8fb5-8346691402cf}" />
 	<object class="MixerBusEffectChain" id="{bb5b0767-3283-4387-9cb5-fd51afec0b3c}">
 		<relationship name="effects">

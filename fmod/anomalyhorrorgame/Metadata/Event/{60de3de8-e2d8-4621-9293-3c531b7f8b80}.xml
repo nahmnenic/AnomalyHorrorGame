@@ -5,7 +5,7 @@
 			<value>env_clock</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{912d9ea5-c05e-4034-913b-1f1f8a5db53d}</destination>
@@ -126,7 +126,11 @@
 			<destination>{e080f187-0dc2-4cde-a62d-b8cba00c3161}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{f4de8e50-ac35-47cd-97df-bf82a573a953}" />
+	<object class="MixerBusPanner" id="{f4de8e50-ac35-47cd-97df-bf82a573a953}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{5e50d78f-ff87-4d8b-a58f-7b81254b15d0}" />
 	<object class="RandomizerModulator" id="{7474f993-a57b-4892-a091-eeed0a71badf}">
 		<property name="nameOfPropertyBeingModulated">

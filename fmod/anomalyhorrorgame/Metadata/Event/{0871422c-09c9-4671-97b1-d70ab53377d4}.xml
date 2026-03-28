@@ -5,7 +5,7 @@
 			<value>event_close_door</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{1bbcc09f-175e-41d3-b4f7-cdd83767cdc4}</destination>
@@ -116,7 +116,11 @@
 			<destination>{17f7ae22-b177-418a-8414-59bf96696404}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{a04833f4-3ade-4180-8e10-2888cc18ef8f}" />
+	<object class="MixerBusPanner" id="{a04833f4-3ade-4180-8e10-2888cc18ef8f}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{32ab8655-3cfa-492d-b50c-6da54743fb4f}" />
 	<object class="MixerBusEffectChain" id="{3d2aec63-2c60-45c7-8608-d07f5eb4f50c}">
 		<relationship name="effects">

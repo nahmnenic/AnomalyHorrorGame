@@ -5,7 +5,7 @@
 			<value>event_radio_anomaly</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{d9066b04-2bd7-45f3-b39c-898812d7c8fe}</destination>
@@ -139,7 +139,11 @@
 			<destination>{fda61034-42a0-493e-86ab-aa5e510ad1fb}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{a694422f-40d6-4c44-b1f5-d0a3375c4178}" />
+	<object class="MixerBusPanner" id="{a694422f-40d6-4c44-b1f5-d0a3375c4178}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{009b731a-e5dd-4e1c-a003-b99c807d9da1}" />
 	<object class="RandomizerModulator" id="{b1a08012-4435-40fc-b43e-2708cf6dee61}">
 		<property name="nameOfPropertyBeingModulated">

@@ -5,7 +5,7 @@
 			<value>event_clock_alarm_anomaly</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{5dd16601-f3dd-4b07-9b38-cd282f2eb0d5}</destination>
@@ -174,7 +174,11 @@
 			<destination>{51c46890-f427-4fe9-98c2-eb69f429cb77}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{c0eddc6c-70e5-46f8-bb8c-428022ad69f0}" />
+	<object class="MixerBusPanner" id="{c0eddc6c-70e5-46f8-bb8c-428022ad69f0}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{8a8a4410-df74-45b2-b6bc-666686e04523}" />
 	<object class="RandomizerModulator" id="{bb16162f-c06e-4a5e-bc56-daea893ce42a}">
 		<property name="nameOfPropertyBeingModulated">

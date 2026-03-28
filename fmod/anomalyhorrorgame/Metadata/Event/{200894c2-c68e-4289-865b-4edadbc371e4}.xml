@@ -5,7 +5,7 @@
 			<value>event_cabinet_fall_inside</value>
 		</property>
 		<property name="outputFormat">
-			<value>2</value>
+			<value>1</value>
 		</property>
 		<relationship name="folder">
 			<destination>{c281c0cc-8ef8-42bd-bda9-4ea76c1aefa1}</destination>
@@ -116,7 +116,11 @@
 			<destination>{4d68274b-9f9c-428f-ba5e-58b34749f8fc}</destination>
 		</relationship>
 	</object>
-	<object class="MixerBusPanner" id="{920a6353-32d8-4908-8f4b-6384fde48e75}" />
+	<object class="MixerBusPanner" id="{920a6353-32d8-4908-8f4b-6384fde48e75}">
+		<property name="overridingOutputFormat">
+			<value>1</value>
+		</property>
+	</object>
 	<object class="MixerBusFader" id="{6de8bbb1-49a4-4940-abf0-348db8e7ae36}" />
 	<object class="MixerBusEffectChain" id="{8c6ece9c-f398-435f-b23a-0bdfed9cdee0}">
 		<relationship name="effects">
