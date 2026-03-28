@@ -557,6 +557,8 @@ MonoBehaviour:
   - env
   - event
   - interaction
+  - music
+  - ui
   BanksToLoad: []
   LiveUpdatePort: 9264
   EnableMemoryTracking: 0
