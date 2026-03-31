@@ -7,9 +7,12 @@ public class SoundController : MonoBehaviour
     [SerializeField] private FMODUnity.StudioEventEmitter _fmod;
     public float Delay;
 
+    public bool Disposable;
+
     [ContextMenu("PlaySound")]
     public void PlaySound()
     {
+        if (_fmod == null) return;
         StartCoroutine(PlaySoundWithDelay());
     }
 
@@ -27,5 +30,9 @@ public class SoundController : MonoBehaviour
     {
         yield return new WaitForSeconds(Delay);
         _fmod.Play();
+        if (Disposable)
+        {
+            _fmod = null;
+        }
     }
 }

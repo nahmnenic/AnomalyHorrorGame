@@ -12,7 +12,12 @@ public class HingeJointRb : MonoBehaviour
     public float torquePower = 0.25f;        // МАЛО
     public float maxAngularVelocity = 0.6f;  // МЕДЛЕННО
 
-    void FixedUpdate()
+    private void Start()
+    {
+        rb.isKinematic = true;
+    }
+    
+    private void FixedUpdate()
     {
         float direction = Mathf.Sign(Mathf.Sin(Time.time * 0.4f));
 
@@ -25,5 +30,21 @@ public class HingeJointRb : MonoBehaviour
             rb.angularVelocity,
             maxAngularVelocity
         );
+    }
+    
+    public void ActivateHinge()
+    {
+        rb.isKinematic = false;
+        StartCoroutine(ChangeLimits());
+    }
+
+    private IEnumerator ChangeLimits()
+    {
+        yield return new WaitForSeconds(0.4f);
+        JointLimits limits = hinge.limits;
+        limits.max = -50f;
+        hinge.limits = limits;
+        hinge.useLimits = true;
+        yield return null;
     }
 }
