@@ -4265,6 +4265,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 1220593163981405317}
   Delay: 5
+  Disposable: 0
 --- !u!114 &1220593163981405317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4341,8 +4342,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100116843589e4fcf90c19cd756254d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Key: {fileID: 0}
+  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 7925869225192791293}
+  color: 2
+  name: 4
 --- !u!1001 &1296232498630380772
 PrefabInstance:
   m_ObjectHideFlags: 0

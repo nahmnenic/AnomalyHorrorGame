@@ -18,6 +18,7 @@ namespace Player
         
         public bool Chair;
         public bool Boards;
+        public bool Key;
 
 
         private void Start()

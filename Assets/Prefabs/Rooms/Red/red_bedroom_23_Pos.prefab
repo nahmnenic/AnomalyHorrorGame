@@ -3713,6 +3713,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 1962219931807262291}
   Delay: 10
+  Disposable: 0
 --- !u!114 &1962219931807262291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3789,8 +3790,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100116843589e4fcf90c19cd756254d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Key: {fileID: 0}
+  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 4040866200164839924}
+  color: 2
+  name: 2
 --- !u!1 &9141350454040690325
 GameObject:
   m_ObjectHideFlags: 0
@@ -5039,6 +5044,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 9192202683629406792}
   Delay: 0
+  Disposable: 0
 --- !u!1001 &766853821425248415
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5789,6 +5795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 8593754666722604802}
   Delay: 0
+  Disposable: 0
 --- !u!114 &8593754666722604802
 MonoBehaviour:
   m_ObjectHideFlags: 0

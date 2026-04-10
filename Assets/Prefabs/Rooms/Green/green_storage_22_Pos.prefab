@@ -5636,8 +5636,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100116843589e4fcf90c19cd756254d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Key: {fileID: 0}
+  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 2051061438905818703}
+  color: 3
+  name: 3
 --- !u!1 &6273455891983125450
 GameObject:
   m_ObjectHideFlags: 0

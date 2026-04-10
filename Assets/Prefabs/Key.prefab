@@ -14,7 +14,9 @@ GameObject:
   - component: {fileID: 4959795141488709503}
   - component: {fileID: 8433402220072130839}
   - component: {fileID: 8506551063931351510}
-  m_Layer: 0
+  - component: {fileID: 4634332878922091520}
+  - component: {fileID: 6208071252649574895}
+  m_Layer: 7
   m_Name: Key
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -995,3 +997,51 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &4634332878922091520
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5190324038014497315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f3d256b75a54a54b6b151ceffd9710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actionsOn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 6208071252649574895}
+        m_TargetAssemblyTypeName: Props.Key, Assembly-CSharp
+        m_MethodName: TakeKay
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _actionsOff:
+    m_PersistentCalls:
+      m_Calls: []
+  _displayName: E
+  _isEnabled: 1
+  On: 0
+  BlockSwitch: 0
+--- !u!114 &6208071252649574895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5190324038014497315}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57ca7d5c58f4f51479941aa2d1ddad24, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _roomName: {fileID: 0}
+  _currentKey: {fileID: 0}

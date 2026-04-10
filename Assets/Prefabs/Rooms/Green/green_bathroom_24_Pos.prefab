@@ -5645,8 +5645,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 100116843589e4fcf90c19cd756254d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Key: {fileID: 0}
+  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 5561610402511630053}
+  color: 3
+  name: 1
 --- !u!1001 &310458091845039201
 PrefabInstance:
   m_ObjectHideFlags: 0

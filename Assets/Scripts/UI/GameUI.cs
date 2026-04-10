@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using Components;
 using Interact;
+using Player;
 using RoomMananger;
 using TMPro;
 using UnityEngine;
@@ -19,6 +21,7 @@ namespace UI
         private PlayerInteraction _playerInteraction;
         private RoomController _roomController;
         private LoadObjectGameComponent _loadObjectGameComponent;
+        private KeyController _keyController;
 
         [SerializeField] private TMP_Text _promtInteract;
         [SerializeField] private Image _blackScreen;
@@ -36,10 +39,10 @@ namespace UI
         {
             _playerInteraction =  FindObjectOfType<PlayerInteraction>();
             _roomController =  FindObjectOfType<RoomController>();
+            _keyController =  FindObjectOfType<KeyController>();
             _loadObjectGameComponent = GetComponent<LoadObjectGameComponent>();
             StartCoroutine(Timer());
         }
-        
 
         private IEnumerator Timer()
         {
@@ -84,6 +87,7 @@ namespace UI
             }
             else if (_time == 0)
             {
+                _keyController.DeleteKey();
                 BlackScreen();
             }
         }
@@ -112,6 +116,7 @@ namespace UI
             _time = 300f;
             _loadObjectGameComponent.LoadObject();
             _playerInteraction.BlockMove = true;
+            _keyController.UpdateKeyRoom();
             
             yield return new WaitForSeconds(2f);
 

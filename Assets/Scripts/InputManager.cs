@@ -1,3 +1,4 @@
+using System;
 using FMOD;
 using Interact;
 using Player;
@@ -26,7 +27,7 @@ public class InputManager : MonoBehaviour
         public bool esc_Input;
         public bool f_Input;
         public bool q_Input;
-
+        
         private void Awake()
         {
             _roomController = FindObjectOfType<RoomController>();

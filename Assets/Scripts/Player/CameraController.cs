@@ -7,6 +7,7 @@ namespace Player
     public class CameraController : MonoBehaviour
     {
         public Transform _currentCamFollowTransform;
+        public Transform InteractionPointParent;
         
         private InputSystem _inputSystem;
         private PlayerInteraction _playerInteraction;
@@ -38,6 +39,7 @@ namespace Player
         {
             _currentCamFollowTransform.localEulerAngles = new Vector3(yAxis,  _currentCamFollowTransform.localEulerAngles.y,
                 _currentCamFollowTransform.localEulerAngles.z);
+            InteractionPointParent.localEulerAngles = _currentCamFollowTransform.localEulerAngles;
             
             transform.eulerAngles = new Vector3(transform.eulerAngles.x, xAxis, transform.eulerAngles.z);
         }
