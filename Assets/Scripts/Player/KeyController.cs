@@ -41,6 +41,11 @@ namespace Player
 
             _inventory.Key = true;
         }
+        
+        public void AddExampleKey()
+        {
+            _inventory.Key = true;
+        }
 
         public void UpdateKeyRoom()
         {
@@ -70,6 +75,8 @@ namespace Player
         {
             return _inventory.Key;
         }
+
+        
 
         public void SetKey()
         {

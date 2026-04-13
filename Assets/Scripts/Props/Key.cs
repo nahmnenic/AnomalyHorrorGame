@@ -9,6 +9,8 @@ namespace Props
     {
         [SerializeField] private GameObject _roomName;
         [SerializeField] private GameObject _currentKey;
+
+        public bool ExampleKey;
         
         private KeyController _keyController;
         
@@ -19,7 +21,18 @@ namespace Props
 
         public void TakeKay()
         {
-            if(_keyController.HaveKeyInInventory()) return;
+            if (_keyController.HaveKeyInInventory())
+            {
+                Debug.Log("У вас уже есть ключ");
+                return;
+            }
+
+            if (ExampleKey)
+            {
+                _keyController.AddExampleKey();
+                Destroy(_currentKey);
+                return;
+            }
             _keyController.ChangeKeyState(_roomName.gameObject);
             Destroy(_currentKey);
         }
