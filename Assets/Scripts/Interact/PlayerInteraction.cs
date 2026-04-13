@@ -19,6 +19,7 @@ namespace Interact
         
         public GameObject _gameWindow;
         public GameObject _settingWindow;
+        public bool MainMenu;
         private IInteractable _focused;
         
         public bool BlockMove = false;
@@ -99,7 +100,7 @@ namespace Interact
             else
             {
                 BlockMove = true;
-                _gameWindow.SetActive(true);
+                if(!MainMenu) _gameWindow.SetActive(true);
             }
         }
         

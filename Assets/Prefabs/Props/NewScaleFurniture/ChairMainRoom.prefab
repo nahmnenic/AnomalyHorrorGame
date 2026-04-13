@@ -16,7 +16,6 @@ GameObject:
   - component: {fileID: 6884272818588782138}
   - component: {fileID: 7546023277890581365}
   - component: {fileID: 3677000471797650507}
-  - component: {fileID: 7534228447100672542}
   - component: {fileID: 4916339463030738696}
   m_Layer: 7
   m_Name: ChairMainRoom
@@ -1644,9 +1643,9 @@ MonoBehaviour:
   _actionsOn:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 7546023277890581365}
+      - m_Target: {fileID: 4916339463030738696}
         m_TargetAssemblyTypeName: Props.Chair, Assembly-CSharp
-        m_MethodName: AddChair
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1656,9 +1655,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7534228447100672542}
+      - m_Target: {fileID: 7546023277890581365}
         m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
-        m_MethodName: PlaySound
+        m_MethodName: AddChair
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1675,20 +1674,6 @@ MonoBehaviour:
   _isEnabled: 1
   On: 0
   BlockSwitch: 0
---- !u!114 &7534228447100672542
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8685579631278344050}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0218f2b0658b9a649850baa34b382fb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fmod: {fileID: 4916339463030738696}
-  Delay: 0
 --- !u!114 &4916339463030738696
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1704,11 +1689,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 514931878
-      Data2: 1141462064
-      Data3: -749735266
-      Data4: -1834723152
-    Path: event:/interaction/barricades/interaction_barricades_chair_put
+      Data1: 1650815836
+      Data2: 1078155580
+      Data3: -2037265496
+      Data4: -1548220745
+    Path: event:/interaction/barricades/interaction_barricades_chair_take
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0

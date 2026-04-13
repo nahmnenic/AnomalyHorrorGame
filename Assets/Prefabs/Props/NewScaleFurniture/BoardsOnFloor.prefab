@@ -390,7 +390,6 @@ GameObject:
   - component: {fileID: 3281763432632609588}
   - component: {fileID: 5601678065756364261}
   - component: {fileID: 8526050295424817823}
-  - component: {fileID: 475570473191325428}
   m_Layer: 7
   m_Name: BoardsOnFloor
   m_TagString: Untagged
@@ -431,9 +430,9 @@ MonoBehaviour:
   _actionsOn:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 5601678065756364261}
+      - m_Target: {fileID: 8526050295424817823}
         m_TargetAssemblyTypeName: Props.Boards, Assembly-CSharp
-        m_MethodName: AddBoard
+        m_MethodName: Play
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -443,9 +442,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 475570473191325428}
+      - m_Target: {fileID: 5601678065756364261}
         m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
-        m_MethodName: PlaySound
+        m_MethodName: AddBoard
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -510,11 +509,11 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 853160278
-      Data2: 1189699717
-      Data3: 310473377
-      Data4: 751111194
-    Path: event:/interaction/barricades/interaction_barricades_boards_put
+      Data1: -2040024468
+      Data2: 1084783504
+      Data3: 204528523
+      Data4: -2140680651
+    Path: event:/interaction/barricades/interaction_barricades_boards_take
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -526,20 +525,6 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
---- !u!114 &475570473191325428
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6642829036953486408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0218f2b0658b9a649850baa34b382fb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fmod: {fileID: 8526050295424817823}
-  Delay: 0
 --- !u!1 &6987670735894216245
 GameObject:
   m_ObjectHideFlags: 0
