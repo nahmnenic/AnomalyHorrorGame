@@ -35,6 +35,8 @@ namespace UI
         [HideInInspector] public bool ChairTrue;
         [HideInInspector] public bool SofaTrue;
 
+        public bool SkipWhiteScreen;
+
         private void Start()
         {
             _playerInteraction =  FindObjectOfType<PlayerInteraction>();
@@ -80,12 +82,16 @@ namespace UI
                 _time = 10;
                 _timerFlag = true;
             }
-
+            
             if (_time == 0 && BoardTrue && ChairTrue && SofaTrue)
             {
                 WhiteScreen();
             }
-            else if (_time == 0)
+            else if (SkipWhiteScreen && _time == 0)
+            {
+                WhiteScreen();
+            }
+            else if (_time == 0 && !SkipWhiteScreen)
             {
                 _keyController.DeleteKey();
                 BlackScreen();
