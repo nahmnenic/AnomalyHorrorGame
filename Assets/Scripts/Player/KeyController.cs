@@ -7,10 +7,10 @@ namespace Player
 {
     public class KeyController : MonoBehaviour
     {
-        public bool _blackKitchenKey = true;
-        public bool _blackStorageKey = true;
-        public bool _blackBathroomKey = true;
-        public bool _blackChildrenKey = true;
+        private bool _blackKitchenKey = true;
+        private bool _blackStorageKey = true;
+        private bool _blackBathroomKey = true;
+        private bool _blackChildrenKey = true;
         private bool _mainRoomKey = true;
 
         private Inventory _inventory;
