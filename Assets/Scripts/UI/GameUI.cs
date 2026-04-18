@@ -122,13 +122,13 @@ namespace UI
             _time = 300f;
             _loadObjectGameComponent.LoadObject();
             _playerInteraction.BlockMove = true;
-            _keyController.UpdateKeyRoom();
             
             yield return new WaitForSeconds(2f);
 
             _playerInteraction.BlockMove = false;
             _blackScreen.gameObject.SetActive(false);
             _whiteScreen.gameObject.SetActive(false);
+            _keyController.UpdateKeyRoom();
             _playerInteraction.Hide();
             StartCoroutine(Timer());
             yield return null;

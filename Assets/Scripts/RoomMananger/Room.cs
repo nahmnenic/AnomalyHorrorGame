@@ -8,8 +8,6 @@ namespace RoomMananger
     public class Room : MonoBehaviour
     {
         public GameObject Key;
-
-        [HideInInspector] public bool HaveKey;
         
         private bool _closeDoor;
         public bool EntranceRoom = false;

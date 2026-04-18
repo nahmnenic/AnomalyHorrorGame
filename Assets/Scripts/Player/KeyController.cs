@@ -7,10 +7,10 @@ namespace Player
 {
     public class KeyController : MonoBehaviour
     {
-        private bool _blackKitchenKey = true;
-        private bool _blackStorageKey = true;
-        private bool _blackBathroomKey = true;
-        private bool _blackChildrenKey = true;
+        public bool _blackKitchenKey = true;
+        public bool _blackStorageKey = true;
+        public bool _blackBathroomKey = true;
+        public bool _blackChildrenKey = true;
         private bool _mainRoomKey = true;
 
         private Inventory _inventory;
@@ -52,6 +52,7 @@ namespace Player
             var rooms = FindObjectsOfType<Room>();
             foreach (var room in rooms)
             {
+                if(room.color == Room.Color.Black) Debug.Log(room.name);
                 if (room.color == Room.Color.Black && room.name == Room.Name.Kitchen && !_blackKitchenKey)
                 {
                     room.Key.SetActive(false);
