@@ -4318,7 +4318,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: {fileID: 0}
-  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 358657830011311416}
   color: 3
@@ -4398,8 +4397,55 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6513389453631780049, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3182363715188638149}
   m_SourcePrefab: {fileID: 100100000, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
+--- !u!1 &6344553926351831771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6513389453631780049, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
+  m_PrefabInstance: {fileID: 173484365672461834}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3182363715188638149
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344553926351831771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b60fb6fa9c643b478766145bbe2c305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8248277236727720252}
+        m_TargetAssemblyTypeName: HingeJointRb, Assembly-CSharp
+        m_MethodName: ActivateHinge
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _delay: 0.6
+--- !u!114 &8248277236727720252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8079338359696465718, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
+  m_PrefabInstance: {fileID: 173484365672461834}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6344553926351831771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 622c61a7131df1f46b73743554cb0656, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &8318631955293717618 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8149792034295870072, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
@@ -6093,7 +6139,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7285731174987913579, guid: feac09c0f7685f14c8e7c47bb8b8e48c, type: 3}
       propertyPath: OnEnterTrigger.m_PersistentCalls.m_Calls.Array.size
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7285731174987913579, guid: feac09c0f7685f14c8e7c47bb8b8e48c, type: 3}
       propertyPath: OnEnterTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_Mode
@@ -6128,6 +6174,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7562530899962292762}
     - target: {fileID: 7285731174987913579, guid: feac09c0f7685f14c8e7c47bb8b8e48c, type: 3}
+      propertyPath: OnEnterTrigger.m_PersistentCalls.m_Calls.Array.data[3].m_Target
+      value: 
+      objectReference: {fileID: 3182363715188638149}
+    - target: {fileID: 7285731174987913579, guid: feac09c0f7685f14c8e7c47bb8b8e48c, type: 3}
       propertyPath: OnEnterTrigger.m_PersistentCalls.m_Calls.Array.data[1].m_CallState
       value: 2
       objectReference: {fileID: 0}
@@ -6161,7 +6211,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7285731174987913579, guid: feac09c0f7685f14c8e7c47bb8b8e48c, type: 3}
       propertyPath: OnEnterTrigger.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
-      value: Rotate
+      value: StartActions
       objectReference: {fileID: 0}
     - target: {fileID: 7285731174987913579, guid: feac09c0f7685f14c8e7c47bb8b8e48c, type: 3}
       propertyPath: OnEnterTrigger.m_PersistentCalls.m_Calls.Array.data[4].m_MethodName
@@ -6185,7 +6235,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7285731174987913579, guid: feac09c0f7685f14c8e7c47bb8b8e48c, type: 3}
       propertyPath: OnEnterTrigger.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
-      value: Components.RotateObjectComponent, Assembly-CSharp
+      value: Components.EventWithDelayComponent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7285731174987913579, guid: feac09c0f7685f14c8e7c47bb8b8e48c, type: 3}
       propertyPath: OnEnterTrigger.m_PersistentCalls.m_Calls.Array.data[4].m_TargetAssemblyTypeName
