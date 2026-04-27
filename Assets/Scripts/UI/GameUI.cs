@@ -24,7 +24,7 @@ namespace UI
         private KeyController _keyController;
 
         [SerializeField] private TMP_Text _promtInteract;
-        [SerializeField] private Image _blackScreen;
+         public Image _blackScreen;
         [SerializeField] private Image _whiteScreen;
         
         [HideInInspector] public bool Board;
