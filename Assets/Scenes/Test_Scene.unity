@@ -27714,7 +27714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: {fileID: 0}
-  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 0}
   color: 0
@@ -33380,7 +33379,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: {fileID: 0}
-  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 0}
   color: 0
@@ -51482,7 +51480,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: {fileID: 0}
-  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 0}
   color: 0
@@ -53676,6 +53673,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2085919399206875867, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2703859887912056894, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: m_Name
       value: Player (1)
@@ -53731,6 +53732,10 @@ PrefabInstance:
     - target: {fileID: 4461746442068767276, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: _layerMask.m_Bits
       value: 128
+      objectReference: {fileID: 0}
+    - target: {fileID: 6511994024441378339, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7800422985999155221, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: attenuationObject
@@ -119307,7 +119312,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: {fileID: 0}
-  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 0}
   color: 0
