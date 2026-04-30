@@ -6,6 +6,7 @@ namespace Player
     public class PlayerLighter : MonoBehaviour
     {
         [SerializeField] private GameObject _flash;
+        [SerializeField] private GameObject _flashFlicker;
         [SerializeField] private FMODUnity.StudioEventEmitter _fmod;
         private bool Block = false;
         
@@ -20,10 +21,22 @@ namespace Player
         public void BlockFlash()
         {
             Block = true;
+            _flash.GetComponent<Light>().enabled = false;
         }
         public void UnblockFlash()
         {
             Block = false;
+            _flash.GetComponent<Light>().enabled = true;
+        }
+
+        public void StartFlicker()
+        {
+            _flashFlicker.SetActive(true);
+        }
+
+        public void StopFlicker()
+        {
+            _flashFlicker.SetActive(false);
         }
 
         public void StopFlash(float _delay)

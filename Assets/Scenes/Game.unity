@@ -3296,6 +3296,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1074974480}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &753624856 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 2882693644710747300, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+  m_PrefabInstance: {fileID: 1371206625}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &846431426
 GameObject:
   m_ObjectHideFlags: 0
@@ -5654,6 +5659,10 @@ PrefabInstance:
       propertyPath: near clip plane
       value: 0.1
       objectReference: {fileID: 0}
+    - target: {fileID: 2903423893563434416, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: _flashFlicker
+      value: 
+      objectReference: {fileID: 753624856}
     - target: {fileID: 3241222704597857137, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.765
@@ -5722,6 +5731,10 @@ PrefabInstance:
       propertyPath: m_Range
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 7438773680814446396, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: m_Enabled
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8148108433551518687, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: maxCam
       value: 90
@@ -5734,7 +5747,8 @@ PrefabInstance:
       propertyPath: InteractionPointParent
       value: 
       objectReference: {fileID: 402831543}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2126248163099154281, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []

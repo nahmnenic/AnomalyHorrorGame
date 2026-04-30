@@ -1,4 +1,5 @@
 using System;
+using Components;
 using Player;
 using UI;
 using UnityEngine;
@@ -15,10 +16,26 @@ namespace RoomMananger
         public Transform Door;
         
         private GameUI _gameUI;
+        private LightFlickerComponent _lightFlicker;
+        private PlayerLighter _playerLighter;
 
         private void Awake()
         {
             _gameUI = FindObjectOfType<GameUI>();
+            _lightFlicker = FindFirstObjectByType<LightFlickerComponent>();
+            _playerLighter = FindFirstObjectByType<PlayerLighter>();
+        }
+
+        public void ExitRoomFlahLight()
+        {
+            _playerLighter.StopFlicker();
+            _playerLighter.UnblockFlash();
+        }
+
+        public void StartFlicker()
+        {
+            _playerLighter.StartFlicker();
+            _playerLighter.BlockFlash();
         }
 
         public bool CloseDoor()
