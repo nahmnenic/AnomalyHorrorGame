@@ -8,9 +8,14 @@ namespace Components
     {
         [SerializeField] private UnityEvent _actions;
         [SerializeField] private float _delay;
+        [SerializeField] private bool _disposable;
 
+        private bool _disposed;
+        
         public void StartActions()
         {
+            if(_disposed) return;
+            if (_disposable) _disposed = true;
             StopAllCoroutines();
             StartCoroutine(Actions());
         }
