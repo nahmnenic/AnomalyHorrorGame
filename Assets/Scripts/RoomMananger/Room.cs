@@ -38,6 +38,12 @@ namespace RoomMananger
             _playerLighter.BlockFlash();
         }
 
+        public void StopPlayerFlashLight()
+        {
+            _playerLighter._flash.SetActive(false);
+            _playerLighter._flashFlicker.SetActive(false);
+        }
+
         public bool CloseDoor()
         {
             if (Door.localEulerAngles.y == 0) return true;

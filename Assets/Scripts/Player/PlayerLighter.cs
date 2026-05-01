@@ -5,8 +5,8 @@ namespace Player
 {
     public class PlayerLighter : MonoBehaviour
     {
-        [SerializeField] private GameObject _flash;
-        [SerializeField] private GameObject _flashFlicker;
+        public GameObject _flash;
+        public GameObject _flashFlicker;
         [SerializeField] private FMODUnity.StudioEventEmitter _fmod;
         private bool Block = false;
         
