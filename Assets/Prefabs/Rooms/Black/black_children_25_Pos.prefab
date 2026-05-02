@@ -46,7 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Key: {fileID: 8905607686392834661}
-  HaveKey: 0
   EntranceRoom: 0
   Door: {fileID: 7953825511243535727}
   color: 0
@@ -4946,7 +4945,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210608881308093679, guid: 428f33042e5b54344b47812f1a896998, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.88
+      value: 3.97
       objectReference: {fileID: 0}
     - target: {fileID: 2210608881308093679, guid: 428f33042e5b54344b47812f1a896998, type: 3}
       propertyPath: m_LocalPosition.y
@@ -4954,7 +4953,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210608881308093679, guid: 428f33042e5b54344b47812f1a896998, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 2.02
+      value: 1.979
       objectReference: {fileID: 0}
     - target: {fileID: 2210608881308093679, guid: 428f33042e5b54344b47812f1a896998, type: 3}
       propertyPath: m_LocalRotation.w

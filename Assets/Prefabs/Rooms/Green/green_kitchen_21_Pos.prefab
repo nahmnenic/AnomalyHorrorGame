@@ -4435,6 +4435,7 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   _delay: 0.6
+  _disposable: 0
 --- !u!114 &8248277236727720252 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8079338359696465718, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
@@ -4852,7 +4853,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2210608881308093679, guid: 428f33042e5b54344b47812f1a896998, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.932
+      value: 3.947
       objectReference: {fileID: 0}
     - target: {fileID: 2210608881308093679, guid: 428f33042e5b54344b47812f1a896998, type: 3}
       propertyPath: m_LocalPosition.y
