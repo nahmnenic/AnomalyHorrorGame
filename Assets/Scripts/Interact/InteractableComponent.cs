@@ -1,4 +1,6 @@
 using System;
+using System.Collections;
+using Components;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -13,7 +15,7 @@ namespace Interact
         public bool On;
         public bool BlockSwitch;
         private bool _supBlock = false;
-
+        
         public string DisplayName => _displayName;
         public bool CanInteract() => _isEnabled;
 
@@ -28,6 +30,26 @@ namespace Interact
             _outline.enabled = false;
         }*/
 
+        [ContextMenu("Close Door")]
+        public void FastCloseDoor()
+        {
+            if (On)
+            {
+                GetComponent<EventWithDelayComponent>().StartActions();
+            }
+            else
+            {
+                Interact();
+                StartCoroutine(CloseDoor());
+            }
+        }
+
+        private IEnumerator CloseDoor()
+        {
+            yield return new WaitForSeconds(0.5f);
+            GetComponent<EventWithDelayComponent>().StartActions();
+        }
+        
         public void Interact()
         {
             if (!Enabled()) return;
