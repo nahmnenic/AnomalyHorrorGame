@@ -328,13 +328,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _currentCamFollowTransform: {fileID: 5002012082250622703}
-  InteractionPointParent: {fileID: 0}
+  InteractionPointParent: {fileID: 1494661717341843746}
   rightStickInput: {x: 0, y: 0}
   mouseSense: 0.05
   xAxis: 0
   yAxis: 0
-  minCam: -16
-  maxCam: 32
+  minCam: -90
+  maxCam: 90
 --- !u!114 &4461746442068767276
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -401,6 +401,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _flash: {fileID: 7695349057012409110}
+  _flashFlicker: {fileID: 2882693644710747300}
   _fmod: {fileID: 1926400785658858645}
 --- !u!114 &3305773182156856167
 MonoBehaviour:
@@ -418,7 +419,7 @@ MonoBehaviour:
   BoardPrefab: {fileID: 0}
   _playerInteraction: {fileID: 4461746442068767276}
   _doorInteraction: {fileID: 1475423911516671340}
-  Skip: 0
+  Skip: 1
   Chair: 0
   Boards: 0
   Key: 0
@@ -488,7 +489,8 @@ Transform:
   m_LocalPosition: {x: 0.029, y: -0.384, z: 0.646}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 7904738152269305193}
   m_Father: {fileID: 5002012082250622703}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!108 &6527487955242863612
@@ -560,7 +562,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2882693644710747300}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ac3c18a66c8081b428b0deaa591897a3, type: 3}
   m_Name: 
@@ -589,6 +591,69 @@ MonoBehaviour:
       Data3: 1701651614
       Data4: 1040947617
     Path: event:/interaction/flashlight/interaction_flashlight
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!1 &6243255987436138753
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7904738152269305193}
+  - component: {fileID: 1921520986812434757}
+  m_Layer: 6
+  m_Name: FlickerSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7904738152269305193
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243255987436138753}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8030174222919721912}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1921520986812434757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6243255987436138753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1280042741
+      Data2: 1137444631
+      Data3: -1937393512
+      Data4: -1271062221
+    Path: event:/event/flickering/event_flickering_flashlight
   Event: 
   EventPlayTrigger: 0
   EventStopTrigger: 0
@@ -669,7 +734,7 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
+  near clip plane: 0.1
   far clip plane: 1000
   field of view: 65
   orthographic: 0
@@ -836,7 +901,6 @@ GameObject:
   m_Component:
   - component: {fileID: 6674730104029195323}
   - component: {fileID: 7369818695938474179}
-  - component: {fileID: 2126248163099154281}
   - component: {fileID: 1926400785658858645}
   m_Layer: 6
   m_Name: FlashLight
@@ -873,7 +937,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.74509805, g: 0.9019608, b: 0.88235295, a: 1}
   m_Intensity: 2
-  m_Range: 6
+  m_Range: 10
   m_SpotAngle: 40
   m_InnerSpotAngle: 4
   m_CookieSize: 10
@@ -922,22 +986,6 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &2126248163099154281
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7695349057012409110}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ac3c18a66c8081b428b0deaa591897a3, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _minLightIntensity: 1
-  _maxLightIntensity: 1.4
-  _speed: 0.1
-  _delay: 0
 --- !u!114 &1926400785658858645
 MonoBehaviour:
   m_ObjectHideFlags: 0

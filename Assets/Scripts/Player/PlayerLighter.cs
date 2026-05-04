@@ -7,13 +7,14 @@ namespace Player
     {
         public GameObject _flash;
         public GameObject _flashFlicker;
-        [SerializeField] private FMODUnity.StudioEventEmitter _fmod;
+        [SerializeField] private FMODUnity.StudioEventEmitter _clickSound;
+        [SerializeField] private FMODUnity.StudioEventEmitter _flickerSound;
         private bool Block = false;
         
         public void Flash()
         {
             if (Block) return;
-            _fmod.Play();
+            _clickSound.Play();
             if (_flash.activeSelf == false) _flash.SetActive(true);
             else _flash.SetActive(false);
         }
@@ -31,11 +32,13 @@ namespace Player
 
         public void StartFlicker()
         {
+            _flickerSound.Play();
             _flashFlicker.SetActive(true);
         }
 
         public void StopFlicker()
         {
+            _flickerSound.Stop();
             _flashFlicker.SetActive(false);
         }
 
