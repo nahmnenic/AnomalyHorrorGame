@@ -1,4 +1,5 @@
 using Interact;
+using UI;
 using UnityEngine;
 
 namespace Props
@@ -17,6 +18,23 @@ namespace Props
                     key.GetComponentInParent<InteractableComponent>().enabled = false;
                     break;
                 }
+            }
+        }
+
+        public void EndGame()
+        {
+            int c = 0;
+            foreach (var key in _keys)
+            {
+                if (key.GetComponent<MeshRenderer>().enabled)
+                {
+                    c++;
+                }
+            }
+
+            if (c == 4)
+            {
+                FindFirstObjectByType<GameUI>().WinGame();
             }
         }
     }

@@ -26,6 +26,9 @@ namespace UI
         [SerializeField] private TMP_Text _promtInteract;
          public Image _blackScreen;
         [SerializeField] private Image _whiteScreen;
+        [SerializeField] private Text _winText;
+
+        [SerializeField] private float _fadeSpeed;
         
         [HideInInspector] public bool Board;
         [HideInInspector] public bool Chair;
@@ -137,6 +140,31 @@ namespace UI
         public void ChengeRoomName(GameObject room)
         {
             _roomName.text = room.name;
+        }
+
+        public void WinGame()
+        {
+            StartCoroutine(WhiteWinGameScreen());
+        }
+
+        private IEnumerator WhiteWinGameScreen()
+        {
+            Color c = _whiteScreen.color;
+            c.a = 0;
+            _whiteScreen.color = c;
+            _whiteScreen.gameObject.SetActive(true);
+            var color = _whiteScreen.color;
+
+            _winText.gameObject.SetActive(true);
+            while (color.a < 1f)
+            {
+                color.a += _fadeSpeed * Time.deltaTime;
+                _whiteScreen.color = color;
+                yield return null;
+            }
+            
+            yield return new WaitForSeconds(2f);
+            GetComponent<LoadSceneComponent>().LoadScene();
         }
     }
 }
