@@ -35,4 +35,9 @@ public class SoundController : MonoBehaviour
             _fmod = null;
         }
     }
+    
+    private void OnDestroy()
+    {
+        _fmod.Stop();
+    }
 }
