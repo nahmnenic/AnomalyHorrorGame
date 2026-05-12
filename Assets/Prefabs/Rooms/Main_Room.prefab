@@ -44,12 +44,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c156c71501535408f83efb7ad073d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roomsPrefabs:
-  - {fileID: 1756808410827828956, guid: 1c394436b83b7eb4995f0cb1469d14cd, type: 3}
-  - {fileID: 1232675680456852471, guid: 456ffd2761a8e1a4db35e388557c4fdd, type: 3}
-  - {fileID: 6425764945863945164, guid: e4ffe25745fdcb449910aa595111f49f, type: 3}
-  - {fileID: 9080892991244105756, guid: 6ab96670a42312d48a44043249e319d1, type: 3}
-  - {fileID: 3312746791524928338, guid: 9fae84508967e7b4bb5824c9c320f359, type: 3}
+  _bedroom: {fileID: 1232675680456852471, guid: 456ffd2761a8e1a4db35e388557c4fdd, type: 3}
+  _kitchen: {fileID: 9080892991244105756, guid: 6ab96670a42312d48a44043249e319d1, type: 3}
+  _children: {fileID: 6425764945863945164, guid: e4ffe25745fdcb449910aa595111f49f, type: 3}
+  _storage: {fileID: 3312746791524928338, guid: 9fae84508967e7b4bb5824c9c320f359, type: 3}
+  _bathroom: {fileID: 1756808410827828956, guid: 1c394436b83b7eb4995f0cb1469d14cd, type: 3}
 --- !u!1 &344996437996558769
 GameObject:
   m_ObjectHideFlags: 0
@@ -110,7 +109,7 @@ Transform:
   m_GameObject: {fileID: 390647528459858526}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: -6.18, y: 1, z: 10.48}
+  m_LocalPosition: {x: -6.1095, y: 1, z: 10.241}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -395,7 +394,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1330
+  m_VersionIndex: 1354
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -779,7 +778,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1327
+  m_VersionIndex: 1351
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -1132,7 +1131,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1321
+  m_VersionIndex: 1345
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2430,7 +2429,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1281
+  m_VersionIndex: 1371
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2562,6 +2561,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 8839379194217721047}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2094073418386975974}
+        m_TargetAssemblyTypeName: Props.ExitDoorKeys, Assembly-CSharp
+        m_MethodName: EndGame
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _actionsOff:
     m_PersistentCalls:
       m_Calls: []
@@ -2629,7 +2652,7 @@ Transform:
   m_GameObject: {fileID: 2181969145259527038}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0.7071068, z: -0, w: -0.7071068}
-  m_LocalPosition: {x: -6.1, y: 1, z: 1.467}
+  m_LocalPosition: {x: -6.11, y: 1, z: 1.74}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -2647,8 +2670,10 @@ GameObject:
   - component: {fileID: 1848838861707250717}
   - component: {fileID: 6382189597903474782}
   - component: {fileID: 6548519913901585423}
+  - component: {fileID: 2094073418386975974}
   - component: {fileID: 4669069174178667978}
   - component: {fileID: 4915621134358299493}
+  - component: {fileID: 8839379194217721047}
   m_Layer: 0
   m_Name: Exit_Door
   m_TagString: Untagged
@@ -2912,7 +2937,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 3336
+  m_VersionIndex: 3328
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2987,6 +3012,23 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &2094073418386975974
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240961835533904516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc93376b165b837499b64864df73e98f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _keys:
+  - {fileID: 2307615557345757513}
+  - {fileID: 2325448541278821916}
+  - {fileID: 9019573604737421420}
+  - {fileID: 7223463049739846310}
 --- !u!33 &4669069174178667978
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -3017,6 +3059,37 @@ MeshCollider:
   m_Convex: 0
   m_CookingOptions: 30
   m_Mesh: {fileID: 0}
+--- !u!114 &8839379194217721047
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2240961835533904516}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1958605320
+      Data2: 1292437548
+      Data3: 493873825
+      Data4: -124490705
+    Path: event:/interaction/key/interaction_key_locker
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &2450085455377611441
 GameObject:
   m_ObjectHideFlags: 0
@@ -4409,7 +4482,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1278
+  m_VersionIndex: 1368
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -4532,6 +4605,30 @@ MonoBehaviour:
       - m_Target: {fileID: 3118713900291655270}
         m_TargetAssemblyTypeName: Props.Key, Assembly-CSharp
         m_MethodName: SetKey
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8839379194217721047}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2094073418386975974}
+        m_TargetAssemblyTypeName: Props.ExitDoorKeys, Assembly-CSharp
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4796,7 +4893,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1333
+  m_VersionIndex: 1357
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6154,7 +6251,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1278
+  m_VersionIndex: 1368
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -6277,6 +6374,30 @@ MonoBehaviour:
       - m_Target: {fileID: 8222082324196149137}
         m_TargetAssemblyTypeName: Props.Key, Assembly-CSharp
         m_MethodName: SetKey
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8839379194217721047}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2094073418386975974}
+        m_TargetAssemblyTypeName: Props.ExitDoorKeys, Assembly-CSharp
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -6661,7 +6782,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1330
+  m_VersionIndex: 1354
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7014,7 +7135,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1426
+  m_VersionIndex: 1450
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -7494,12 +7615,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c156c71501535408f83efb7ad073d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roomsPrefabs:
-  - {fileID: 8666746500518590333, guid: 66adb7701deb69a45b4b5fefc945fedd, type: 3}
-  - {fileID: 5736168313814273221, guid: 576453cabd60fb9478c3c6e0bf8a982a, type: 3}
-  - {fileID: 6603089983804400598, guid: 0f67823f91b640c4ca7483c837187272, type: 3}
-  - {fileID: 8602938265252069157, guid: 5b576125ce063c84c8bb9d0ca03e9090, type: 3}
-  - {fileID: 5821733137035784009, guid: babbdd0a71451e54581a408392397b1f, type: 3}
+  _bedroom: {fileID: 5736168313814273221, guid: 576453cabd60fb9478c3c6e0bf8a982a, type: 3}
+  _kitchen: {fileID: 8602938265252069157, guid: 5b576125ce063c84c8bb9d0ca03e9090, type: 3}
+  _children: {fileID: 6603089983804400598, guid: 0f67823f91b640c4ca7483c837187272, type: 3}
+  _storage: {fileID: 5821733137035784009, guid: babbdd0a71451e54581a408392397b1f, type: 3}
+  _bathroom: {fileID: 8666746500518590333, guid: 66adb7701deb69a45b4b5fefc945fedd, type: 3}
 --- !u!1 &6227804941116273302
 GameObject:
   m_ObjectHideFlags: 0
@@ -7748,7 +7868,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1321
+  m_VersionIndex: 1345
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9046,7 +9166,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1284
+  m_VersionIndex: 1374
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9169,6 +9289,30 @@ MonoBehaviour:
       - m_Target: {fileID: 8167169193381159782}
         m_TargetAssemblyTypeName: Props.Key, Assembly-CSharp
         m_MethodName: SetKey
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8839379194217721047}
+        m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
+        m_MethodName: Play
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2094073418386975974}
+        m_TargetAssemblyTypeName: Props.ExitDoorKeys, Assembly-CSharp
+        m_MethodName: EndGame
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9481,7 +9625,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1333
+  m_VersionIndex: 1357
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -9669,12 +9813,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c156c71501535408f83efb7ad073d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roomsPrefabs:
-  - {fileID: 2623379077992177935, guid: 9e6050880eabee443899b854e08593c0, type: 3}
-  - {fileID: 6942112777999012198, guid: e8729dea0b24b704e81d0be89f06325a, type: 3}
-  - {fileID: 84023630972257348, guid: b012c7588a4f8f44eace70ff0467ad22, type: 3}
-  - {fileID: 1489900960916410876, guid: edf76fa4e737c094d8af44cfed884e7a, type: 3}
-  - {fileID: 2937350366555847285, guid: d226449b085b1364d9d15dd898a54c7b, type: 3}
+  _bedroom: {fileID: 6942112777999012198, guid: e8729dea0b24b704e81d0be89f06325a, type: 3}
+  _kitchen: {fileID: 1489900960916410876, guid: edf76fa4e737c094d8af44cfed884e7a, type: 3}
+  _children: {fileID: 84023630972257348, guid: b012c7588a4f8f44eace70ff0467ad22, type: 3}
+  _storage: {fileID: 2937350366555847285, guid: d226449b085b1364d9d15dd898a54c7b, type: 3}
+  _bathroom: {fileID: 2623379077992177935, guid: 9e6050880eabee443899b854e08593c0, type: 3}
 --- !u!1 &7772191345328450797
 GameObject:
   m_ObjectHideFlags: 0
@@ -14522,7 +14665,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 16542
+  m_VersionIndex: 16632
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -14671,12 +14814,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75c156c71501535408f83efb7ad073d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _roomsPrefabs:
-  - {fileID: 624295276630813059, guid: 817dae7633491ca468420e220533c458, type: 3}
-  - {fileID: 7104524943574093856, guid: 24d939327487527489a60b0e92321f58, type: 3}
-  - {fileID: 6192452559125486898, guid: 503548ba4e913f448845ea1c477e95cf, type: 3}
-  - {fileID: 5743747572799671579, guid: c4b6ab57c9b1be144bc555b00617e525, type: 3}
-  - {fileID: 8322445160748233973, guid: 68f4c583f7e10664384526fabb006ee2, type: 3}
+  _bedroom: {fileID: 7104524943574093856, guid: 24d939327487527489a60b0e92321f58, type: 3}
+  _kitchen: {fileID: 5743747572799671579, guid: c4b6ab57c9b1be144bc555b00617e525, type: 3}
+  _children: {fileID: 6192452559125486898, guid: 503548ba4e913f448845ea1c477e95cf, type: 3}
+  _storage: {fileID: 8322445160748233973, guid: 68f4c583f7e10664384526fabb006ee2, type: 3}
+  _bathroom: {fileID: 624295276630813059, guid: 817dae7633491ca468420e220533c458, type: 3}
 --- !u!1 &7999998603735905602
 GameObject:
   m_ObjectHideFlags: 0
@@ -14853,7 +14995,7 @@ Transform:
   m_GameObject: {fileID: 8696373304968249446}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -1.596, y: 1, z: 6}
+  m_LocalPosition: {x: -1.855, y: 1, z: 5.99}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -14884,7 +15026,7 @@ Transform:
   m_GameObject: {fileID: 8870248329976365754}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.614, y: 1, z: 5.984}
+  m_LocalPosition: {x: -10.36, y: 1, z: 5.9896}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -15234,7 +15376,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1315
+  m_VersionIndex: 1339
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -15437,7 +15579,7 @@ PrefabInstance:
       objectReference: {fileID: 3769190102897140400}
     - target: {fileID: 7478629627735744437, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: m_VersionIndex
-      value: 464
+      value: 554
       objectReference: {fileID: 0}
     - target: {fileID: 8506551063931351510, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: m_Mesh
@@ -15533,11 +15675,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5248063125476396706, guid: 9e17429c76796464c9d11b496ce6e492, type: 3}
       propertyPath: m_VersionIndex
-      value: 937
+      value: 1027
       objectReference: {fileID: 0}
     - target: {fileID: 6033692927166833492, guid: 9e17429c76796464c9d11b496ce6e492, type: 3}
       propertyPath: m_VersionIndex
-      value: 903
+      value: 993
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15647,7 +15789,7 @@ PrefabInstance:
       objectReference: {fileID: 3769190102897140400}
     - target: {fileID: 7478629627735744437, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: m_VersionIndex
-      value: 458
+      value: 548
       objectReference: {fileID: 0}
     - target: {fileID: 8506551063931351510, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: m_Mesh
@@ -15699,7 +15841,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1852637823824728561, guid: ed24957a1e31bc441be31c91212eb06e, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 2.962
+      value: 4.733
       objectReference: {fileID: 0}
     - target: {fileID: 1852637823824728561, guid: ed24957a1e31bc441be31c91212eb06e, type: 3}
       propertyPath: m_LocalPosition.y
@@ -15747,7 +15889,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5363518459194946498, guid: ed24957a1e31bc441be31c91212eb06e, type: 3}
       propertyPath: m_VersionIndex
-      value: 2881
+      value: 2974
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -15963,7 +16105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4634332878922091520, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: _actionsOn.m_PersistentCalls.m_Calls.Array.size
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4634332878922091520, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: _actionsOn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -15998,12 +16140,16 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 3769190102897140400}
     - target: {fileID: 6208071252649574895, guid: b278694680b04d8479b5047299ca3529, type: 3}
+      propertyPath: ExampleKey
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6208071252649574895, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: _currentKey
       value: 
       objectReference: {fileID: 1605666906876381979}
     - target: {fileID: 7478629627735744437, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: m_VersionIndex
-      value: 536
+      value: 626
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16079,9 +16225,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3677000471797650507, guid: dab2d7f0d9c42cb4a951c42acd5b8f00, type: 3}
+      propertyPath: _actionsOn.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 3677000471797650507, guid: dab2d7f0d9c42cb4a951c42acd5b8f00, type: 3}
+      propertyPath: _actionsOn.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
+      value: Props.Chair, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 7460127423905923094, guid: dab2d7f0d9c42cb4a951c42acd5b8f00, type: 3}
       propertyPath: m_VersionIndex
-      value: 4946
+      value: 5036
       objectReference: {fileID: 0}
     - target: {fileID: 8685579631278344050, guid: dab2d7f0d9c42cb4a951c42acd5b8f00, type: 3}
       propertyPath: m_Name
@@ -16195,7 +16349,7 @@ PrefabInstance:
       objectReference: {fileID: 3769190102897140400}
     - target: {fileID: 7478629627735744437, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: m_VersionIndex
-      value: 461
+      value: 551
       objectReference: {fileID: 0}
     - target: {fileID: 8506551063931351510, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: m_Mesh
@@ -16335,7 +16489,7 @@ PrefabInstance:
       objectReference: {fileID: 3769190102897140400}
     - target: {fileID: 7478629627735744437, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: m_VersionIndex
-      value: 458
+      value: 548
       objectReference: {fileID: 0}
     - target: {fileID: 8506551063931351510, guid: b278694680b04d8479b5047299ca3529, type: 3}
       propertyPath: m_Mesh
@@ -16431,11 +16585,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7546637313299508691, guid: 4a4bf236bf532e843ad8347b2f675dbd, type: 3}
       propertyPath: m_VersionIndex
-      value: 1731
+      value: 1821
       objectReference: {fileID: 0}
     - target: {fileID: 8777360935484857561, guid: 4a4bf236bf532e843ad8347b2f675dbd, type: 3}
       propertyPath: m_VersionIndex
-      value: 1740
+      value: 1830
       objectReference: {fileID: 0}
     - target: {fileID: 8928853672801719082, guid: 4a4bf236bf532e843ad8347b2f675dbd, type: 3}
       propertyPath: _actionsOn.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
@@ -16447,6 +16601,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8928853672801719082, guid: 4a4bf236bf532e843ad8347b2f675dbd, type: 3}
       propertyPath: _actionsOn.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: FMODUnity.StudioEventEmitter, FMODUnity
+      objectReference: {fileID: 0}
+    - target: {fileID: 8928853672801719082, guid: 4a4bf236bf532e843ad8347b2f675dbd, type: 3}
+      propertyPath: _actionsOn.m_PersistentCalls.m_Calls.Array.data[1].m_TargetAssemblyTypeName
       value: Props.Boards, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 8928853672801719082, guid: 4a4bf236bf532e843ad8347b2f675dbd, type: 3}
@@ -16455,7 +16613,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 9036019676985813440, guid: 4a4bf236bf532e843ad8347b2f675dbd, type: 3}
       propertyPath: m_VersionIndex
-      value: 1737
+      value: 1827
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -16477,7 +16635,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 35747812647274445, guid: 02b23d3f1daa0024ca3b80db4e07d625, type: 3}
       propertyPath: m_VersionIndex
-      value: 5532
+      value: 5622
       objectReference: {fileID: 0}
     - target: {fileID: 145810712069353776, guid: 02b23d3f1daa0024ca3b80db4e07d625, type: 3}
       propertyPath: m_Name
@@ -16525,7 +16683,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4258388943879573602, guid: 02b23d3f1daa0024ca3b80db4e07d625, type: 3}
       propertyPath: m_VersionIndex
-      value: 1254
+      value: 1344
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -14,56 +14,117 @@ namespace RoomMananger
         [SerializeField] private SpawnerRoom _yellowSpawner;
         [SerializeField] private SpawnerRoom _redSpawner;
 
-        private const int RoomsCount = 5;
+        private List<int> _blackRooms;
+        private List<int> _greenRooms;
+        private List<int> _yellowRooms;
+        private List<int> _redRooms;
+
+        private int _currentCycle;
 
         private void Start()
         {
+            GenerateAllOrders();
+
             SwitchRoom();
         }
 
         public void SwitchRoom()
         {
-            Transform[] shuffledPositions = (Transform[])_roomPos.Clone();
-            
+            // прошло 5 циклов
+            if (_currentCycle >= 5)
+            {
+                _currentCycle = 0;
+
+                GenerateAllOrders();
+            }
+
+            // =========================
+            // РАНДОМ ПОЗИЦИЙ
+            // =========================
+
+            Transform[] shuffledPositions =
+                (Transform[])_roomPos.Clone();
+
             for (int i = 0; i < shuffledPositions.Length; i++)
             {
-                int randomIndex = Random.Range(i, shuffledPositions.Length);
-                (shuffledPositions[i], shuffledPositions[randomIndex]) =
-                    (shuffledPositions[randomIndex], shuffledPositions[i]);
+                int rnd = Random.Range(i, shuffledPositions.Length);
+
+                (shuffledPositions[i], shuffledPositions[rnd]) =
+                    (shuffledPositions[rnd], shuffledPositions[i]);
             }
-            
-            _blackSpawner.transform.position = shuffledPositions[0].position;
-            _blackSpawner.transform.rotation = shuffledPositions[0].rotation;
-            
-            _greenSpawner.transform.position = shuffledPositions[1].position;
-            _greenSpawner.transform.rotation = shuffledPositions[1].rotation;
-            
-            _yellowSpawner.transform.position = shuffledPositions[2].position;
-            _yellowSpawner.transform.rotation = shuffledPositions[2].rotation;
-            
-            _redSpawner.transform.position = shuffledPositions[3].position;
-            _redSpawner.transform.rotation = shuffledPositions[3].rotation;
-            
-            Spawn();
+
+            // =========================
+            // ДВИГАЕМ СПАВНЕРЫ
+            // =========================
+
+            SetSpawnerTransform(
+                _blackSpawner,
+                shuffledPositions[0]);
+
+            SetSpawnerTransform(
+                _greenSpawner,
+                shuffledPositions[1]);
+
+            SetSpawnerTransform(
+                _yellowSpawner,
+                shuffledPositions[2]);
+
+            SetSpawnerTransform(
+                _redSpawner,
+                shuffledPositions[3]);
+
+            // =========================
+            // СПАВНИМ КОМНАТЫ
+            // =========================
+
+            _blackSpawner.SpawnRoom(
+                _blackRooms[_currentCycle]);
+
+            _greenSpawner.SpawnRoom(
+                _greenRooms[_currentCycle]);
+
+            _yellowSpawner.SpawnRoom(
+                _yellowRooms[_currentCycle]);
+
+            _redSpawner.SpawnRoom(
+                _redRooms[_currentCycle]);
+
+            _currentCycle++;
         }
 
-        private void Spawn()
+        private void SetSpawnerTransform(
+            SpawnerRoom spawner,
+            Transform point)
         {
-            List<int> roomNumbers = new List<int>();
-            
-            for (int i = 0; i < RoomsCount; i++)
-                roomNumbers.Add(i);
-            
-            for (int i = 0; i < roomNumbers.Count; i++)
+            spawner.transform.position = point.position;
+            spawner.transform.rotation = point.rotation;
+        }
+
+        private void GenerateAllOrders()
+        {
+            _blackRooms = GenerateRandomOrder();
+            _greenRooms = GenerateRandomOrder();
+            _yellowRooms = GenerateRandomOrder();
+            _redRooms = GenerateRandomOrder();
+        }
+
+        private List<int> GenerateRandomOrder()
+        {
+            List<int> rooms = new List<int>()
             {
-                int rnd = Random.Range(i, roomNumbers.Count);
-                (roomNumbers[i], roomNumbers[rnd]) = (roomNumbers[rnd], roomNumbers[i]);
+                0, 1, 2, 3, 4
+            };
+
+            // Fisher-Yates Shuffle
+            for (int i = 0; i < rooms.Count; i++)
+            {
+                int rnd = Random.Range(i, rooms.Count);
+
+                (rooms[i], rooms[rnd]) =
+                    (rooms[rnd], rooms[i]);
             }
-            
-            _blackSpawner.SpawnRoom(roomNumbers[0]);
-            _greenSpawner.SpawnRoom(roomNumbers[1]);
-            _yellowSpawner.SpawnRoom(roomNumbers[2]);
-            _redSpawner.SpawnRoom(roomNumbers[3]);
+
+            return rooms;
         }
         
     }
