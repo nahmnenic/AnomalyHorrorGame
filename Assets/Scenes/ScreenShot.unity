@@ -3221,6 +3221,10 @@ PrefabInstance:
       propertyPath: _gameWindow
       value: 
       objectReference: {fileID: 1932544115}
+    - target: {fileID: 2085919399206875867, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 2703859887912056894, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: m_Name
       value: Player
@@ -3301,6 +3305,10 @@ PrefabInstance:
       propertyPath: _settingWindow
       value: 
       objectReference: {fileID: 318675105}
+    - target: {fileID: 6511994024441378339, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8148108433551518687, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: InteractionPointParent
       value: 
@@ -3572,6 +3580,14 @@ PrefabInstance:
     - target: {fileID: 2309854035435522061, guid: d8fc60a92d4c2844d9e635dc2d626b23, type: 3}
       propertyPath: m_VersionIndex
       value: 1330
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312257785010815586, guid: d8fc60a92d4c2844d9e635dc2d626b23, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2312257785010815586, guid: d8fc60a92d4c2844d9e635dc2d626b23, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 3.254
       objectReference: {fileID: 0}
     - target: {fileID: 2563929046558865915, guid: d8fc60a92d4c2844d9e635dc2d626b23, type: 3}
       propertyPath: m_Mesh
@@ -5032,6 +5048,8 @@ MonoBehaviour:
   _promtInteract: {fileID: 1695385135}
   _blackScreen: {fileID: 357487375}
   _whiteScreen: {fileID: 2039236413}
+  _winText: {fileID: 0}
+  _fadeSpeed: 0
   Board: 0
   Chair: 0
   Sofa: 0
@@ -6104,7 +6122,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-46626
+  m_Name: pb_Mesh50686
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
