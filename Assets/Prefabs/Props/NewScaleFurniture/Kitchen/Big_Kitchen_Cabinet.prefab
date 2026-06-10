@@ -1,5 +1,84 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
+--- !u!1 &1332561003076120996
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8067822385657418521}
+  - component: {fileID: 1421606281340658275}
+  - component: {fileID: 6604406759894406722}
+  m_Layer: 0
+  m_Name: OpenSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8067822385657418521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332561003076120996}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000006463824, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.28464758, y: 0.46110743, z: 0.24757886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4850323626147499711}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1421606281340658275
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332561003076120996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1847883259
+      Data2: 1204757433
+      Data3: -1124697209
+      Data4: -1138195246
+    Path: event:/interaction/door/interaction_furniture_door_open
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &6604406759894406722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1332561003076120996}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218f2b0658b9a649850baa34b382fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fmod: {fileID: 1421606281340658275}
+  Delay: 0
+  Disposable: 0
 --- !u!1 &1685098698758934912
 GameObject:
   m_ObjectHideFlags: 0
@@ -100,6 +179,85 @@ MonoBehaviour:
   _isEnabled: 1
   On: 0
   BlockSwitch: 0
+--- !u!1 &2033247491584063245
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5410338567765601957}
+  - component: {fileID: 4470631477756767607}
+  - component: {fileID: 7041448821583117425}
+  m_Layer: 0
+  m_Name: CloseSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5410338567765601957
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033247491584063245}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.0000006463824, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.28464758, y: 0.46110743, z: 0.24757886}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 4850323626147499711}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &4470631477756767607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033247491584063245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1107649330
+      Data2: 1214565937
+      Data3: 1078598297
+      Data4: -235117750
+    Path: event:/interaction/door/interaction_furniture_door_close
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &7041448821583117425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2033247491584063245}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218f2b0658b9a649850baa34b382fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fmod: {fileID: 4470631477756767607}
+  Delay: 0
+  Disposable: 0
 --- !u!1 &3344064360705698786
 GameObject:
   m_ObjectHideFlags: 0
@@ -1826,7 +1984,9 @@ Transform:
   m_LocalPosition: {x: -0.699, y: 0.938, z: 0.056}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 8067822385657418521}
+  - {fileID: 5410338567765601957}
   m_Father: {fileID: 150766469465624489}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &5454261745234751534
@@ -1868,6 +2028,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6604406759894406722}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _actionsOff:
     m_PersistentCalls:
       m_Calls:
@@ -1886,6 +2058,18 @@ MonoBehaviour:
       - m_Target: {fileID: 7970806600204330275}
         m_TargetAssemblyTypeName: Components.RotateObjectComponent, Assembly-CSharp
         m_MethodName: Rotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7041448821583117425}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: StopSound
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

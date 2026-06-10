@@ -9,7 +9,9 @@ namespace Props
     {
         [SerializeField] private GameObject _roomName;
         [SerializeField] private GameObject _currentKey;
-
+        
+        [SerializeField] private SoundController _setKeySound;
+        
         public bool ExampleKey;
         
         private KeyController _keyController;
@@ -47,6 +49,7 @@ namespace Props
             gameObject.GetComponent<MeshRenderer>().enabled = true;
             GetComponentInParent<InteractableComponent>().enabled = false;
             _keyController.SetKey();
+            _setKeySound.PlaySound();
         }
         
         public void UnSetKey()
