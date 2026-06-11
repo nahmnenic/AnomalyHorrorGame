@@ -11,6 +11,7 @@ namespace Player
         private bool _blackStorageKey = true;
         private bool _blackBathroomKey = true;
         private bool _blackChildrenKey = true;
+        public bool _exampleKey = true;
         private bool _mainRoomKey = true;
 
         private Inventory _inventory;
@@ -77,7 +78,10 @@ namespace Player
             return _inventory.Key;
         }
 
-        
+        public void DeleteExampleKey()
+        {
+            _exampleKey = false;
+        }
 
         public void SetKey()
         {
@@ -87,6 +91,11 @@ namespace Player
 
         public void DeleteKey()
         {
+            if (!_exampleKey)
+            {
+                FindFirstObjectByType<ExitDoorKeys>().DeleteRandomKey();
+                _exampleKey = true;
+            }
             if (_blackBathroomKey && _blackStorageKey && _blackKitchenKey && _blackChildrenKey) return;
             List<int> falseIndexes = new List<int>();
 

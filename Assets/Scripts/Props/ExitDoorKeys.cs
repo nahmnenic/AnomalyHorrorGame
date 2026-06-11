@@ -14,8 +14,8 @@ namespace Props
             {
                 if (key.GetComponent<MeshRenderer>().enabled)
                 {
-                    key.SetActive(false);
-                    key.GetComponentInParent<InteractableComponent>().enabled = false;
+                    key.GetComponent<MeshRenderer>().enabled = false;
+                    key.GetComponentInParent<InteractableComponent>().enabled = true;
                     break;
                 }
             }

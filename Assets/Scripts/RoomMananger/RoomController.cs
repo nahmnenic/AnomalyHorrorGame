@@ -30,11 +30,9 @@ namespace RoomMananger
 
         public void SwitchRoom()
         {
-            // прошло 5 циклов
-            if (_currentCycle >= 5)
+            if (_currentCycle >= 4)
             {
                 _currentCycle = 0;
-
                 GenerateAllOrders();
             }
 
@@ -42,59 +40,43 @@ namespace RoomMananger
             // РАНДОМ ПОЗИЦИЙ
             // =========================
 
-            Transform[] shuffledPositions =
-                (Transform[])_roomPos.Clone();
+            Transform[] shuffledPositions = (Transform[])_roomPos.Clone();
 
             for (int i = 0; i < shuffledPositions.Length; i++)
             {
                 int rnd = Random.Range(i, shuffledPositions.Length);
 
-                (shuffledPositions[i], shuffledPositions[rnd]) =
-                    (shuffledPositions[rnd], shuffledPositions[i]);
+                (shuffledPositions[i], shuffledPositions[rnd]) = (shuffledPositions[rnd], shuffledPositions[i]);
             }
 
             // =========================
             // ДВИГАЕМ СПАВНЕРЫ
             // =========================
 
-            SetSpawnerTransform(
-                _blackSpawner,
-                shuffledPositions[0]);
+            SetSpawnerTransform(_blackSpawner, shuffledPositions[0]);
 
-            SetSpawnerTransform(
-                _greenSpawner,
-                shuffledPositions[1]);
+            SetSpawnerTransform(_greenSpawner, shuffledPositions[1]);
 
-            SetSpawnerTransform(
-                _yellowSpawner,
-                shuffledPositions[2]);
+            SetSpawnerTransform(_yellowSpawner, shuffledPositions[2]);
 
-            SetSpawnerTransform(
-                _redSpawner,
-                shuffledPositions[3]);
+            SetSpawnerTransform(_redSpawner, shuffledPositions[3]);
 
             // =========================
             // СПАВНИМ КОМНАТЫ
             // =========================
 
-            _blackSpawner.SpawnRoom(
-                _blackRooms[_currentCycle]);
+            _blackSpawner.SpawnRoom(_blackRooms[_currentCycle]);
 
-            _greenSpawner.SpawnRoom(
-                _greenRooms[_currentCycle]);
+            _greenSpawner.SpawnRoom(_greenRooms[_currentCycle]);
 
-            _yellowSpawner.SpawnRoom(
-                _yellowRooms[_currentCycle]);
+            _yellowSpawner.SpawnRoom(_yellowRooms[_currentCycle]);
 
-            _redSpawner.SpawnRoom(
-                _redRooms[_currentCycle]);
+            _redSpawner.SpawnRoom(_redRooms[_currentCycle]);
 
             _currentCycle++;
         }
 
-        private void SetSpawnerTransform(
-            SpawnerRoom spawner,
-            Transform point)
+        private void SetSpawnerTransform(SpawnerRoom spawner, Transform point)
         {
             spawner.transform.position = point.position;
             spawner.transform.rotation = point.rotation;
@@ -102,26 +84,46 @@ namespace RoomMananger
 
         private void GenerateAllOrders()
         {
-            _blackRooms = GenerateRandomOrder();
-            _greenRooms = GenerateRandomOrder();
-            _yellowRooms = GenerateRandomOrder();
-            _redRooms = GenerateRandomOrder();
+            bool valid = false;
+
+            while (!valid)
+            {
+                _blackRooms = GenerateRandomOrder();
+                _greenRooms = GenerateRandomOrder();
+                _yellowRooms = GenerateRandomOrder();
+                _redRooms = GenerateRandomOrder();
+
+                valid = true;
+
+                // Проверяем первые 4 цикла
+                for (int i = 0; i < 4; i++)
+                {
+                    HashSet<int> roomsInCycle = new HashSet<int>()
+                    {
+                        _blackRooms[i],
+                        _greenRooms[i],
+                        _yellowRooms[i],
+                        _redRooms[i]
+                    };
+
+                    if (roomsInCycle.Count != 4)
+                    {
+                        valid = false;
+                        break;
+                    }
+                }
+            }
         }
 
         private List<int> GenerateRandomOrder()
         {
-            List<int> rooms = new List<int>()
-            {
-                0, 1, 2, 3, 4
-            };
-
-            // Fisher-Yates Shuffle
+            List<int> rooms = new List<int>() { 0, 1, 2, 3, 4 };
+            
             for (int i = 0; i < rooms.Count; i++)
             {
                 int rnd = Random.Range(i, rooms.Count);
 
-                (rooms[i], rooms[rnd]) =
-                    (rooms[rnd], rooms[i]);
+                (rooms[i], rooms[rnd]) = (rooms[rnd], rooms[i]);
             }
 
             return rooms;

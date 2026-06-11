@@ -5356,6 +5356,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 7991991478477114763}
     - target: {fileID: 249266879674173000, guid: e645d694709b85748a2166dca9c455cb, type: 3}
+      propertyPath: _actionsOff.m_PersistentCalls.m_Calls.Array.data[6].m_Target
+      value: 
+      objectReference: {fileID: 5363335447142563845}
+    - target: {fileID: 249266879674173000, guid: e645d694709b85748a2166dca9c455cb, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[1].m_MethodName
       value: MoveObject
       objectReference: {fileID: 0}
@@ -5682,6 +5686,17 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 1
   OverrideMaxDistance: 20
+--- !u!114 &5363335447142563845 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3592949638496974022, guid: e645d694709b85748a2166dca9c455cb, type: 3}
+  m_PrefabInstance: {fileID: 8913430174617007299}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1658836022634257297}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218f2b0658b9a649850baa34b382fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &8703012133169050251 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 249266879674173000, guid: e645d694709b85748a2166dca9c455cb, type: 3}

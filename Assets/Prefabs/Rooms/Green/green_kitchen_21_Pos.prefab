@@ -49,6 +49,7 @@ Transform:
   - {fileID: 5636126999708897283}
   - {fileID: 8993861567129295851}
   - {fileID: 8318631955293717618}
+  - {fileID: 2786763994739846902}
   - {fileID: 4956359146190651670}
   - {fileID: 3104438492259672829}
   - {fileID: 5690416221436887677}
@@ -4272,6 +4273,37 @@ MonoBehaviour:
   OverrideAttenuation: 0
   OverrideMinDistance: 0
   OverrideMaxDistance: 0
+--- !u!1 &5289236972454136789
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2786763994739846902}
+  m_Layer: 0
+  m_Name: PosHingeConnect
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2786763994739846902
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5289236972454136789}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6118861386280740656}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &8602938265252069157
 GameObject:
   m_ObjectHideFlags: 0
@@ -4384,15 +4416,23 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8923174563158607969, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
       propertyPath: m_ConnectedAnchor.y
-      value: 3.584
+      value: 17.214003
       objectReference: {fileID: 0}
     - target: {fileID: 8923174563158607969, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
       propertyPath: m_ConnectedAnchor.z
       value: 42.58837
       objectReference: {fileID: 0}
+    - target: {fileID: 8923174563158607969, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
+      propertyPath: m_AutoConfigureConnectedAnchor
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 9179379661082639341, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
       propertyPath: m_VersionIndex
       value: 1386
+      objectReference: {fileID: 0}
+    - target: {fileID: 9187584529489195638, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
+      propertyPath: m_Convex
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 5021468369979439220, guid: 0af6ce92c6723d640b6523a6c3261852, type: 3}
