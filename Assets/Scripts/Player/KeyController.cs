@@ -43,10 +43,10 @@ namespace Player
             _inventory.Key = true;
         }
         
-        public void AddExampleKey()
+        /*public void AddExampleKey()
         {
             _inventory.Key = true;
-        }
+        }*/
 
         public void UpdateKeyRoom()
         {
@@ -91,11 +91,12 @@ namespace Player
 
         public void DeleteKey()
         {
-            if (!_exampleKey)
+            /*if (!_exampleKey)
             {
                 FindFirstObjectByType<ExitDoorKeys>().DeleteRandomKey();
                 _exampleKey = true;
-            }
+            }*/
+            
             if (_blackBathroomKey && _blackStorageKey && _blackKitchenKey && _blackChildrenKey) return;
             List<int> falseIndexes = new List<int>();
 

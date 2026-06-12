@@ -29,12 +29,13 @@ namespace Props
                 return;
             }
 
-            if (ExampleKey)
+            /*if (ExampleKey)
             {
                 _keyController.AddExampleKey();
                 Destroy(_currentKey);
                 return;
-            }
+            }*/
+            
             _keyController.ChangeKeyState(_roomName.gameObject);
             Destroy(_currentKey);
         }
