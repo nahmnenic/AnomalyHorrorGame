@@ -53,7 +53,6 @@ namespace Player
             var rooms = FindObjectsOfType<Room>();
             foreach (var room in rooms)
             {
-                if(room.color == Room.Color.Black) Debug.Log(room.name);
                 if (room.color == Room.Color.Black && room.name == Room.Name.Kitchen && !_blackKitchenKey)
                 {
                     room.Key.SetActive(false);
@@ -116,6 +115,16 @@ namespace Player
             }
             
             FindFirstObjectByType<ExitDoorKeys>().DeleteRandomKey();
+        }
+
+        public void DebugAllKeys()
+        {
+            Debug.Log("___КЛЮЧИ___");
+            if(_blackBathroomKey) Debug.Log("Bathroom");
+            if (_blackStorageKey) Debug.Log("Storage");
+            if (_blackKitchenKey) Debug.Log("Kitchen");
+            if (_blackChildrenKey) Debug.Log("Children");
+            
         }
     }
 }

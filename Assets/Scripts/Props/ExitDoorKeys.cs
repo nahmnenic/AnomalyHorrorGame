@@ -37,5 +37,18 @@ namespace Props
                 FindFirstObjectByType<GameUI>().WinGame();
             }
         }
+
+        public void DebugAllKeys()
+        {
+            int c = 0;
+            foreach (var key in _keys)
+            {
+                if (key.GetComponent<MeshRenderer>().enabled)
+                {
+                    c++;
+                }
+            }
+            Debug.Log($"ВСЕГО КЛЮЧЕЙ В ДВЕРИ: {c}");
+        }
     }
 }

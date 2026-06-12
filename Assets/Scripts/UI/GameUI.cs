@@ -3,6 +3,7 @@ using System.Collections;
 using Components;
 using Interact;
 using Player;
+using Props;
 using RoomMananger;
 using TMPro;
 using UnityEngine;
@@ -66,6 +67,7 @@ namespace UI
 
         private void BlackScreen()
         {
+            Debug.Log("@@@LOSE@@@");
             _promtInteract.gameObject.SetActive(false);
             _blackScreen.gameObject.SetActive(true);
             ReloadGame();
@@ -76,6 +78,7 @@ namespace UI
             _promtInteract.gameObject.SetActive(false);
             _whiteScreen.gameObject.SetActive(true);
             ReloadGame();
+            Debug.Log("@@@WIN@@@");
         }
 
         private void CheckTimeRound()
@@ -84,6 +87,12 @@ namespace UI
             {
                 _time = 10;
                 _timerFlag = true;
+            }
+
+            if (_time == 1)
+            {
+                Debug.Log("______________________________");
+                Debug.Log("______________________________");
             }
             
             if (_time == 0 && BoardTrue && ChairTrue && SofaTrue)
@@ -129,6 +138,7 @@ namespace UI
             yield return new WaitForSeconds(2f);
 
             _playerInteraction.BlockMove = false;
+            AllDebug();
             _blackScreen.gameObject.SetActive(false);
             _whiteScreen.gameObject.SetActive(false);
             _keyController.UpdateKeyRoom();
@@ -165,6 +175,12 @@ namespace UI
             
             yield return new WaitForSeconds(2f);
             GetComponent<LoadSceneComponent>().LoadScene();
+        }
+
+        private void AllDebug()
+        {
+            _keyController.DebugAllKeys();
+            FindFirstObjectByType<ExitDoorKeys>().DebugAllKeys();
         }
     }
 }
