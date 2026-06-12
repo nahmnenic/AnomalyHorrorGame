@@ -58,6 +58,7 @@ namespace RoomMananger
 
         public void ChengeNameRoom(GameObject room)
         {
+            Debug.Log(room.name);
             _gameUI.ChengeRoomName(room);
         }
         
