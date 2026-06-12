@@ -34,7 +34,6 @@ public class HingeJointRb : MonoBehaviour
     
     public void ActivateHinge()
     {
-        hinge.connectedAnchor = transform.TransformPoint(hinge.anchor);
         rb.isKinematic = false;
         StartCoroutine(ChangeLimits());
     }

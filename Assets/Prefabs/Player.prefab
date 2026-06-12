@@ -166,7 +166,7 @@ GameObject:
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
-  m_Icon: {fileID: 0}
+  m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
@@ -421,7 +421,7 @@ MonoBehaviour:
   BoardPrefab: {fileID: 0}
   _playerInteraction: {fileID: 4461746442068767276}
   _doorInteraction: {fileID: 1475423911516671340}
-  Skip: 1
+  Skip: 0
   Chair: 0
   Boards: 0
   Key: 0
@@ -460,6 +460,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb136f5e3b2d9e45807f15bf453e781, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _exampleKey: 1
 --- !u!1 &2882693644710747300
 GameObject:
   m_ObjectHideFlags: 0
@@ -678,7 +679,6 @@ GameObject:
   - component: {fileID: 5002012082250622703}
   - component: {fileID: 2739496305360818787}
   - component: {fileID: 7800422985999155221}
-  - component: {fileID: 5541141261246868802}
   - component: {fileID: 6511994024441378339}
   - component: {fileID: 2085919399206875867}
   m_Layer: 8
@@ -769,21 +769,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
---- !u!114 &5541141261246868802
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6871000779097438100}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  nonRigidbodyVelocity: 0
-  attenuationObject: {fileID: 0}
+  attenuationObject: {fileID: 2703859887912056894}
 --- !u!114 &6511994024441378339
 MonoBehaviour:
   m_ObjectHideFlags: 0

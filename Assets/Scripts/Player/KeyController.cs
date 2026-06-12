@@ -11,7 +11,6 @@ namespace Player
         private bool _blackStorageKey = true;
         private bool _blackBathroomKey = true;
         private bool _blackChildrenKey = true;
-        public bool _exampleKey = true;
         private bool _mainRoomKey = true;
 
         private Inventory _inventory;
@@ -79,7 +78,7 @@ namespace Player
 
         public void DeleteExampleKey()
         {
-            _exampleKey = false;
+            //_exampleKey = false;
         }
 
         public void SetKey()
