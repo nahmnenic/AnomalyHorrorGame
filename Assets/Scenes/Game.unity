@@ -3898,7 +3898,7 @@ MonoBehaviour:
   BoardTrue: 0
   ChairTrue: 0
   SofaTrue: 0
-  SkipWhiteScreen: 1
+  SkipWhiteScreen: 0
 --- !u!114 &846431428
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6266,7 +6266,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3305773182156856167, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: Skip
-      value: 1
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3305773182156856167, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: Chair
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3305773182156856167, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: BoardPrefab
