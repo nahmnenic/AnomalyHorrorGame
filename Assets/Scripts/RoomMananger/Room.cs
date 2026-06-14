@@ -1,5 +1,6 @@
 using System;
 using Components;
+using Interact;
 using Player;
 using UI;
 using UnityEngine;
@@ -46,7 +47,8 @@ namespace RoomMananger
 
         public bool CloseDoor()
         {
-            if (Door.localEulerAngles.y == 0) return true;
+            if (!Door.GetComponent<RotateObjectComponent>().IsOpen) return true;
+            //if (Door.localEulerAngles.y == 0) return true;
             
             return false;
         }

@@ -12,7 +12,11 @@ namespace Interact
         [SerializeField] private UnityEvent _actionsOff;
         [SerializeField] private string _displayName = "E";
         [SerializeField] private bool _isEnabled = true;
+        [SerializeField] private float _minTimeToSwitch;
+        private float _nextUseTime;
+        
         public bool On;
+        public bool AntiSpam;
         public bool BlockSwitch;
         private bool _supBlock = false;
         
@@ -52,6 +56,12 @@ namespace Interact
         
         public void Interact()
         {
+            if (AntiSpam)
+            {
+                if (Time.time < _nextUseTime) return;
+                _nextUseTime = Time.time + _minTimeToSwitch;
+            }
+            
             if (!Enabled()) return;
             if (!On)
             {

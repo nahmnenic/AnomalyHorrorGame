@@ -45,7 +45,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0218f2b0658b9a649850baa34b382fb5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _fmod: {fileID: 0}
+  _fmod: {fileID: 8441826386853468779}
   Delay: 0
   Disposable: 0
 --- !u!114 &8441826386853468779
@@ -5627,27 +5627,110 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5122565787642030152, guid: 428f33042e5b54344b47812f1a896998, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7231301907694940321}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 1743938572331415789, guid: 428f33042e5b54344b47812f1a896998, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7611842353394668909}
   m_SourcePrefab: {fileID: 100100000, guid: 428f33042e5b54344b47812f1a896998, type: 3}
 --- !u!4 &238925162731297894 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2210608881308093679, guid: 428f33042e5b54344b47812f1a896998, type: 3}
   m_PrefabInstance: {fileID: 2161019992797155465}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &418494877049514084 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1743938572331415789, guid: 428f33042e5b54344b47812f1a896998, type: 3}
+  m_PrefabInstance: {fileID: 2161019992797155465}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7611842353394668909
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418494877049514084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b60fb6fa9c643b478766145bbe2c305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8925326718539069086}
+        m_TargetAssemblyTypeName: Components.RotateObjectComponent, Assembly-CSharp
+        m_MethodName: FastRotate
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 8185276121411662977}
+        m_TargetAssemblyTypeName: SoundController, Assembly-CSharp
+        m_MethodName: PlaySound
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 6873183721510532761}
+        m_TargetAssemblyTypeName: Interact.InteractableComponent, Assembly-CSharp
+        m_MethodName: SwitchOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _delay: 0
+  _disposable: 1
 --- !u!4 &6551187466970855617 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5122565787642030152, guid: 428f33042e5b54344b47812f1a896998, type: 3}
   m_PrefabInstance: {fileID: 2161019992797155465}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &7295806005023029842 stripped
+--- !u!114 &6873183721510532761 stripped
 MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 8701681067225918171, guid: 428f33042e5b54344b47812f1a896998, type: 3}
+  m_CorrespondingSourceObject: {fileID: 4800564618576586256, guid: 428f33042e5b54344b47812f1a896998, type: 3}
   m_PrefabInstance: {fileID: 2161019992797155465}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10f3d256b75a54a54b6b151ceffd9710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &7295806005023029842 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8701681067225918171, guid: 428f33042e5b54344b47812f1a896998, type: 3}
+  m_PrefabInstance: {fileID: 2161019992797155465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 418494877049514084}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 10f3d256b75a54a54b6b151ceffd9710, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &8925326718539069086 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 7358984489930057239, guid: 428f33042e5b54344b47812f1a896998, type: 3}
+  m_PrefabInstance: {fileID: 2161019992797155465}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 90688c71ff1e6604ebdabe00905dc3ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1001 &3079043587384611324
@@ -5719,12 +5802,24 @@ PrefabInstance:
       value: 828
       objectReference: {fileID: 0}
     - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
+      propertyPath: AntiSpam
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
+      propertyPath: _minTimeToSwitch
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
       propertyPath: _actionsOn.m_PersistentCalls.m_Calls.Array.size
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
       propertyPath: _actionsOff.m_PersistentCalls.m_Calls.Array.size
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
       propertyPath: _actions.m_PersistentCalls.m_Calls.Array.data[1].m_Target
@@ -5757,7 +5852,7 @@ PrefabInstance:
     - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
       propertyPath: _actionsOff.m_PersistentCalls.m_Calls.Array.data[2].m_Target
       value: 
-      objectReference: {fileID: 7295806005023029842}
+      objectReference: {fileID: 4869224332301222372}
     - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
       propertyPath: _actionsOff.m_PersistentCalls.m_Calls.Array.data[3].m_Target
       value: 
@@ -5792,7 +5887,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
       propertyPath: _actionsOff.m_PersistentCalls.m_Calls.Array.data[2].m_MethodName
-      value: FastCloseDoor
+      value: StartActions
       objectReference: {fileID: 0}
     - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
       propertyPath: _actionsOff.m_PersistentCalls.m_Calls.Array.data[3].m_MethodName
@@ -5808,7 +5903,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
       propertyPath: _actionsOff.m_PersistentCalls.m_Calls.Array.data[2].m_TargetAssemblyTypeName
-      value: Interact.InteractableComponent, Assembly-CSharp
+      value: Components.EventWithDelayComponent, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
       propertyPath: _actionsOff.m_PersistentCalls.m_Calls.Array.data[3].m_TargetAssemblyTypeName
@@ -5875,7 +5970,44 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4891956358548377028, guid: a7464af534645a346b7efd72344a3099, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2202603042575565140}
+    - targetCorrespondingSourceObject: {fileID: 3087196160940189663, guid: a7464af534645a346b7efd72344a3099, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4869224332301222372}
   m_SourcePrefab: {fileID: 100100000, guid: a7464af534645a346b7efd72344a3099, type: 3}
+--- !u!1 &30708644497274403 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3087196160940189663, guid: a7464af534645a346b7efd72344a3099, type: 3}
+  m_PrefabInstance: {fileID: 3079043587384611324}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &4869224332301222372
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 30708644497274403}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b60fb6fa9c643b478766145bbe2c305, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _actions:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 7295806005023029842}
+        m_TargetAssemblyTypeName: Interact.InteractableComponent, Assembly-CSharp
+        m_MethodName: FastCloseDoor
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _delay: 0
+  _disposable: 1
 --- !u!4 &1136922432850008382 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2701558590945331394, guid: a7464af534645a346b7efd72344a3099, type: 3}
@@ -5897,8 +6029,8 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7662702476193699136, guid: a7464af534645a346b7efd72344a3099, type: 3}
   m_PrefabInstance: {fileID: 3079043587384611324}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
+  m_GameObject: {fileID: 30708644497274403}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 10f3d256b75a54a54b6b151ceffd9710, type: 3}
   m_Name: 
@@ -5934,6 +6066,18 @@ MonoBehaviour:
   _actions:
     m_PersistentCalls:
       m_Calls:
+      - m_Target: {fileID: 4678561175590995132}
+        m_TargetAssemblyTypeName: UnityEngine.Behaviour, UnityEngine
+        m_MethodName: set_enabled
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
       - m_Target: {fileID: 4678561175590995132}
         m_TargetAssemblyTypeName: Interact.InteractableComponent, Assembly-CSharp
         m_MethodName: Interact

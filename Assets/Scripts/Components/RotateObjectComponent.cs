@@ -11,8 +11,12 @@ namespace Components
         [SerializeField] private float _rotateTo;
         [SerializeField] private float _rotateFrom;
         [SerializeField] private float _delay;
+
+        private float _defualtSpeed;
         
         private Coroutine _rotationCoroutine;
+        
+        public bool IsOpen;
         
         public bool Stable;
         public bool Spin;
@@ -28,6 +32,11 @@ namespace Components
         }
 
         public Axis axis;
+
+        private void Start()
+        {
+            _defualtSpeed = _rotateSpeed;
+        }
 
         private void Update()
         {
@@ -49,6 +58,11 @@ namespace Components
                     target = movingToTarget ? _rotateFrom : _rotateTo;
                     newAngle = Mathf.MoveTowardsAngle(currentAngle, target, _rotateSpeed * Time.deltaTime);
                     transform.localEulerAngles = new Vector3(newAngle, transform.localEulerAngles.y, transform.localEulerAngles.z);
+                    if (Mathf.Abs(Mathf.DeltaAngle(newAngle, target)) < 0.01f)
+                    {
+                        _rotateSpeed = _defualtSpeed;
+                        Debug.Log("Доехали до цели");
+                    }
                     if(newAngle == target && Stable) Rotate();
                     break;
                 case Axis.Y:
@@ -58,6 +72,11 @@ namespace Components
                     target = movingToTarget ? _rotateFrom : _rotateTo;
                     newAngle = Mathf.MoveTowardsAngle(currentAngle, target, _rotateSpeed * Time.deltaTime);
                     transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, newAngle, transform.localEulerAngles.z);
+                    if (Mathf.Abs(Mathf.DeltaAngle(newAngle, target)) < 0.01f)
+                    {
+                        _rotateSpeed = _defualtSpeed;
+                        Debug.Log("Доехали до цели");
+                    }
                     if(currentAngle == target && Stable) Rotate();
                     break;
                 case Axis.Z:
@@ -67,19 +86,33 @@ namespace Components
                     target = movingToTarget ? _rotateFrom : _rotateTo;
                     newAngle = Mathf.MoveTowardsAngle(currentAngle, target, _rotateSpeed * Time.deltaTime);
                     transform.localEulerAngles = new Vector3(transform.localEulerAngles.x, transform.localEulerAngles.y, newAngle);
+                    if (Mathf.Abs(Mathf.DeltaAngle(newAngle, target)) < 0.01f)
+                    {
+                        _rotateSpeed = _defualtSpeed;
+                        Debug.Log("Доехали до цели");
+                    }
                     if(currentAngle == target && Stable) Rotate();
                     break;
             }
+            
+            
         }
     
         public void Rotate()
         {
+            IsOpen = !IsOpen;
             movingToTarget = !movingToTarget;
             if (Spin && movingToTarget)
             {
                 StopCoroutine(RotateContinuously(1));
                 _rotationCoroutine = null;
             }
+        }
+
+        public void FastRotate()
+        {
+            _rotateSpeed *= 2;
+            Rotate();
         }
 
         private IEnumerator DelayImitate()
@@ -95,20 +128,16 @@ namespace Components
             {
                 switch (axis)
                 {
-                    case 0:
-                        transform.Rotate(_rotateSpeed * Time.deltaTime, 0, 0);
-                        yield return null;
-                        break;
-                    case 1:
-                        transform.Rotate(0, _rotateSpeed * Time.deltaTime, 0);
-                        yield return null;
-                        break;
-                    case 2:
-                        transform.Rotate(0, 0, _rotateSpeed * Time.deltaTime);
-                        yield return null;
-                        break;
+                    case 0: transform.Rotate(_rotateSpeed * Time.deltaTime, 0, 0); break;
+                    case 1: transform.Rotate(0, _rotateSpeed * Time.deltaTime, 0); break;
+                    case 2: transform.Rotate(0, 0, _rotateSpeed * Time.deltaTime); break;
                 }
+
+                yield return null;
             }
+            
+            _rotateSpeed = _defualtSpeed;
+            Debug.Log(_defualtSpeed);
         }
     }
 }

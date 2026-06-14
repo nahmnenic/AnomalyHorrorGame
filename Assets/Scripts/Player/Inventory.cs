@@ -29,16 +29,10 @@ namespace Player
         public bool CheckRooms()
         {
             bool flag = true;
-            if(Skip) return true;
+            //if(Skip) return true;
             var rooms = FindObjectsOfType<Room>();
             for (int i = 0; i < rooms.Length; i++)
             {
-                if (!rooms[i].EntranceRoom)
-                {
-                    Debug.Log($"Посетите все комнаты: {rooms[i].gameObject.name}");
-                    flag = false;
-                }
-
                 if (!rooms[i].CloseDoor())
                 {
                     Debug.Log($"Закройте все двери: {rooms[i].gameObject.name}");

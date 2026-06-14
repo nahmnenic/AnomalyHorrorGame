@@ -5971,7 +5971,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7755038771964200683}
         m_TargetAssemblyTypeName: Components.RotateObjectComponent, Assembly-CSharp
-        m_MethodName: Rotate
+        m_MethodName: FastRotate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

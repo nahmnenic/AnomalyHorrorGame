@@ -108,6 +108,7 @@ public class InputManager : MonoBehaviour
             if (esc_Input)
             {
                 esc_Input = false;
+                _playerInteraction.EscSound();
                 if(_playerInteraction._gameWindow.activeSelf) _playerInteraction.ShowGameWindow();
                 else if (_playerInteraction._settingWindow.activeSelf)
                 {

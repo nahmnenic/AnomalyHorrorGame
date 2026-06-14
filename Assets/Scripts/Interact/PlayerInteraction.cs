@@ -17,6 +17,7 @@ namespace Interact
         [SerializeField] private float _maxDistance = 100f;
         [SerializeField] private LayerMask _layerMask = ~0;
         
+        [SerializeField] private SoundController _escSound;
         public GameObject _gameWindow;
         public GameObject _settingWindow;
         public bool MainMenu;
@@ -102,6 +103,11 @@ namespace Interact
                 BlockMove = true;
                 if(!MainMenu) _gameWindow.SetActive(true);
             }
+        }
+
+        public void EscSound()
+        {
+            _escSound.PlaySound();
         }
         
         public void ShowSettingWindow()
