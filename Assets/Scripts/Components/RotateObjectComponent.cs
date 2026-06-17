@@ -61,7 +61,6 @@ namespace Components
                     if (Mathf.Abs(Mathf.DeltaAngle(newAngle, target)) < 0.01f)
                     {
                         _rotateSpeed = _defualtSpeed;
-                        Debug.Log("Доехали до цели");
                     }
                     if(newAngle == target && Stable) Rotate();
                     break;
@@ -75,7 +74,6 @@ namespace Components
                     if (Mathf.Abs(Mathf.DeltaAngle(newAngle, target)) < 0.01f)
                     {
                         _rotateSpeed = _defualtSpeed;
-                        Debug.Log("Доехали до цели");
                     }
                     if(currentAngle == target && Stable) Rotate();
                     break;
@@ -89,7 +87,6 @@ namespace Components
                     if (Mathf.Abs(Mathf.DeltaAngle(newAngle, target)) < 0.01f)
                     {
                         _rotateSpeed = _defualtSpeed;
-                        Debug.Log("Доехали до цели");
                     }
                     if(currentAngle == target && Stable) Rotate();
                     break;
