@@ -1933,9 +1933,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: E
+  _displayNameOn: Stop
+  _displayNameOff: Play
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!114 &5513021153889767351
 MonoBehaviour:
@@ -1953,6 +1956,7 @@ MonoBehaviour:
   _rotateTo: 40
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 0
   axis: 1
@@ -1970,6 +1974,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 7565070080571773906}
   Delay: 0
+  Disposable: 0
 --- !u!114 &7565070080571773906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2052,6 +2057,7 @@ MonoBehaviour:
   _rotateTo: 0
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 1
   axis: 1
@@ -2100,6 +2106,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 505782238200986119}
   Delay: 5
+  Disposable: 0
 --- !u!1001 &2733241708357705174
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -742,9 +742,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: E
+  _displayNameOn: Close
+  _displayNameOff: Open
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!114 &2425036208771608593
 MonoBehaviour:
@@ -1550,9 +1553,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: E
+  _displayNameOn: Close
+  _displayNameOff: Open
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!114 &8790987829352100177
 MonoBehaviour:
@@ -2941,9 +2947,12 @@ MonoBehaviour:
   _actionsOff:
     m_PersistentCalls:
       m_Calls: []
-  _displayName: E
+  _displayNameOn: Put
+  _displayNameOff: Put
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!114 &4795332930404639481
 MonoBehaviour:
@@ -3020,6 +3029,7 @@ MonoBehaviour:
   _rotateTo: -90
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 0
   axis: 1

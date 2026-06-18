@@ -17,7 +17,7 @@ namespace Interact
         [SerializeField] private LayerMask _layerMask = ~0;
         
         [SerializeField] private GameObject _gameWindow;
-        private IInteractable _focused;
+        [HideInInspector] public IInteractable Focused;
 
         private void Update()
         {
@@ -28,13 +28,13 @@ namespace Interact
         private void UpdateFocus(IInteractable nearest)
         {
             
-            if (ReferenceEquals(nearest, _focused)) return;
-            _focused?.OnFocusExit();
-            _focused = nearest;
-            if (_focused != null)
+            if (ReferenceEquals(nearest, Focused)) return;
+            Focused?.OnFocusExit();
+            Focused = nearest;
+            if (Focused != null)
             {
-                _focused.OnFocusEnter();
-                _promt.Show(_focused);
+                Focused.OnFocusEnter();
+                _promt.Show(Focused);
             }
             else
             {
@@ -72,9 +72,9 @@ namespace Interact
 
         public void Interact()
         {
-            if (_focused != null)
+            if (Focused != null)
             {
-                if (_focused.CanInteract()) _focused.Interact();
+                if (Focused.CanInteract()) Focused.Interact();
             }
         }
         
@@ -85,7 +85,7 @@ namespace Interact
 
         public void Hide()
         {
-            _focused.OnFocusExit();
+            Focused.OnFocusExit();
             _promt.Hide();
         }
     }

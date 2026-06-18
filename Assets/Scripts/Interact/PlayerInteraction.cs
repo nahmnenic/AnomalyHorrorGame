@@ -21,7 +21,7 @@ namespace Interact
         public GameObject _gameWindow;
         public GameObject _settingWindow;
         public bool MainMenu;
-        private IInteractable _focused;
+        [HideInInspector] public IInteractable Focused;
         
         public bool BlockMove = false;
 
@@ -33,14 +33,14 @@ namespace Interact
 
         private void UpdateFocus(IInteractable nearest)
         {
-            if (ReferenceEquals(nearest, _focused)) return;
-            _focused?.OnFocusExit();
-            _focused = nearest;
+            if (ReferenceEquals(nearest, Focused)) return;
+            Focused?.OnFocusExit();
+            Focused = nearest;
             
-            if (_focused != null)
+            if (Focused != null)
             {
-                _focused.OnFocusEnter();
-                _promt.Show(_focused);
+                Focused.OnFocusEnter();
+                _promt.Show(Focused);
             }
             else
             {
@@ -78,9 +78,9 @@ namespace Interact
 
         public void Interact()
         {
-            if (_focused != null)
+            if (Focused != null)
             {
-                if (_focused.CanInteract()) _focused.Interact();
+                if (Focused.CanInteract()) Focused.Interact();
             }
         }
         

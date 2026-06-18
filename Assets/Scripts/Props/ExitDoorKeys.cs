@@ -1,3 +1,4 @@
+using Components;
 using Interact;
 using UI;
 using UnityEngine;
@@ -35,6 +36,7 @@ namespace Props
             if (c == 4)
             {
                 FindFirstObjectByType<GameUI>().WinGame();
+                GetComponent<RotateObjectComponent>().Rotate();
             }
         }
 

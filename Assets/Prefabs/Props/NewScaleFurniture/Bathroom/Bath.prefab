@@ -431,6 +431,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7171306879832870960}
+        m_TargetAssemblyTypeName: Interact.InteractableComponent, Assembly-CSharp
+        m_MethodName: SwitchOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _actionsOff:
     m_PersistentCalls:
       m_Calls:
@@ -470,9 +482,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: E
+      - m_Target: {fileID: 7171306879832870960}
+        m_TargetAssemblyTypeName: Interact.InteractableComponent, Assembly-CSharp
+        m_MethodName: SwitchOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _displayNameOn: Close
+  _displayNameOff: Open
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!114 &9179985840257265398
 MonoBehaviour:
@@ -488,6 +515,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 7575417917903797391}
   Delay: 0
+  Disposable: 0
 --- !u!114 &7575417917903797391
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -570,6 +598,7 @@ MonoBehaviour:
   _rotateTo: 180
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 0
   axis: 2
@@ -618,6 +647,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 3384227643881149260}
   Delay: 0
+  Disposable: 0
 --- !u!1 &4356624855431617669
 GameObject:
   m_ObjectHideFlags: 0

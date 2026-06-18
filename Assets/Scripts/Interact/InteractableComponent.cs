@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using Components;
+using Interact.UI;
 using UnityEngine;
 using UnityEngine.Events;
 
@@ -10,10 +11,15 @@ namespace Interact
     {
         [SerializeField] private UnityEvent _actionsOn;
         [SerializeField] private UnityEvent _actionsOff;
-        [SerializeField] private string _displayName = "E";
+        [SerializeField] private string _displayNameOn = "E";
+        [SerializeField] private string _displayNameOff = "E";
+        private string _displayName = "E";
         [SerializeField] private bool _isEnabled = true;
         [SerializeField] private float _minTimeToSwitch;
         private float _nextUseTime;
+        
+        private PlayerInteraction _playerInteraction;
+        private PlayerInteractionDoor _playerInteractionDoor;
         
         public bool On;
         public bool AntiSpam;
@@ -23,16 +29,20 @@ namespace Interact
         public string DisplayName => _displayName;
         public bool CanInteract() => _isEnabled;
 
-        //private Outline _outline;
-
-        /*private void Awake()
+        private void Start()
         {
-            _outline = gameObject.AddComponent<Outline>();
-            _outline.OutlineMode = Outline.Mode.OutlineVisible;
-            _outline.OutlineColor = Color.yellow;
-            _outline.OutlineWidth = 10f;
-            _outline.enabled = false;
-        }*/
+            _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
+            _playerInteractionDoor = FindFirstObjectByType<PlayerInteractionDoor>();
+            SwitchText();
+        }
+
+        private void SwitchText()
+        {
+            if (On) _displayName = _displayNameOn;
+            else _displayName = _displayNameOff;
+            _playerInteraction.Focused = null;
+            _playerInteractionDoor.Focused = null;
+        }
 
         [ContextMenu("Close Door")]
         public void FastCloseDoor()
@@ -72,7 +82,9 @@ namespace Interact
                     _supBlock = true;
                     return;
                 }
+                _displayName = _displayNameOn;
                 On = true;
+                SwitchText();
             }
             else
             {
@@ -83,7 +95,9 @@ namespace Interact
                     _supBlock = true;
                     return;
                 }
+                _displayName = _displayNameOff;
                 On = false;
+                SwitchText();
             }
             
         }
@@ -102,6 +116,8 @@ namespace Interact
         {
             if(On) On = false;
             else On = true;
+
+            SwitchText();
         }
 
         public bool Enabled()

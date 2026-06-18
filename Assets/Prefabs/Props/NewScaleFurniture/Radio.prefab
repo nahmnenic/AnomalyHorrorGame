@@ -422,9 +422,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: Start Radio
+  _displayNameOn: Stop
+  _displayNameOff: Play
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!114 &2820231291473402619
 MonoBehaviour:
@@ -471,6 +474,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 2820231291473402619}
   Delay: 0
+  Disposable: 0
 --- !u!1 &4891956358548377028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1309,6 +1313,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 0}
   Delay: 0
+  Disposable: 0
 --- !u!1001 &7357176358536832494
 PrefabInstance:
   m_ObjectHideFlags: 0

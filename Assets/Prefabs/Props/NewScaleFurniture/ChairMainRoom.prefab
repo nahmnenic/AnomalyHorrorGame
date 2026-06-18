@@ -1670,9 +1670,12 @@ MonoBehaviour:
   _actionsOff:
     m_PersistentCalls:
       m_Calls: []
-  _displayName: E
+  _displayNameOn: Take
+  _displayNameOff: Take
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!114 &4916339463030738696
 MonoBehaviour:

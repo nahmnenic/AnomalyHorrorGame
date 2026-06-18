@@ -784,9 +784,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: To open door
+  _displayNameOn: Close
+  _displayNameOff: Open
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!1 &4967540029590198381
 GameObject:
@@ -838,6 +841,7 @@ MonoBehaviour:
   _rotateTo: 90
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 0
   axis: 1
@@ -1546,9 +1550,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: To open door
+  _displayNameOn: Close
+  _displayNameOff: Open
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!1 &5988204900252924315
 GameObject:
@@ -1679,6 +1686,7 @@ MonoBehaviour:
   _rotateTo: 90
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 0
   axis: 1

@@ -50,6 +50,7 @@ MonoBehaviour:
   _rotateTo: -90
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 0
   axis: 1
@@ -3559,6 +3560,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7913108086350120598}
+        m_TargetAssemblyTypeName: Interact.InteractableComponent, Assembly-CSharp
+        m_MethodName: SwitchOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   _actionsOff:
     m_PersistentCalls:
       m_Calls:
@@ -3598,9 +3611,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: E
+      - m_Target: {fileID: 7913108086350120598}
+        m_TargetAssemblyTypeName: Interact.InteractableComponent, Assembly-CSharp
+        m_MethodName: SwitchOn
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  _displayNameOn: Close
+  _displayNameOff: Open
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!114 &2829427732746428140
 MonoBehaviour:
@@ -3618,6 +3646,7 @@ MonoBehaviour:
   _rotateTo: -30
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 0
   axis: 2
@@ -4325,9 +4354,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: E
+  _displayNameOn: E
+  _displayNameOff: E
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!65 &4665761053648262233
 BoxCollider:

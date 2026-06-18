@@ -175,9 +175,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: To open
+  _displayNameOn: E
+  _displayNameOff: E
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!1 &2033247491584063245
 GameObject:
@@ -937,9 +940,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: To open
+  _displayNameOn: E
+  _displayNameOff: E
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!1 &5339935407114186265
 GameObject:
@@ -1951,6 +1957,7 @@ MonoBehaviour:
   _rotateTo: -90
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 0
   axis: 1
@@ -2079,9 +2086,12 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayName: To open
+  _displayNameOn: Close
+  _displayNameOff: Open
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!65 &5842884182996554064
 BoxCollider:
@@ -3487,6 +3497,7 @@ MonoBehaviour:
   _rotateTo: 90
   _rotateFrom: 0
   _delay: 0
+  IsOpen: 0
   Stable: 0
   Spin: 0
   axis: 1

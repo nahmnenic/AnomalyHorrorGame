@@ -457,9 +457,11 @@ MonoBehaviour:
   _actionsOff:
     m_PersistentCalls:
       m_Calls: []
-  _displayName: To inventory
+  _displayName: Take
   _isEnabled: 1
+  _minTimeToSwitch: 0
   On: 0
+  AntiSpam: 0
   BlockSwitch: 0
 --- !u!65 &3281763432632609588
 BoxCollider:

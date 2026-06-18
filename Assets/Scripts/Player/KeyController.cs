@@ -15,6 +15,8 @@ namespace Player
 
         private Inventory _inventory;
 
+        public bool InfinityKeys;
+
         private void Start()
         {
             _inventory = FindObjectOfType<Inventory>();
@@ -73,6 +75,7 @@ namespace Player
         
         public bool HaveKeyInInventory()
         {
+            if (InfinityKeys) return true;
             return _inventory.Key;
         }
 

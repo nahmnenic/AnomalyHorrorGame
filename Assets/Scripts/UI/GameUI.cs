@@ -159,6 +159,8 @@ namespace UI
 
         private IEnumerator WhiteWinGameScreen()
         {
+            _timerText.gameObject.SetActive(false);
+            yield return new WaitForSeconds(5f);
             Color c = _whiteScreen.color;
             c.a = 0;
             _whiteScreen.color = c;
