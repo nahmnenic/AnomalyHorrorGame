@@ -46,7 +46,7 @@ Light:
   m_Shape: 0
   m_Color: {r: 0.43137255, g: 0.78431374, b: 0.78431374, a: 1}
   m_Intensity: 0.6
-  m_Range: 6
+  m_Range: 4
   m_SpotAngle: 135.8
   m_InnerSpotAngle: 21.80208
   m_CookieSize: 10
@@ -107,6 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac3c18a66c8081b428b0deaa591897a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _minLightIntensity: 0.5
-  _maxLightIntensity: 0.65
+  _minLightIntensity: 0.3
+  _maxLightIntensity: 0.45
   _speed: 0.075
+  _delay: 0
