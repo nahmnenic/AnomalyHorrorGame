@@ -31,6 +31,7 @@ namespace Player
             bool flag = true;
             //if(Skip) return true;
             var rooms = FindObjectsOfType<Room>();
+            
             for (int i = 0; i < rooms.Length; i++)
             {
                 if (!rooms[i].CloseDoor())
