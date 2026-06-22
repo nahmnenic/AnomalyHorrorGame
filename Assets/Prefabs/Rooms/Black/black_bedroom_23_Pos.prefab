@@ -342,7 +342,6 @@ Transform:
   - {fileID: 7206375668672442059}
   - {fileID: 4265567039956849044}
   - {fileID: 5168619834833022763}
-  - {fileID: 8917014680024332130}
   - {fileID: 4076478438465221729}
   m_Father: {fileID: 2218835480696586893}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4057,7 +4056,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 1428218332781584279}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!1 &9045674351622077124 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7042111075279977169, guid: 47612149437aa444fb48f6be8cb38fc2, type: 3}
@@ -4329,68 +4330,6 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 2210608881308093679, guid: 428f33042e5b54344b47812f1a896998, type: 3}
   m_PrefabInstance: {fileID: 2711166493660241275}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &2956595171659522261
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 9171052106728577603}
-    m_Modifications:
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -0.655
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 3.225
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.581
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7064175197966093552, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_Name
-      value: Light_Additional
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
---- !u!4 &8917014680024332130 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-  m_PrefabInstance: {fileID: 2956595171659522261}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4427803694243693358
 PrefabInstance:
@@ -5294,7 +5233,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 3117143088407106347}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!114 &3117143088407106347
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5476,7 +5417,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 4570110171343092431}
   Delay: 0.2
+  _isPlaying: 0
   Disposable: 1
+  Light: 0
 --- !u!4 &8494440502556717976 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 556971711419737895, guid: cc9b9698ba2e5d947b3b7326c40b12ef, type: 3}

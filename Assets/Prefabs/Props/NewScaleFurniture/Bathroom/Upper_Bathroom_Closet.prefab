@@ -132,7 +132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 3769774395059424224}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!1 &6286847669890534770
 GameObject:
   m_ObjectHideFlags: 0
@@ -142,8 +144,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5266532810869762433}
-  - component: {fileID: 3681651119038189038}
   - component: {fileID: 9100361386414350363}
+  - component: {fileID: 6033930096958780637}
+  - component: {fileID: 85725419225706215}
+  - component: {fileID: 2273658536099034738}
   m_Layer: 7
   m_Name: Handle
   m_TagString: Untagged
@@ -160,35 +164,14 @@ Transform:
   m_GameObject: {fileID: 6286847669890534770}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.48299965, y: 0.32199994, z: -0.006999716}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: 0.4814, y: 0.3252, z: -0.0037}
+  m_LocalScale: {x: 0.02663609, y: 0.04936004, z: 0.02210809}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3186605466439450212}
   - {fileID: 3620739316151361711}
   m_Father: {fileID: 2684911862233337784}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &3681651119038189038
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6286847669890534770}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 3
-  m_Size: {x: 0.026636092, y: 0.049360037, z: 0.022108087}
-  m_Center: {x: -0.002680244, y: 0.004339814, z: 0.002989979}
 --- !u!114 &9100361386414350363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -262,6 +245,77 @@ MonoBehaviour:
   On: 0
   AntiSpam: 0
   BlockSwitch: 0
+--- !u!33 &6033930096958780637
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6286847669890534770}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!23 &85725419225706215
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6286847669890534770}
+  m_Enabled: 0
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!65 &2273658536099034738
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6286847669890534770}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 1.0000001, y: 1, z: 1.0000001}
+  m_Center: {x: 0, y: 0, z: 0.0000076293945}
 --- !u!1 &6877914760266769554
 GameObject:
   m_ObjectHideFlags: 0
@@ -340,7 +394,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 1683937387688350508}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!1 &8952126923415555551
 GameObject:
   m_ObjectHideFlags: 0

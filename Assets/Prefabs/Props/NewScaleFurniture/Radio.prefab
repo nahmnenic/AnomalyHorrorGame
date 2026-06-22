@@ -13,10 +13,10 @@ GameObject:
   - component: {fileID: 2565121747331549228}
   - component: {fileID: 566179338791906775}
   - component: {fileID: 3859011707917044422}
-  - component: {fileID: 1024465782501200887}
   - component: {fileID: 7662702476193699136}
   - component: {fileID: 2820231291473402619}
   - component: {fileID: 2261643183580398679}
+  - component: {fileID: 7298175084201471962}
   m_Layer: 7
   m_Name: Radio_Knob
   m_TagString: Untagged
@@ -328,7 +328,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 823c8e9e8d947e54a95d7ca3279922d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -357,28 +357,6 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3087196160940189663}
-  m_Mesh: {fileID: 0}
---- !u!64 &1024465782501200887
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3087196160940189663}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 0
-  m_CookingOptions: 30
   m_Mesh: {fileID: 0}
 --- !u!114 &7662702476193699136
 MonoBehaviour:
@@ -474,7 +452,30 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 2820231291473402619}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
+--- !u!65 &7298175084201471962
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3087196160940189663}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 0.038925894, y: 0.012208941, z: 0.03524494}
+  m_Center: {x: -0.019462708, y: 0.006103517, z: -0.017621994}
 --- !u!1 &4891956358548377028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1313,7 +1314,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 0}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!1001 &7357176358536832494
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1322,17 +1325,25 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2701558590945331394}
     m_Modifications:
+    - target: {fileID: 48677395504366289, guid: 8c124191395594b4a9a357fa1fa1ff13, type: 3}
+      propertyPath: m_Range
+      value: 0.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 48677395504366289, guid: 8c124191395594b4a9a357fa1fa1ff13, type: 3}
+      propertyPath: m_Intensity
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 2771856759703656036, guid: 8c124191395594b4a9a357fa1fa1ff13, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.06
+      value: -0.134
       objectReference: {fileID: 0}
     - target: {fileID: 2771856759703656036, guid: 8c124191395594b4a9a357fa1fa1ff13, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.183
+      value: 0.043
       objectReference: {fileID: 0}
     - target: {fileID: 2771856759703656036, guid: 8c124191395594b4a9a357fa1fa1ff13, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -0.015
+      value: 0.13
       objectReference: {fileID: 0}
     - target: {fileID: 2771856759703656036, guid: 8c124191395594b4a9a357fa1fa1ff13, type: 3}
       propertyPath: m_LocalRotation.w
