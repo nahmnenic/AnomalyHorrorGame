@@ -18,8 +18,7 @@ namespace Interact
         [SerializeField] private float _minTimeToSwitch;
         private float _nextUseTime;
         
-        private PlayerInteraction _playerInteraction;
-        private PlayerInteractionDoor _playerInteractionDoor;
+        public event Action DisplayNameChanged;
         
         public bool On;
         public bool AntiSpam;
@@ -31,8 +30,6 @@ namespace Interact
 
         private void Start()
         {
-            _playerInteraction = FindFirstObjectByType<PlayerInteraction>();
-            _playerInteractionDoor = FindFirstObjectByType<PlayerInteractionDoor>();
             SwitchText();
         }
 
@@ -40,8 +37,8 @@ namespace Interact
         {
             if (On) _displayName = _displayNameOn;
             else _displayName = _displayNameOff;
-            _playerInteraction.Focused = null;
-            _playerInteractionDoor.Focused = null;
+            
+            DisplayNameChanged?.Invoke();
         }
 
         [ContextMenu("Close Door")]

@@ -39,6 +39,7 @@ namespace Interact
                 BoardPrefab.SetActive(true);
                 _gameUI.Board = true;
                 if(color == ColorOption.Red) _gameUI.BoardTrue = true;
+                else _gameUI.BoardTrue = false;
                 DropBoard();
                 DisableBaricade();
             }
@@ -47,6 +48,7 @@ namespace Interact
                 ChairPrefab.SetActive(true);
                 _gameUI.Chair = true;
                 if(color == ColorOption.Yellow) _gameUI.ChairTrue = true;
+                else _gameUI.ChairTrue = false;
                 DropChair();
                 DisableBaricade();
             }

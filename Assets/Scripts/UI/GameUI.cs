@@ -33,11 +33,11 @@ namespace UI
         
         [HideInInspector] public bool Board;
         [HideInInspector] public bool Chair;
-        [HideInInspector] public bool Sofa;
+        public bool Sofa;
         
-        [HideInInspector] public bool BoardTrue;
-        [HideInInspector] public bool ChairTrue;
-        [HideInInspector] public bool SofaTrue;
+        public bool BoardTrue;
+        public bool ChairTrue;
+        public bool SofaTrue;
 
         public bool SkipWhiteScreen;
 

@@ -30,12 +30,14 @@ namespace Interact
             IInteractable nearest = FindNearestInteractable();
             UpdateFocus(nearest);
         }
-
+        
         private void UpdateFocus(IInteractable nearest)
         {
             if (ReferenceEquals(nearest, Focused)) return;
-            Focused?.OnFocusExit();
+            
+            if (Focused is InteractableComponent oldInteractable) oldInteractable.DisplayNameChanged -= OnDisplayNameChanged;
             Focused = nearest;
+            if (Focused is InteractableComponent interactable) interactable.DisplayNameChanged += OnDisplayNameChanged;
             
             if (Focused != null)
             {
@@ -73,6 +75,7 @@ namespace Interact
                     nearst = interactable;
                 }
             }
+            
             return nearst;
         }
 
@@ -86,7 +89,6 @@ namespace Interact
         
         public void Hide()
         {
-            //_focused.OnFocusExit();
             _promt.Hide();
         }
         
@@ -123,6 +125,11 @@ namespace Interact
                 _settingWindow.SetActive(true);
                 BlockMove = true;
             }
+        }
+        
+        private void OnDisplayNameChanged()
+        {
+            if (Focused != null) _promt.Show(Focused);
         }
     }
 }

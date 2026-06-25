@@ -1632,7 +1632,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6376485669558887010}
   - component: {fileID: 5613006119411408925}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: ChairSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1695,7 +1695,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6072978401163311789}
   - component: {fileID: 9169270117949384428}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: BoardsSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2020,7 +2020,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1488
+  m_VersionIndex: 1491
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2431,7 +2431,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1476
+  m_VersionIndex: 1479
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -2984,7 +2984,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2210608881308093679}
   - component: {fileID: 7358984489930057239}
-  m_Layer: 9
+  m_Layer: 0
   m_Name: Door
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3305,7 +3305,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 1482
+  m_VersionIndex: 1485
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []
@@ -3458,6 +3458,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7460127423905923094, guid: 4b82404b938c8af4db185be085b49e33, type: 3}
+      propertyPath: m_VersionIndex
+      value: 4748
+      objectReference: {fileID: 0}
     - target: {fileID: 8685579631278344050, guid: 4b82404b938c8af4db185be085b49e33, type: 3}
       propertyPath: m_Name
       value: ChairDoor
@@ -3547,7 +3551,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6936491734767739810, guid: 8c124191395594b4a9a357fa1fa1ff13, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6936491734767739810, guid: 8c124191395594b4a9a357fa1fa1ff13, type: 3}
       propertyPath: m_IsActive
@@ -3629,7 +3633,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6936491734767739810, guid: 8c124191395594b4a9a357fa1fa1ff13, type: 3}
       propertyPath: m_Layer
-      value: 9
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

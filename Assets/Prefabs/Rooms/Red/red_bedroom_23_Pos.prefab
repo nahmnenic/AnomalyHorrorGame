@@ -165,7 +165,6 @@ Transform:
   - {fileID: 2428321753860935865}
   - {fileID: 456852494051022120}
   - {fileID: 6991374380614370960}
-  - {fileID: 6785796438345381319}
   - {fileID: 6604767193612215585}
   - {fileID: 3939680742005457882}
   m_Father: {fileID: 1976697220391175608}
@@ -3716,7 +3715,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 1962219931807262291}
   Delay: 0
+  _isPlaying: 0
   Disposable: 1
+  Light: 0
 --- !u!114 &1962219931807262291
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5207,7 +5208,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 9192202683629406792}
   Delay: 10
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!114 &2367823168374495180
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5637,68 +5640,6 @@ GameObject:
 Transform:
   m_CorrespondingSourceObject: {fileID: 8551990152526109661, guid: feac09c0f7685f14c8e7c47bb8b8e48c, type: 3}
   m_PrefabInstance: {fileID: 766853821425248415}
-  m_PrefabAsset: {fileID: 0}
---- !u!1001 &906221709005316720
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 1058970076256744711}
-    m_Modifications:
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: -4.0292015
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 2.818
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 1.7369194
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7064175197966093552, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-      propertyPath: m_Name
-      value: Light_Additional
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
---- !u!4 &6785796438345381319 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 5960644122945361847, guid: 63c4a86ab16ffd942b925a1a9c57a282, type: 3}
-  m_PrefabInstance: {fileID: 906221709005316720}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2790441175595908379
 PrefabInstance:
@@ -6382,7 +6323,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 8593754666722604802}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!114 &8593754666722604802
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6843,7 +6786,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 4743787988063161465}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!114 &4743787988063161465
 MonoBehaviour:
   m_ObjectHideFlags: 0

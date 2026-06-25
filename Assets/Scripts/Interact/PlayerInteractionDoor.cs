@@ -27,10 +27,12 @@ namespace Interact
 
         private void UpdateFocus(IInteractable nearest)
         {
-            
             if (ReferenceEquals(nearest, Focused)) return;
-            Focused?.OnFocusExit();
+            
+            if (Focused is InteractableComponent oldInteractable) oldInteractable.DisplayNameChanged -= OnDisplayNameChanged;
             Focused = nearest;
+            if (Focused is InteractableComponent interactable) interactable.DisplayNameChanged += OnDisplayNameChanged;
+            
             if (Focused != null)
             {
                 Focused.OnFocusEnter();
@@ -87,6 +89,11 @@ namespace Interact
         {
             Focused.OnFocusExit();
             _promt.Hide();
+        }
+        
+        private void OnDisplayNameChanged()
+        {
+            if (Focused != null) _promt.Show(Focused);
         }
     }
 }

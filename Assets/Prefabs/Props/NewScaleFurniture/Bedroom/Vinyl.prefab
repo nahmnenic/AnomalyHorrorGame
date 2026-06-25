@@ -1815,7 +1815,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: c22777d6e868e4f2fb421913386b154e, type: 2}
+  - {fileID: 2100000, guid: 823c8e9e8d947e54a95d7ca3279922d2, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -1974,7 +1974,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 7565070080571773906}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!114 &7565070080571773906
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2106,7 +2108,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 505782238200986119}
   Delay: 5
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!1001 &2733241708357705174
 PrefabInstance:
   m_ObjectHideFlags: 0

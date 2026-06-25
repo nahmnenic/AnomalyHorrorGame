@@ -18,6 +18,7 @@ namespace Components
         [SerializeField] private GameObject Pos;
         
         private Collider[] _interactionResult = new Collider[32];
+        [SerializeField] private LayerMask _layerMask = ~0;
 
         private void Awake()
         {
@@ -29,8 +30,8 @@ namespace Components
         {
             _inventory.CheckRooms();
             if(!_inventory.CheckRooms()) return;
-            int count = Physics.OverlapSphereNonAlloc(_interactionPoint.position, 5, _interactionResult);
-
+            int count = Physics.OverlapSphereNonAlloc(_interactionPoint.position, 5, _interactionResult, _layerMask);
+            
             for (int i = 0; i < count; i++)
             {
                 Collider col = _interactionResult[i];
@@ -65,8 +66,8 @@ namespace Components
 
         public void ColorDoor()
         {
-            int count = Physics.OverlapSphereNonAlloc(_interactionPoint.position, 5, _interactionResult);
-
+            int count = Physics.OverlapSphereNonAlloc(_interactionPoint.position, 5, _interactionResult, _layerMask);
+            
             for (int i = 0; i < count; i++)
             {
                 Collider col = _interactionResult[i];
@@ -74,6 +75,7 @@ namespace Components
                 if (col == null) continue;
                 if(baricade == null) continue;
                 if (baricade.color == Baricade.ColorOption.Black) _gameUI.SofaTrue = true;
+                else _gameUI.SofaTrue = false;
             }
         }
     }

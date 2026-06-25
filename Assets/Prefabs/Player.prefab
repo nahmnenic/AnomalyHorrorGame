@@ -78,7 +78,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 1902418387100468520}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!1 &999503411333110350
 GameObject:
   m_ObjectHideFlags: 0
@@ -157,7 +159,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _fmod: {fileID: 4256397572592750655}
   Delay: 0
+  _isPlaying: 0
   Disposable: 0
+  Light: 0
 --- !u!114 &4256397572592750655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -428,7 +432,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 41396f46859d54cbda18f2c7ddfcf375, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _interactionRadius: 1
+  _interactionRadius: 0.75
   _interactionLayer:
     serializedVersion: 2
     m_Bits: 128
