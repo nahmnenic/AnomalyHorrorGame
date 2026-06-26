@@ -19,6 +19,11 @@ namespace Interact
         [SerializeField] private GameObject _gameWindow;
         [HideInInspector] public IInteractable Focused;
 
+        private void Start()
+        {
+            _promt.Hide();
+        }
+        
         private void Update()
         {
             IInteractable nearest = FindNearestInteractable();

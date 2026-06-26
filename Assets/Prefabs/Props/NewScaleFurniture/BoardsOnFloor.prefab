@@ -457,7 +457,8 @@ MonoBehaviour:
   _actionsOff:
     m_PersistentCalls:
       m_Calls: []
-  _displayName: Take
+  _displayNameOn: Take
+  _displayNameOff: Take
   _isEnabled: 1
   _minTimeToSwitch: 0
   On: 0
