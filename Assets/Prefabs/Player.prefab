@@ -364,7 +364,7 @@ MonoBehaviour:
   IsJumping: 0
   IsCrouching: 0
   walkingSpeed: 1
-  runningSpeed: 2
+  runningSpeed: 3
   sprintingSpeed: 5
 --- !u!114 &3513509596282201338
 MonoBehaviour:
