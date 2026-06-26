@@ -131,6 +131,7 @@
 		<relationship name="effects">
 			<destination>{6aaaf791-81d5-4f65-8ccd-24b6f3308674}</destination>
 			<destination>{1d3b2c84-2f8c-4797-b014-9c07ffb5439d}</destination>
+			<destination>{cf73c4a6-69e1-4f18-b5a5-a7ae0a255e83}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusPanner" id="{fa13551a-26e0-48ba-aad4-778e50f21858}">
@@ -154,5 +155,39 @@
 			<destination>{8e7e5867-86ee-4104-9d07-4f6fddd5f8b9}</destination>
 		</relationship>
 	</object>
+	<object class="GainEffect" id="{cf73c4a6-69e1-4f18-b5a5-a7ae0a255e83}">
+		<property name="gain">
+			<value>10</value>
+		</property>
+		<relationship name="modulators">
+			<destination>{b3947b93-9c2f-40d8-acab-a8c4c8a1a664}</destination>
+		</relationship>
+	</object>
 	<object class="MixerBusFader" id="{949dd2fb-55c3-4caa-8e0c-3eb7d0723873}" />
+	<object class="ADSRModulator" id="{b3947b93-9c2f-40d8-acab-a8c4c8a1a664}">
+		<property name="nameOfPropertyBeingModulated">
+			<value>gain</value>
+		</property>
+		<property name="initialValue">
+			<value>-80</value>
+		</property>
+		<property name="attackTime">
+			<value>0</value>
+		</property>
+		<property name="holdTime">
+			<value>5200</value>
+		</property>
+		<property name="decayTime">
+			<value>8600</value>
+		</property>
+		<property name="sustainValue">
+			<value>-10</value>
+		</property>
+		<property name="releaseTime">
+			<value>0</value>
+		</property>
+		<property name="finalValue">
+			<value>-80</value>
+		</property>
+	</object>
 </objects>
