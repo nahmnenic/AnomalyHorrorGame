@@ -816,9 +816,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3305773182156856167, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4461746442068767276, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: MainMenu
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4461746442068767276, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4461746442068767276, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: _gameWindow
@@ -945,6 +953,7 @@ GameObject:
   - component: {fileID: 1214394569}
   - component: {fileID: 1214394568}
   - component: {fileID: 1214394567}
+  - component: {fileID: 1214394571}
   m_Layer: 5
   m_Name: Canvas
   m_TagString: Untagged
@@ -1040,6 +1049,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1214394571
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1214394566}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4aac355960debd45b499294b3c416ae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1498438147
 GameObject:
   m_ObjectHideFlags: 0
@@ -1192,8 +1213,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1696112898}
-        m_TargetAssemblyTypeName: Components.LoadSceneComponent, Assembly-CSharp
+      - m_Target: {fileID: 1214394571}
+        m_TargetAssemblyTypeName: UI.MainMenu, Assembly-CSharp
         m_MethodName: QuitGame
         m_Mode: 1
         m_Arguments:

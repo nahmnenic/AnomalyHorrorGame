@@ -18,6 +18,11 @@ namespace UI
         private bool _timerFlag;
         
         [SerializeField] private TMP_Text _roomName;
+
+        [Header("Start Download")] 
+        [SerializeField] private GameObject _settingWindow;
+        [SerializeField] private GameObject _downloadScreen;
+        [SerializeField] private GameObject _interactUI;
         
         private PlayerInteraction _playerInteraction;
         private RoomController _roomController;
@@ -43,11 +48,35 @@ namespace UI
 
         private void Start()
         {
+            BlockCursor();
             _playerInteraction =  FindObjectOfType<PlayerInteraction>();
             _roomController =  FindObjectOfType<RoomController>();
             _keyController =  FindObjectOfType<KeyController>();
             _loadObjectGameComponent = GetComponent<LoadObjectGameComponent>();
+            StartCoroutine(StartGame());
+        }
+
+        private IEnumerator StartGame()
+        {
+            _playerInteraction.BlockMove = true;
+            yield return new WaitForSeconds(1f);
+            _settingWindow.SetActive(false);
+            _downloadScreen.SetActive(false);
+            _interactUI.SetActive(true);
             StartCoroutine(Timer());
+            _playerInteraction.BlockMove = false;
+        }
+        
+        public void UnlockCursor()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
+        
+        public void BlockCursor()
+        {
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
         }
 
         private IEnumerator Timer()
@@ -154,6 +183,7 @@ namespace UI
 
         public void WinGame()
         {
+            _time = 1000f;
             StartCoroutine(WhiteWinGameScreen());
         }
 

@@ -11,10 +11,5 @@ namespace Components
         {
             SceneManager.LoadScene(sceneName);
         }
-
-        public void QuitGame()
-        {
-            Application.Quit();
-        }
     }
 }

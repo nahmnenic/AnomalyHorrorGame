@@ -1,5 +1,6 @@
 using System;
 using Interact.UI;
+using UI;
 using UnityEngine;
 
 namespace Interact
@@ -23,11 +24,16 @@ namespace Interact
         public bool MainMenu;
         [HideInInspector] public IInteractable Focused;
         
+        private GameUI _gameUI;
+        
         public bool BlockMove = false;
 
         private void Start()
         {
+            _settingWindow.SetActive(true);
+            _settingWindow.SetActive(false);
             _promt.Hide();
+            _gameUI = FindFirstObjectByType<GameUI>();
         }
 
         private void Update()
@@ -104,9 +110,11 @@ namespace Interact
             {
                 BlockMove = false;
                 _gameWindow.SetActive(false);
+                _gameUI.BlockCursor();
             }
             else
             {
+                _gameUI.UnlockCursor();
                 BlockMove = true;
                 if(!MainMenu) _gameWindow.SetActive(true);
             }
@@ -127,6 +135,7 @@ namespace Interact
             }
             else
             {
+                _gameUI.UnlockCursor();
                 _settingWindow.SetActive(true);
                 BlockMove = true;
             }

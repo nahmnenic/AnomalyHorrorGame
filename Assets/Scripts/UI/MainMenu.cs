@@ -1,18 +1,19 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
-public class MainMenu : MonoBehaviour
+namespace UI
 {
-    // Start is called before the first frame update
-    void Start()
+    public class MainMenu : MonoBehaviour
     {
-        
-    }
+        private void Start()
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+        }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        public void QuitGame()
+        {
+            Application.Quit();
+        }
     }
 }
