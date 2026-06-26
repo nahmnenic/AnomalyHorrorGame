@@ -13,11 +13,20 @@ namespace UI
         [SerializeField] private Text _sensTxt;
         [SerializeField] private Slider _sensValue;
         
+        [SerializeField] private float _volume;
+        [SerializeField] private float _sens;
+        
         private CameraController _cameraController;
 
         private void Start()
         {
+            _cameraController = FindFirstObjectByType<CameraController>();
+            
+            _volumeValue.SetValueWithoutNotify(_volume);
+            _sensValue.SetValueWithoutNotify(_sens);
+            
             ChangeVolume();
+            ChangeSensetivity();
         }
 
         public void ChangeVolume()
@@ -31,7 +40,7 @@ namespace UI
         public void ChangeSensetivity()
         {
             _sensTxt.text = Math.Round(_sensValue.value, 2).ToString();
-            FindFirstObjectByType<CameraController>().mouseSense = _sensValue.value / 10;
+            _cameraController.mouseSense = _sensValue.value / 10;
         }
     }
 }
