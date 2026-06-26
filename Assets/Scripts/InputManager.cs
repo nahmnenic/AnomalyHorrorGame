@@ -12,7 +12,6 @@ public class InputManager : MonoBehaviour
         private InputSystem _inputSystem;
         private PlayerLocomotion _playerLococmotion;
         private SoundController _soundController;
-        private PlayerLighter _playerLighter;
         private PlayerInteraction _playerInteraction;
         private PlayerInteractionDoor _doorInteraction;
         private RoomController _roomController;
@@ -25,14 +24,12 @@ public class InputManager : MonoBehaviour
         public bool shift_Input;
         public bool e_Input;
         public bool esc_Input;
-        public bool f_Input;
         public bool q_Input;
         
         private void Awake()
         {
             _roomController = FindObjectOfType<RoomController>();
             _soundController = GetComponentInChildren<SoundController>();
-            _playerLighter = GetComponent<PlayerLighter>();
             _playerLococmotion = GetComponent<PlayerLocomotion>();
             _playerInteraction = GetComponent<PlayerInteraction>();
             _doorInteraction = GetComponent<PlayerInteractionDoor>();
@@ -50,7 +47,6 @@ public class InputManager : MonoBehaviour
                 _inputSystem.PlayerActions.Shift.canceled += i => shift_Input = false;
                 _inputSystem.PlayerActions.Interaction.performed += i => e_Input = true;
                 _inputSystem.PlayerActions.Escape.performed += i => esc_Input = true;
-                _inputSystem.PlayerActions.Flash.performed += i => f_Input = true;
                 _inputSystem.PlayerActions.Switch.performed += i => q_Input = true;
             }
             
@@ -70,7 +66,6 @@ public class InputManager : MonoBehaviour
             HandleSprintingInput();
             HandleInteractionInput();
             HandleSwitchInput();
-            HandleFlashLightInput();
         }
 
         private void HandleMovementInput()
@@ -119,15 +114,6 @@ public class InputManager : MonoBehaviour
                 {
                     _playerInteraction.ShowGameWindow();
                 }
-            }
-        }
-        
-        private void HandleFlashLightInput()
-        {
-            if (f_Input)
-            {
-                f_Input = false;
-                _playerLighter.Flash();
             }
         }
         

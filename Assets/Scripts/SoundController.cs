@@ -5,6 +5,7 @@ using UnityEngine;
 public class SoundController : MonoBehaviour
 {
     [SerializeField] private FMODUnity.StudioEventEmitter _fmod;
+    private IEnumerator _currentRoutine;
     public float Delay;
 
     public bool _isPlaying = false;
@@ -16,13 +17,16 @@ public class SoundController : MonoBehaviour
     public void PlaySound()
     {
         if (_fmod == null) return;
+        if(_currentRoutine != null) return;
         StartCoroutine(PlaySoundWithDelay());
+        _currentRoutine = PlaySoundWithDelay();
     }
 
     public void StopSound()
     {
         _fmod.Stop();
         _isPlaying = false;
+        _currentRoutine = null;
     }
 
     public bool IsPlaying()
@@ -40,6 +44,8 @@ public class SoundController : MonoBehaviour
             _fmod = null;
             _isPlaying = false;
         }
+
+        _currentRoutine = null;
     }
     
     private void OnDestroy()
