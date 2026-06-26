@@ -363,9 +363,9 @@ MonoBehaviour:
   IsGrounded: 0
   IsJumping: 0
   IsCrouching: 0
-  walkingSpeed: 5
-  runningSpeed: 7
-  sprintingSpeed: 9
+  walkingSpeed: 1
+  runningSpeed: 2
+  sprintingSpeed: 5
 --- !u!114 &3513509596282201338
 MonoBehaviour:
   m_ObjectHideFlags: 0
