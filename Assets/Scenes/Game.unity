@@ -5615,10 +5615,6 @@ PrefabInstance:
       propertyPath: _gameWindow
       value: 
       objectReference: {fileID: 1499994874}
-    - target: {fileID: 1671587409826894961, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
-      propertyPath: InfinityKeys
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 2703859887912056894, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: m_Name
       value: Player
