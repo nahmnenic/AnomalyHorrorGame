@@ -25,6 +25,11 @@ namespace Interact
         
         public bool BlockMove = false;
 
+        private void Start()
+        {
+            _promt.Hide();
+        }
+
         private void Update()
         {
             IInteractable nearest = FindNearestInteractable();
@@ -130,6 +135,11 @@ namespace Interact
         private void OnDisplayNameChanged()
         {
             if (Focused != null) _promt.Show(Focused);
+        }
+
+        private void OnDisable()
+        {
+            Hide();
         }
     }
 }
