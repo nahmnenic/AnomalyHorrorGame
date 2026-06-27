@@ -245,6 +245,8 @@ GameObject:
   - component: {fileID: 3305773182156856167}
   - component: {fileID: 1475423911516671340}
   - component: {fileID: 1671587409826894961}
+  - component: {fileID: 686460065648823492}
+  - component: {fileID: 5218733452941006005}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -440,11 +442,6 @@ MonoBehaviour:
   _layerMask:
     serializedVersion: 2
     m_Bits: 128
-  _escSound: {fileID: 5480792009666125936}
-  _gameWindow: {fileID: 0}
-  _settingWindow: {fileID: 0}
-  MainMenu: 0
-  BlockMove: 0
 --- !u!54 &408218949809184373
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -528,6 +525,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InfinityKeys: 0
+--- !u!114 &686460065648823492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703859887912056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76175035f127fbb4d8fe375d792fd6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _gameWindow: {fileID: 0}
+  _settingWindow: {fileID: 0}
+  _escSound: {fileID: 0}
+  _mainMenu: 0
+--- !u!114 &5218733452941006005
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703859887912056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 575b3a90931ed814d911fbe0d6367da5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6871000779097438100
 GameObject:
   m_ObjectHideFlags: 0

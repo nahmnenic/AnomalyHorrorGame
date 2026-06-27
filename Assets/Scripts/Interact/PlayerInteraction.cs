@@ -18,22 +18,11 @@ namespace Interact
         [SerializeField] private float _maxDistance = 100f;
         [SerializeField] private LayerMask _layerMask = ~0;
         
-        [SerializeField] private SoundController _escSound;
-        public GameObject _gameWindow;
-        public GameObject _settingWindow;
-        public bool MainMenu;
         [HideInInspector] public IInteractable Focused;
-        
-        private GameUI _gameUI;
-        
-        public bool BlockMove = false;
 
         private void Start()
         {
-            _settingWindow.SetActive(true);
-            _settingWindow.SetActive(false);
             _promt.Hide();
-            _gameUI = FindFirstObjectByType<GameUI>();
         }
 
         private void Update()
@@ -101,44 +90,6 @@ namespace Interact
         public void Hide()
         {
             _promt.Hide();
-        }
-        
-        public void ShowGameWindow()
-        {
-            if(_gameWindow == null) return;
-            if (_gameWindow.activeSelf)
-            {
-                BlockMove = false;
-                _gameWindow.SetActive(false);
-                _gameUI.BlockCursor();
-            }
-            else
-            {
-                _gameUI.UnlockCursor();
-                BlockMove = true;
-                if(!MainMenu) _gameWindow.SetActive(true);
-            }
-        }
-
-        public void EscSound()
-        {
-            _escSound.PlaySound();
-        }
-        
-        public void ShowSettingWindow()
-        {
-            if(_settingWindow == null) return;
-            if (_settingWindow.activeSelf)
-            {
-                BlockMove = false;
-                _settingWindow.SetActive(false);
-            }
-            else
-            {
-                _gameUI.UnlockCursor();
-                _settingWindow.SetActive(true);
-                BlockMove = true;
-            }
         }
         
         private void OnDisplayNameChanged()

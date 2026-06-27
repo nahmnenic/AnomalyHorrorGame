@@ -1,5 +1,6 @@
 using System;
 using Interact;
+using UI;
 using UnityEngine;
 
 namespace Player
@@ -10,7 +11,7 @@ namespace Player
         public Transform InteractionPointParent;
         
         private InputSystem _inputSystem;
-        private PlayerInteraction _playerInteraction;
+        private UIManager _uiMananger;
         
         public Vector2 rightStickInput;
         
@@ -24,12 +25,12 @@ namespace Player
 
         private void Awake()
         {
-            _playerInteraction =  GetComponent<PlayerInteraction>();
+            _uiMananger = GetComponent<UIManager>();
         }
 
         private void Update()
         {
-            if(_playerInteraction.BlockMove) return;
+            if(_uiMananger.BlockMove) return;
             xAxis += rightStickInput.x * mouseSense;
             yAxis -= rightStickInput.y * mouseSense;
             yAxis = Mathf.Clamp(yAxis,minCam, maxCam);

@@ -1,11 +1,8 @@
-using System;
-using FMOD;
-using Interact;
+using Interact; 
 using Player;
 using RoomMananger;
+using UI;
 using UnityEngine;
-using UnityEngine.InputSystem;
-using Debug = UnityEngine.Debug;
 
 public class InputManager : MonoBehaviour
 {
@@ -15,6 +12,7 @@ public class InputManager : MonoBehaviour
         private PlayerInteraction _playerInteraction;
         private PlayerInteractionDoor _doorInteraction;
         private RoomController _roomController;
+        private UIManager _uiManager;
 
         public Vector2 movementInput;
         public float moveAmount;
@@ -33,6 +31,13 @@ public class InputManager : MonoBehaviour
             _playerLococmotion = GetComponent<PlayerLocomotion>();
             _playerInteraction = GetComponent<PlayerInteraction>();
             _doorInteraction = GetComponent<PlayerInteractionDoor>();
+            _uiManager = GetComponent<UIManager>();
+        }
+        
+        private void Start()
+        {
+            _uiManager.OnUIOpened += EnableUI;
+            _uiManager.OnUIClosed += EnableGameplay;
         }
 
         private void OnEnable()
@@ -46,22 +51,29 @@ public class InputManager : MonoBehaviour
                 _inputSystem.PlayerActions.Shift.performed += i => shift_Input = true;
                 _inputSystem.PlayerActions.Shift.canceled += i => shift_Input = false;
                 _inputSystem.PlayerActions.Interaction.performed += i => e_Input = true;
-                _inputSystem.PlayerActions.Escape.performed += i => esc_Input = true;
                 _inputSystem.PlayerActions.Switch.performed += i => q_Input = true;
+                
+                _inputSystem.Global.Escape.performed += i => esc_Input = true;
             }
             
-            _inputSystem.Enable();
+            _inputSystem.Global.Enable();
+            _inputSystem.PlayerMovement.Enable();
+            _inputSystem.PlayerActions.Enable();
+            _inputSystem.UI.Disable();
         }
 
         private void OnDisable()
         {
             _inputSystem.Disable();
+            
+            _uiManager.OnUIOpened -= EnableUI;
+            _uiManager.OnUIClosed -= EnableGameplay;
         }
 
         public void HandleAllInput()
         {
             HandleEscapeInput();
-            if(_playerInteraction.BlockMove) return;
+            if(_uiManager.BlockMove) return;
             HandleMovementInput();
             HandleSprintingInput();
             HandleInteractionInput();
@@ -100,21 +112,10 @@ public class InputManager : MonoBehaviour
         
         private void HandleEscapeInput()
         {
-            if (esc_Input)
-            {
-                esc_Input = false;
-                _playerInteraction.EscSound();
-                if(_playerInteraction._gameWindow.activeSelf) _playerInteraction.ShowGameWindow();
-                else if (_playerInteraction._settingWindow.activeSelf)
-                {
-                    _playerInteraction.ShowSettingWindow();
-                    _playerInteraction.ShowGameWindow();
-                }
-                else
-                {
-                    _playerInteraction.ShowGameWindow();
-                }
-            }
+            if (!esc_Input) return;
+            esc_Input = false;
+
+            _uiManager.HandleEscape();
         }
         
         private void HandleSwitchInput()
@@ -124,5 +125,19 @@ public class InputManager : MonoBehaviour
                 q_Input = false;
                 _roomController.SwitchRoom();
             }
+        }
+        
+        public void EnableGameplay()
+        {
+            _inputSystem.PlayerMovement.Enable();
+            _inputSystem.PlayerActions.Enable();
+            _inputSystem.UI.Disable();
+        }
+
+        public void EnableUI()
+        {
+            _inputSystem.PlayerMovement.Disable();
+            _inputSystem.PlayerActions.Disable();
+            _inputSystem.UI.Enable();
         }
 }

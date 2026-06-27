@@ -285,18 +285,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 596843641}
+    m_SelectOnDown: {fileID: 1577788319}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.90588236, g: 0.90588236, b: 0.90588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -316,9 +316,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1371206626}
-        m_TargetAssemblyTypeName: Interact.PlayerInteraction, Assembly-CSharp
-        m_MethodName: ShowGameWindow
+      - m_Target: {fileID: 1371206641}
+        m_TargetAssemblyTypeName: UI.UIManager, Assembly-CSharp
+        m_MethodName: CloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -801,6 +801,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5664192233717073200, guid: d060b9c539214f34087d1d09081ce657, type: 3}
+      propertyPath: m_Value
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -814,6 +818,11 @@ GameObject:
 --- !u!224 &142210017 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 977152389768080977, guid: d060b9c539214f34087d1d09081ce657, type: 3}
+  m_PrefabInstance: {fileID: 142210015}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &142210018 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7952492487363140255, guid: d060b9c539214f34087d1d09081ce657, type: 3}
   m_PrefabInstance: {fileID: 142210015}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &221133247 stripped
@@ -2975,18 +2984,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 1577788319}
+    m_SelectOnDown: {fileID: 120664559}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.90588236, g: 0.90588236, b: 0.90588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -3006,18 +3015,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1371206626}
-        m_TargetAssemblyTypeName: Interact.PlayerInteraction, Assembly-CSharp
-        m_MethodName: ShowGameWindow
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
       - m_Target: {fileID: 1651301904}
         m_TargetAssemblyTypeName: FMODUnity.StudioEventEmitter, FMODUnity
         m_MethodName: Play
@@ -3030,9 +3027,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 1
         m_CallState: 2
-      - m_Target: {fileID: 1371206626}
-        m_TargetAssemblyTypeName: Interact.PlayerInteraction, Assembly-CSharp
-        m_MethodName: ShowSettingWindow
+      - m_Target: {fileID: 1371206641}
+        m_TargetAssemblyTypeName: UI.UIManager, Assembly-CSharp
+        m_MethodName: OpenSettings
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -5607,6 +5604,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 686460065648823492, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: _escSound
+      value: 
+      objectReference: {fileID: 2146400697}
+    - target: {fileID: 686460065648823492, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: _gameWindow
+      value: 
+      objectReference: {fileID: 1499994874}
+    - target: {fileID: 686460065648823492, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: _settingWindow
+      value: 
+      objectReference: {fileID: 142210016}
+    - target: {fileID: 686460065648823492, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: _pauseFirstButton
+      value: 
+      objectReference: {fileID: 1577788317}
+    - target: {fileID: 686460065648823492, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+      propertyPath: _settingsFirstButton
+      value: 
+      objectReference: {fileID: 142210018}
     - target: {fileID: 1475423911516671340, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
       propertyPath: _promt
       value: 
@@ -5684,22 +5701,22 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
---- !u!114 &1371206626 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 4461746442068767276, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
-  m_PrefabInstance: {fileID: 1371206625}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1371206628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41396f46859d54cbda18f2c7ddfcf375, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &1371206628 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2703859887912056894, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
   m_PrefabInstance: {fileID: 1371206625}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1371206641 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 686460065648823492, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+  m_PrefabInstance: {fileID: 1371206625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1371206628}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 76175035f127fbb4d8fe375d792fd6ef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1373089418
 GameObject:
   m_ObjectHideFlags: 0
@@ -6319,18 +6336,18 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 3
+    m_Mode: 4
     m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
+    m_SelectOnUp: {fileID: 120664559}
+    m_SelectOnDown: {fileID: 596843641}
     m_SelectOnLeft: {fileID: 0}
     m_SelectOnRight: {fileID: 0}
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_HighlightedColor: {r: 0.90588236, g: 0.90588236, b: 0.90588236, a: 1}
     m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_SelectedColor: {r: 1, g: 0.4764151, b: 0.4764151, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -6362,9 +6379,9 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1371206626}
-        m_TargetAssemblyTypeName: Interact.PlayerInteraction, Assembly-CSharp
-        m_MethodName: ShowGameWindow
+      - m_Target: {fileID: 1371206641}
+        m_TargetAssemblyTypeName: UI.UIManager, Assembly-CSharp
+        m_MethodName: CloseAllWindows
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -7356,7 +7373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 0}
+  m_FirstSelected: {fileID: 1577788317}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1843600431
@@ -8273,6 +8290,17 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!114 &2146400697 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5480792009666125936, guid: c95970226f71642c7a628f1ed587fcfe, type: 3}
+  m_PrefabInstance: {fileID: 1371206625}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0218f2b0658b9a649850baa34b382fb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

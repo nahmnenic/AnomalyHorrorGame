@@ -1,4 +1,5 @@
 using System;
+using Data;
 using Player;
 using UnityEngine;
 using UnityEngine.UI;
@@ -13,17 +14,16 @@ namespace UI
         [SerializeField] private Text _sensTxt;
         [SerializeField] private Slider _sensValue;
         
-        [SerializeField] private float _volume;
-        [SerializeField] private float _sens;
-        
         private CameraController _cameraController;
+        private GameSession _gameSession;
 
         private void Start()
         {
+            _gameSession = FindFirstObjectByType<GameSession>();
             _cameraController = FindFirstObjectByType<CameraController>();
             
-            _volumeValue.SetValueWithoutNotify(_volume);
-            _sensValue.SetValueWithoutNotify(_sens);
+            _volumeValue.SetValueWithoutNotify(_gameSession.Volume);
+            _sensValue.SetValueWithoutNotify(_gameSession.Sensitivity);
             
             ChangeVolume();
             ChangeSensetivity();
@@ -35,12 +35,14 @@ namespace UI
             string vcaPath = "vca:/Master";
             FMOD.Studio.VCA vca = FMODUnity.RuntimeManager.GetVCA(vcaPath);
             vca.setVolume(_volumeValue.value / 100);
+            _gameSession.Volume = _volumeValue.value;
         }
         
         public void ChangeSensetivity()
         {
             _sensTxt.text = Math.Round(_sensValue.value, 2).ToString();
             _cameraController.mouseSense = _sensValue.value / 10;
+            _gameSession.Sensitivity = _sensValue.value;
         }
     }
 }

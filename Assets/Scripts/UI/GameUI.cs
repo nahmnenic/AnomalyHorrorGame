@@ -28,6 +28,7 @@ namespace UI
         private RoomController _roomController;
         private LoadObjectGameComponent _loadObjectGameComponent;
         private KeyController _keyController;
+        private UIManager _uiMananger;
 
         [SerializeField] private TMP_Text _promtInteract;
          public Image _blackScreen;
@@ -53,18 +54,19 @@ namespace UI
             _roomController =  FindObjectOfType<RoomController>();
             _keyController =  FindObjectOfType<KeyController>();
             _loadObjectGameComponent = GetComponent<LoadObjectGameComponent>();
+            _uiMananger =  FindObjectOfType<UIManager>();
             StartCoroutine(StartGame());
         }
 
         private IEnumerator StartGame()
         {
-            _playerInteraction.BlockMove = true;
+            _uiMananger.BlockMove = true;
             yield return new WaitForSeconds(1f);
             _settingWindow.SetActive(false);
             _downloadScreen.SetActive(false);
             _interactUI.SetActive(true);
             StartCoroutine(Timer());
-            _playerInteraction.BlockMove = false;
+            _uiMananger.BlockMove = false;
         }
         
         public void UnlockCursor()
@@ -89,7 +91,7 @@ namespace UI
                 _timerText.text = minutes.ToString("00") + ":" + seconds.ToString("00");
                 yield return new WaitForSeconds(1f);
                 
-                if (!_playerInteraction.BlockMove)
+                if (!_uiMananger.BlockMove)
                     _time--;
             }
         }
@@ -162,11 +164,11 @@ namespace UI
             ReturnBool();
             _time = 300f;
             _loadObjectGameComponent.LoadObject();
-            _playerInteraction.BlockMove = true;
+            _uiMananger.BlockMove = true;
             
             yield return new WaitForSeconds(2f);
 
-            _playerInteraction.BlockMove = false;
+            _uiMananger.BlockMove = false;
             AllDebug();
             _blackScreen.gameObject.SetActive(false);
             _whiteScreen.gameObject.SetActive(false);
