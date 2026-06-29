@@ -1,3 +1,4 @@
+using Interact.UI;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -9,18 +10,18 @@ namespace UI
         [SerializeField] private GameObject _gameWindow;
         [SerializeField] private GameObject _settingWindow;
 
+        [Header("Settings")] 
+        [SerializeField] private bool _mainMenu;
+        
         [Header("Sound")]
         [SerializeField] private SoundController _escSound;
-
-        [Header("Settings")]
-        [SerializeField] private bool _mainMenu;
         
         [Header("EventSystem")]
         [SerializeField] private GameObject _pauseFirstButton;
         [SerializeField] private GameObject _settingsFirstButton;
         private GameObject _lastSelected;
 
-        private GameUI _gameUI;
+        [SerializeField] private GameUI _gameUI;
 
         public bool UIisOpen { get; private set; }
         public bool BlockMove { get; set; }
@@ -30,11 +31,9 @@ namespace UI
 
         private void Awake()
         {
-            _gameUI = FindFirstObjectByType<GameUI>();
-
-            if (_gameWindow != null) _gameWindow.SetActive(false);
             if (_settingWindow != null) _settingWindow.SetActive(false);
-
+            if(_mainMenu) return;
+            if (_gameWindow != null) _gameWindow.SetActive(false);
             SetUIState(false);
         }
         
@@ -76,6 +75,11 @@ namespace UI
             {
                 ClearSelection();
             }
+            
+            if (!_mainMenu)
+            {
+                FindFirstObjectByType<InteractPromt>().SwitchDevice(usingGamepad);
+            }
         }
         
         public void SelectButtonForCurrentWindow()
@@ -108,16 +112,14 @@ namespace UI
             UIisOpen = isOpen;
             BlockMove = isOpen;
 
-            if (isOpen)
+            if (_gameUI != null)
             {
-                _gameUI.UnlockCursor();
-                OnUIOpened?.Invoke();
+                if (isOpen) _gameUI.UnlockCursor();
+                else _gameUI.BlockCursor();
             }
-            else
-            {
-                _gameUI.BlockCursor();
-                OnUIClosed?.Invoke();
-            }
+            
+            if (isOpen) OnUIOpened?.Invoke();
+            else OnUIClosed?.Invoke();
         }
 
         private void OpenWindow(GameObject window)
@@ -145,7 +147,7 @@ namespace UI
 
         public void TogglePauseMenu()
         {
-            if (_mainMenu) return;
+            if (_gameWindow == null) return;
 
             if (UIisOpen) CloseAllWindows();
             else OpenWindow(_gameWindow);
@@ -163,15 +165,15 @@ namespace UI
 
         public void HandleEscape()
         {
-            PlayEscapeSound();
-
             if (_settingWindow != null && _settingWindow.activeSelf)
             {
+                PlayEscapeSound();
                 CloseSettings();
                 return;
             }
 
-            TogglePauseMenu();
+            if(_mainMenu) return;
+            if(_gameWindow != null) TogglePauseMenu();
         }
 
         public void PlayEscapeSound()

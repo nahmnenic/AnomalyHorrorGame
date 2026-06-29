@@ -1,12 +1,14 @@
 using System;
 using TMPro;
 using UnityEngine;
+using UnityEngine.UI;
 
 namespace Interact.UI
 {
     public class InteractPromt : MonoBehaviour
     {
         [SerializeField] private TMP_Text _label;
+        [SerializeField] private Image _labelImage;
         [SerializeField] private Vector3 _worldOffset = new Vector3(0f, 1f, 0f);
         [SerializeField] private string _keyHint = "[E]";
         private Camera _camera;
@@ -14,6 +16,9 @@ namespace Interact.UI
         private Canvas _canvas;
         private RectTransform _canvasRect;
         private RectTransform _labelRect;
+        
+        [SerializeField] private Sprite _keyboardSprite;
+        [SerializeField] private Sprite _gamepadSprite;
 
         private void Awake()
         {
@@ -34,8 +39,7 @@ namespace Interact.UI
             Vector3 worldPos = _target.position + _worldOffset;
             Vector3 screenPos = _camera.WorldToScreenPoint(worldPos);
             Camera uiCam = _canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : _camera;
-            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvasRect, screenPos, uiCam,
-                    out Vector2 localPoint))
+            if (RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvasRect, screenPos, uiCam, out Vector2 localPoint))
             {
                 _labelRect.anchoredPosition = localPoint;
             }
@@ -50,14 +54,22 @@ namespace Interact.UI
                 return;
             }
             _target = interactable.transform;
-            _label.text = $"{_keyHint}{interactable.DisplayName}";
+            _label.text = interactable.DisplayName;
+            
             _label.gameObject.SetActive(true);
+            _labelImage.gameObject.SetActive(true);
         }
 
         public void Hide()
         {
             _label.gameObject.SetActive(false);
+            _labelImage.gameObject.SetActive(false);
             _target = null;
+        }
+
+        public void SwitchDevice(bool usingGamepad)
+        {
+            _labelImage.sprite = usingGamepad ? _gamepadSprite : _keyboardSprite;
         }
     }
 }

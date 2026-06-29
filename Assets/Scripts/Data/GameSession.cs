@@ -1,3 +1,4 @@
+using Player;
 using UnityEngine;
 
 namespace Data
@@ -5,6 +6,8 @@ namespace Data
     public class GameSession : MonoBehaviour
     {
         public static GameSession Instance { get; private set; }
+        
+        private CameraController _cameraController;
 
         public float Sensitivity { get; set; }
         public float Volume { get; set; }
@@ -24,6 +27,7 @@ namespace Data
             DontDestroyOnLoad(gameObject);
 
             Load();
+            SetSettings();
         }
 
         private void OnApplicationQuit()
@@ -42,6 +46,19 @@ namespace Data
         {
             Sensitivity = PlayerPrefs.GetFloat(SensKey, 2.5f);
             Volume = PlayerPrefs.GetFloat(VolumeKey, 100f);
+        }
+
+        public void SetSettings()
+        {
+            _cameraController.mouseSense = Sensitivity / 10;
+            SetVolume();
+        }
+        
+        private void SetVolume()
+        {
+            string vcaPath = "vca:/Master";
+            FMOD.Studio.VCA vca = FMODUnity.RuntimeManager.GetVCA(vcaPath);
+            vca.setVolume(Volume / 100);
         }
     }
 }
