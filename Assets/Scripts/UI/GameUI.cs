@@ -17,7 +17,7 @@ namespace UI
         [SerializeField] public float _time;
         private bool _timerFlag;
         
-        [SerializeField] private TMP_Text _roomName;
+        public TMP_Text _roomName;
 
         [Header("Start Download")] 
         [SerializeField] private GameObject _settingWindow;

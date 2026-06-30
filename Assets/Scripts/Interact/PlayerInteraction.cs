@@ -1,5 +1,6 @@
 using System;
 using Interact.UI;
+using RoomMananger;
 using UI;
 using UnityEngine;
 
@@ -12,6 +13,7 @@ namespace Interact
         [SerializeField] private LayerMask _interactionLayer;
         [SerializeField] private InteractPromt _promt;
         [SerializeField] private Transform _interactionPoint;
+        [SerializeField] private Transform _interactionPointParent;
         private Collider[] _interactionResult = new Collider[32];
 
         [Header("Raycast")] 
@@ -41,7 +43,6 @@ namespace Interact
             
             if (Focused != null)
             {
-                Focused.OnFocusEnter();
                 _promt.Show(Focused);
             }
             else
@@ -52,23 +53,30 @@ namespace Interact
 
         private IInteractable FindNearestInteractable()
         {
-            int count = Physics.OverlapSphereNonAlloc(
-                _interactionPoint.position,
-                _interactionRadius,
-                _interactionResult,
-                _interactionLayer);
+            int count = Physics.OverlapSphereNonAlloc(_interactionPoint.position, _interactionRadius, _interactionResult, _interactionLayer);
             IInteractable nearst = null;
             float bestDistSq = float.MaxValue;
 
             for (int i = 0; i < count; i++)
             {
-                Collider col =  _interactionResult[i];
+                Collider col = _interactionResult[i];
                 if (col == null) continue;
+
                 IInteractable interactable = col.GetComponentInParent<IInteractable>();
                 if (interactable == null) continue;
-                if(!interactable.Enabled()) continue;
+                if (!interactable.Enabled()) continue;
                 if (!interactable.CanInteract()) continue;
-                float distSq = (col.transform.position - _interactionPoint.position).sqrMagnitude;
+
+                Vector3 origin = _interactionPointParent.position;
+                Vector3 target = col.bounds.center;
+                Vector3 dir = target - origin;
+                float distance = dir.magnitude;
+
+                // Есть ли стена?
+                if (Physics.Raycast(origin, dir.normalized, distance, _layerMask))
+                    continue;
+
+                float distSq = dir.sqrMagnitude;
                 if (distSq < bestDistSq)
                 {
                     bestDistSq = distSq;
@@ -96,6 +104,7 @@ namespace Interact
         {
             if (Focused != null) _promt.Show(Focused);
         }
+        
 
         private void OnDisable()
         {

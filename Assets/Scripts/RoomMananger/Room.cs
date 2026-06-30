@@ -28,7 +28,6 @@ namespace RoomMananger
         public bool CloseDoor()
         {
             if (!Door.GetComponent<RotateObjectComponent>().IsOpen) return true;
-            //if (Door.localEulerAngles.y == 0) return true;
             
             return false;
         }

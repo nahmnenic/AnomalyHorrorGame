@@ -17,9 +17,16 @@ namespace Interact
         [SerializeField] private bool _isEnabled = true;
         [SerializeField] private float _minTimeToSwitch;
         private float _nextUseTime;
+        [SerializeField] private Transform _promptPoint;
+        public Transform PromptPoint => _promptPoint;
+        [SerializeField] private bool _mainRoom;
 
-        public GameObject TextPos;
-        
+        public bool mainRoom
+        {
+            get => _mainRoom;
+            set => _mainRoom = value;
+        }
+
         public event Action DisplayNameChanged;
         
         public bool On;
@@ -101,16 +108,6 @@ namespace Interact
             
         }
 
-        public void OnFocusEnter()
-        {
-            //_outline.enabled = true;
-        }
-
-        public void OnFocusExit()
-        {
-            //_outline.enabled = false;
-        }
-
         public void SwitchOn()
         {
             if(On) On = false;
@@ -122,11 +119,6 @@ namespace Interact
         public bool Enabled()
         {
             return gameObject.GetComponent<InteractableComponent>().enabled;
-        }
-
-        public GameObject TextTransform()
-        {
-            return TextPos;
         }
         
     }

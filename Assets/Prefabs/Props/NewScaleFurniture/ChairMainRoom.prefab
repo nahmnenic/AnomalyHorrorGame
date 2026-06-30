@@ -1674,6 +1674,8 @@ MonoBehaviour:
   _displayNameOff: Take
   _isEnabled: 1
   _minTimeToSwitch: 0
+  _mainRoom: 1
+  _promptPoint: {fileID: 0}
   On: 0
   AntiSpam: 0
   BlockSwitch: 0

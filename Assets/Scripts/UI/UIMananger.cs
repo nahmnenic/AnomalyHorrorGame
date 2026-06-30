@@ -40,7 +40,9 @@ namespace UI
         private void Update()
         {
             if (EventSystem.current == null) return;
-
+            
+            if (!EventSystem.current.sendNavigationEvents) ClearSelection();
+            
             if (EventSystem.current.currentSelectedGameObject != null)
             {
                 _lastSelected = EventSystem.current.currentSelectedGameObject;

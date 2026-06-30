@@ -40,7 +40,6 @@ namespace Interact
             
             if (Focused != null)
             {
-                Focused.OnFocusEnter();
                 _promt.Show(Focused);
             }
             else
@@ -92,7 +91,6 @@ namespace Interact
 
         public void Hide()
         {
-            Focused.OnFocusExit();
             _promt.Hide();
         }
         

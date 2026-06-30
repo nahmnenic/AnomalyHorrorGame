@@ -24,12 +24,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 585863050435549241}
   serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0.17364816, w: 0.9848078}
-  m_LocalPosition: {x: 0.0755, y: -0.0265, z: -0.0069}
+  m_LocalRotation: {x: -0, y: -0, z: -0.3420201, w: 0.9396926}
+  m_LocalPosition: {x: 0.009, y: 0.025, z: -0.024596222}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 5320022118345834011}
+  m_Father: {fileID: 2492599859220761567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1547803701484365233
 GameObject:
@@ -68,8 +68,7 @@ Transform:
   m_LocalPosition: {x: -0.052803278, y: 0.023723602, z: -0.043596268}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 7457286675279825604}
+  m_Children: []
   m_Father: {fileID: 2492599859220761567}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 20}
 --- !u!114 &6033692927166833492
@@ -483,7 +482,7 @@ MonoBehaviour:
   _displayNameOff: On
   _isEnabled: 1
   _minTimeToSwitch: 0
-  TextPos: {fileID: 585863050435549241}
+  _promptPoint: {fileID: 7457286675279825604}
   On: 0
   AntiSpam: 0
   BlockSwitch: 0
@@ -589,6 +588,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 7457286675279825604}
   - {fileID: 5320022118345834011}
   - {fileID: 4805942158618497090}
   m_Father: {fileID: 0}

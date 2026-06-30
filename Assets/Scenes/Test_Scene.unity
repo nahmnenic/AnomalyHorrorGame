@@ -12693,7 +12693,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-381158
+  m_Name: pb_Mesh-781342
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -21994,6 +21994,8 @@ MonoBehaviour:
   _displayNameOff: E
   _isEnabled: 1
   _minTimeToSwitch: 0
+  _promptPoint: {fileID: 0}
+  _mainRoom: 0
   On: 0
   AntiSpam: 0
   BlockSwitch: 0
@@ -32319,7 +32321,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-381304
+  m_Name: pb_Mesh-781492
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -35841,6 +35843,9 @@ MonoBehaviour:
   _timerText: {fileID: 1714392029}
   _time: 300
   _roomName: {fileID: 571717952}
+  _settingWindow: {fileID: 0}
+  _downloadScreen: {fileID: 0}
+  _interactUI: {fileID: 0}
   _promtInteract: {fileID: 0}
   _blackScreen: {fileID: 263824470}
   _whiteScreen: {fileID: 371709955}
@@ -72427,6 +72432,9 @@ MonoBehaviour:
   _timerText: {fileID: 1714392029}
   _time: 300
   _roomName: {fileID: 571717952}
+  _settingWindow: {fileID: 0}
+  _downloadScreen: {fileID: 0}
+  _interactUI: {fileID: 0}
   _promtInteract: {fileID: 0}
   _blackScreen: {fileID: 263824470}
   _whiteScreen: {fileID: 371709955}
@@ -85064,7 +85072,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh-381248
+  m_Name: pb_Mesh-781436
   serializedVersion: 11
   m_SubMeshes:
   - serializedVersion: 2
@@ -136055,9 +136063,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ccf8fd22eaf00346b185705b5a58e05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _current: {fileID: 0}
   _label: {fileID: 797289425}
+  _labelImage: {fileID: 0}
   _worldOffset: {x: 0, y: 0, z: 0}
   _keyHint: '[E]'
+  _keyboardSprite: {fileID: 0}
+  _gamepadSprite: {fileID: 0}
 --- !u!43 &2077150119
 Mesh:
   m_ObjectHideFlags: 0
@@ -143983,6 +143995,10 @@ PrefabInstance:
     - target: {fileID: 3378732843731691215, guid: 9fae84508967e7b4bb5824c9c320f359, type: 3}
       propertyPath: m_VersionIndex
       value: 876
+      objectReference: {fileID: 0}
+    - target: {fileID: 3378732843731691215, guid: 9fae84508967e7b4bb5824c9c320f359, type: 3}
+      propertyPath: m_SelectedVertices.Array.size
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3409629877693422498, guid: 9fae84508967e7b4bb5824c9c320f359, type: 3}
       propertyPath: m_Mesh

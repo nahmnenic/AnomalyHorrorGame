@@ -73,13 +73,25 @@ public class InputManager : MonoBehaviour
         public void HandleAllInput()
         {
             HandleEscapeInput();
-            if(_uiManager.BlockMove) return;
+            if (_uiManager.BlockMove)
+            {
+                BlockMoveInput();
+                return;
+            }
             HandleMovementInput();
             HandleSprintingInput();
             HandleInteractionInput();
             HandleSwitchInput();
         }
 
+        private void BlockMoveInput()
+        {
+            movementInput = new Vector2(0, 0);
+            moveAmount = 0;
+            verticalInput = 0;
+            horizontalalInput = 0;
+        }
+        
         private void HandleMovementInput()
         {
             verticalInput = movementInput.y;

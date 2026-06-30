@@ -7,6 +7,7 @@ namespace Interact.UI
 {
     public class InteractPromt : MonoBehaviour
     {
+        [SerializeField] private RectTransform _current;
         [SerializeField] private TMP_Text _label;
         [SerializeField] private Image _labelImage;
         [SerializeField] private Vector3 _worldOffset = new Vector3(0f, 1f, 0f);
@@ -23,7 +24,7 @@ namespace Interact.UI
         private void Awake()
         {
             _camera = Camera.main;
-            _labelRect = _label.rectTransform;
+            _labelRect = _current;
             _canvas = _label.GetComponentInParent<Canvas>();
             _canvasRect = _canvas.GetComponent<RectTransform>();
             Hide();
@@ -43,6 +44,7 @@ namespace Interact.UI
             {
                 _labelRect.anchoredPosition = localPoint;
             }
+            Debug.DrawLine(_target.position, _target.position + _worldOffset, Color.red);
             
         }
 
@@ -53,7 +55,7 @@ namespace Interact.UI
                 Hide();
                 return;
             }
-            _target = interactable.TextTransform().transform;
+            _target = interactable.PromptPoint != null ? interactable.PromptPoint : interactable.transform;
             _label.text = interactable.DisplayName;
             
             _label.gameObject.SetActive(true);
