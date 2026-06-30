@@ -17,6 +17,8 @@ namespace Interact
         [SerializeField] private bool _isEnabled = true;
         [SerializeField] private float _minTimeToSwitch;
         private float _nextUseTime;
+
+        public GameObject TextPos;
         
         public event Action DisplayNameChanged;
         
@@ -121,5 +123,11 @@ namespace Interact
         {
             return gameObject.GetComponent<InteractableComponent>().enabled;
         }
+
+        public GameObject TextTransform()
+        {
+            return TextPos;
+        }
+        
     }
 }

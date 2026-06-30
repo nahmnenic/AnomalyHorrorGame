@@ -1065,8 +1065,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  _displayNameOn: E
-  _displayNameOff: E
+  _displayNameOn: Take
+  _displayNameOff: Take
   _isEnabled: 1
   _minTimeToSwitch: 0
   On: 0

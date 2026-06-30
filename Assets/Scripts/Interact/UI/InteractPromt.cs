@@ -53,7 +53,7 @@ namespace Interact.UI
                 Hide();
                 return;
             }
-            _target = interactable.transform;
+            _target = interactable.TextTransform().transform;
             _label.text = interactable.DisplayName;
             
             _label.gameObject.SetActive(true);
