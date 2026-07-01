@@ -29,7 +29,6 @@ public class SofaController : MonoBehaviour
 
     public void MoveSofa(int number)
     {
-        if (!_inventory.CheckRooms()) return;
         switch (number)
         {
             case 1:

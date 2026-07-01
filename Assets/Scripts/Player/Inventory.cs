@@ -26,24 +26,6 @@ namespace Player
             UpdateProps();
         }
 
-        public bool CheckRooms()
-        {
-            bool flag = true;
-            //if(Skip) return true;
-            var rooms = FindObjectsOfType<Room>();
-            
-            for (int i = 0; i < rooms.Length; i++)
-            {
-                if (!rooms[i].CloseDoor())
-                {
-                    Debug.Log($"Закройте все двери: {rooms[i].gameObject.name}");
-                    flag = false;
-                }
-            }
-            
-            return flag;
-        }
-
         private void ChangeMode()
         {
             if (Chair || Boards)
@@ -62,8 +44,6 @@ namespace Player
         
         public void AddChair()
         {
-            if (!CheckRooms()) return;
-            
             if(Boards) return;
             Chair = true;
             ChairPrefab.SetActive(false);
@@ -78,8 +58,6 @@ namespace Player
 
         public void AddBoard()
         {
-            if (!CheckRooms()) return;
-            
             if(Chair) return;
             Boards = true;
             BoardPrefab.SetActive(false);

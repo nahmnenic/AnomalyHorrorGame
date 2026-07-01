@@ -34,6 +34,7 @@ namespace Interact
         public void Barricade()
         {
             if (_baricade.Bariccade) return;
+            CloseDoor();
             if (_inventory.Boards)
             {
                 BoardPrefab.SetActive(true);
@@ -52,12 +53,18 @@ namespace Interact
                 DropChair();
                 DisableBaricade();
             }
+            
             Bariccade = true;
             CheckDoorComponent[] PosSofa = FindObjectsOfType<CheckDoorComponent>();
             foreach (CheckDoorComponent CheckDoor in PosSofa)
             {
                 CheckDoor.CheckDoor();
             }
+        }
+
+        private void CloseDoor()
+        {
+            if(_doorHandle1.On) _doorHandle1.Interact();
         }
 
         public void DisableBaricade()
