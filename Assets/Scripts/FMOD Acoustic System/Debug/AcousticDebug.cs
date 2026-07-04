@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace FMOD_Acoustic_System.Debug
+namespace FMODAcoustics
 {
     public static class AcousticDebug
     {

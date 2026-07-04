@@ -1,65 +1,47 @@
 ﻿using UnityEngine;
 
-namespace FMOD_Acoustic_System.Utilities
+namespace FMODAcoustics
 {
     [CreateAssetMenu(
-        fileName = "Acoustic Settings",
-        menuName = "FMOD Acoustics/Acoustic Settings")]
+        fileName = "AcousticSettings",
+        menuName = "FMOD Acoustic System/Acoustic Settings")]
     public class AcousticSettings : ScriptableObject
     {
         [Header("Occlusion")]
 
-        [Tooltip("Количество лучей для проверки окклюзии.")]
-        [Range(1, 32)]
-        public int rayCount = 9;
+        [Range(0f, 20f)]
+        public float occlusionSmoothSpeed = 8f;
 
-        [Tooltip("Радиус вокруг источника, в котором будут выпускаться дополнительные лучи.")]
-        [Range(0f, 2f)]
-        public float rayRadius = 0.35f;
-
-        [Tooltip("Максимальная дистанция проверки.")]
-        public float maxDistance = 60f;
-
-        [Tooltip("Какие слои считаются препятствиями.")]
-        public LayerMask occlusionLayers;
+        [Range(0f, 1f)]
+        public float maxOcclusion = 1f;
 
         [Header("Diffraction")]
 
-        [Tooltip("Максимальный угол поиска края стены.")]
-        [Range(5f, 90f)]
-        public float diffractionAngle = 35f;
+        [Range(0f, 20f)]
+        public float diffractionSmoothSpeed = 6f;
 
-        [Tooltip("Количество лучей поиска края.")]
-        [Range(5, 40)]
-        public int diffractionRays = 15;
+        [Range(0f, 1f)]
+        public float minDiffractionVolume = 0.05f;
 
-        [Tooltip("Максимальное расстояние поиска края.")]
-        public float diffractionDistance = 4f;
+        [Range(0f, 1f)]
+        public float maxDiffractionVolume = 0.6f;
 
-        [Header("Update")]
+        [Header("Raycasting")]
 
-        [Tooltip("Сколько источников обновлять за кадр.")]
-        [Range(1, 100)]
-        public int sourcesPerFrame = 20;
+        public float maxRayDistance = 50f;
 
-        [Tooltip("Скорость сглаживания параметров.")]
-        [Range(1f, 30f)]
-        public float interpolationSpeed = 8f;
+        public LayerMask geometryMask = ~0;
 
         [Header("Performance")]
 
-        [Tooltip("Не обновлять очень дальние источники.")]
-        public float cullingDistance = 100f;
-
-        [Tooltip("Минимальное смещение объекта перед пересчетом.")]
-        public float movementThreshold = 0.05f;
+        [Range(1, 8)]
+        public int edgeSearchSteps = 4;
 
         [Header("Debug")]
 
+        public bool enableDebug = true;
+
         public bool drawRays = true;
-
-        public bool drawDiffraction = true;
-
-        public bool drawLabels = false;
+        public bool drawDiffractionPoints = true;
     }
 }

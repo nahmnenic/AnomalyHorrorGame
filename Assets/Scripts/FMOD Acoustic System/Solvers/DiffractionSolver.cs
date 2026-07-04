@@ -1,88 +1,52 @@
-﻿using FMOD_Acoustic_System.Core;
-using FMOD_Acoustic_System.Utilities;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace FMOD_Acoustic_System.Solvers
+namespace FMODAcoustics
 {
-    public static class DiffractionSolver
+    public class DiffractionSolver : MonoBehaviour
     {
-        public static float Calculate(AcousticSource source)
+        [Header("References")]
+        [SerializeField] private EdgeFinder edgeFinder;
+
+        [SerializeField] private Transform listener;
+
+        [Header("Settings")]
+        [SerializeField] private float maxDistance = 30f;
+
+        [SerializeField] private float minVolume = 0.05f;
+
+        [SerializeField] private float maxVolume = 0.6f;
+        
+        [Header("Geometry")]
+        [SerializeField] private LayerMask geometryMask;
+
+        //======================================================
+
+        public void Solve(AcousticSource source, FMODEventController fmod)
         {
-            Transform listener = AcousticManager.Listener;
+            if (listener == null || edgeFinder == null)
+                return;
 
-            if (listener == null)
-                return 0;
+            Vector3 origin = source.Position;
+            Vector3 target = listener.position;
 
-            AcousticSettings settings = AcousticManager.Settings;
+            // 1. нет прямого пути
+            if (!Physics.Raycast(origin, target - origin, Vector3.Distance(origin, target), geometryMask))
+                return;
 
-            Vector3 start = source.Position;
-            Vector3 end = listener.position;
+            // 2. ищем edge
+            if (!edgeFinder.TryFindEdge(source, listener, out Vector3 edge))
+                return;
 
-            Vector3 direction = (end - start).normalized;
+            // 3. ВАЖНАЯ ПРОВЕРКА: source → edge
+            if (Physics.Raycast(origin, edge - origin, Vector3.Distance(origin, edge), geometryMask))
+                return;
 
-            float distance = Vector3.Distance(start, end);
+            // 4. ВАЖНАЯ ПРОВЕРКА: edge → listener
+            if (Physics.Raycast(edge, target - edge, Vector3.Distance(edge, target), geometryMask))
+                return;
 
-            // Прямая видимость
-            if (!Physics.Raycast(
-                start,
-                direction,
-                distance,
-                settings.occlusionLayers,
-                QueryTriggerInteraction.Ignore))
-            {
-                return 0;
-            }
-
-            float maxAngle = settings.diffractionAngle;
-            int rayCount = settings.diffractionRays;
-
-            for (int i = 1; i <= rayCount; i++)
-            {
-                float angle =
-                    maxAngle * i / rayCount;
-
-                Vector3 left =
-                    Quaternion.AngleAxis(
-                        -angle,
-                        Vector3.up) * direction;
-
-                if (!Physics.Raycast(
-                    start,
-                    left,
-                    settings.diffractionDistance,
-                    settings.occlusionLayers,
-                    QueryTriggerInteraction.Ignore))
-                {
-                    UnityEngine.Debug.DrawRay(
-                        start,
-                        left * settings.diffractionDistance,
-                        Color.cyan);
-
-                    return 1f - angle / maxAngle;
-                }
-
-                Vector3 right =
-                    Quaternion.AngleAxis(
-                        angle,
-                        Vector3.up) * direction;
-
-                if (!Physics.Raycast(
-                    start,
-                    right,
-                    settings.diffractionDistance,
-                    settings.occlusionLayers,
-                    QueryTriggerInteraction.Ignore))
-                {
-                    UnityEngine.Debug.DrawRay(
-                        start,
-                        right * settings.diffractionDistance,
-                        Color.cyan);
-
-                    return 1f - angle / maxAngle;
-                }
-            }
-
-            return 0;
+            // 5. только теперь дифракция валидна
+            fmod.SetDiffraction(true, edge);
         }
     }
 }

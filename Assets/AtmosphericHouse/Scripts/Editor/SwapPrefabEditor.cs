@@ -10,7 +10,7 @@ namespace PrefabSwapper
 {
     [CustomEditor(typeof(SwapPrefab))]
     [CanEditMultipleObjects]
-    public class SwapPrefabManagerEditor : Editor
+    public class SwapPrefabManagerEditor : UnityEditor.Editor
     {
         public string category;
         public string prefab;

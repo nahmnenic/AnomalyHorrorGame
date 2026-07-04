@@ -12,19 +12,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3926d66096b743949a4c408a9eefe904, type: 3}
   m_Name: Acoustic Settings
   m_EditorClassIdentifier: 
-  rayCount: 9
-  rayRadius: 0.4
-  maxDistance: 60
-  occlusionLayers:
+  occlusionSmoothSpeed: 8
+  maxOcclusion: 1
+  diffractionSmoothSpeed: 6
+  minDiffractionVolume: 0.05
+  maxDiffractionVolume: 0.6
+  maxRayDistance: 50
+  geometryMask:
     serializedVersion: 2
     m_Bits: 2048
-  diffractionAngle: 35
-  diffractionRays: 15
-  diffractionDistance: 4
-  sourcesPerFrame: 20
-  interpolationSpeed: 8
-  cullingDistance: 100
-  movementThreshold: 0.05
+  edgeSearchSteps: 4
+  enableDebug: 1
   drawRays: 1
-  drawDiffraction: 1
-  drawLabels: 0
+  drawDiffractionPoints: 1

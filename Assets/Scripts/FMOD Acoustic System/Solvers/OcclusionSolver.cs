@@ -1,107 +1,75 @@
-﻿using FMOD_Acoustic_System.Core;
-using FMOD_Acoustic_System.Materials;
-using FMOD_Acoustic_System.Utilities;
-using UnityEngine;
+﻿using UnityEngine;
 
-namespace FMOD_Acoustic_System.Solvers
+namespace FMODAcoustics
 {
-    public static class OcclusionSolver
+    public class OcclusionSolver : MonoBehaviour
     {
-        public static float LastMaterialParameter { get; private set; }
+        [Header("References")]
+        [SerializeField] private Transform listener;
 
-        private static readonly Vector3[] RayOffsets =
+        [SerializeField] private LayerMask geometryMask = ~0;
+
+        [Header("Settings")]
+        [SerializeField] private float maxDistance = 50f;
+
+        [SerializeField] private int raySteps = 3;
+
+        
+        private AcousticSource debugSource;
+        //======================================================
+
+        public void Solve(AcousticSource source, FMODEventController fmod)
         {
-            Vector3.zero,
+            if (source == null || fmod == null)
+                return;
 
-            Vector3.up,
-            Vector3.down,
-
-            Vector3.left,
-            Vector3.right,
-
-            new Vector3(1,1,0).normalized,
-            new Vector3(-1,1,0).normalized,
-
-            new Vector3(1,-1,0).normalized,
-            new Vector3(-1,-1,0).normalized
-        };
-
-        public static float Calculate(AcousticSource source)
-        {
-            Transform listener = AcousticManager.Listener;
+            debugSource = source; //  ВАЖНО
 
             if (listener == null)
-                return 0;
+                return;
 
-            AcousticSettings settings = AcousticManager.Settings;
+            Vector3 origin = source.Position;
+            Vector3 target = listener.position;
 
-            Vector3 start = source.Position;
-            Vector3 end = listener.position;
+            Vector3 dir = target - origin;
 
-            Vector3 direction = (end - start).normalized;
+            if (dir.sqrMagnitude < 0.0001f)
+                return;
 
-            float distance = Vector3.Distance(start, end);
+            float distance = dir.magnitude;
+            dir /= distance;
 
-            LastMaterialParameter = 0;
-
-            int blocked = 0;
-
-            Vector3 right = Vector3.Cross(direction, Vector3.up);
-
-            if (right.sqrMagnitude < 0.001f)
-                right = Vector3.right;
-
-            right.Normalize();
-
-            Vector3 up = Vector3.Cross(right, direction);
-
-            float radius = settings.rayRadius;
-
-            for (int i = 0; i < RayOffsets.Length; i++)
+            if (!Physics.Raycast(origin, dir, distance, geometryMask))
             {
-                Vector3 offset =
-                    right * RayOffsets[i].x * radius +
-                    up * RayOffsets[i].y * radius;
-
-                Vector3 origin = start + offset;
-
-                bool hitSomething =
-                    Physics.Raycast(
-                        origin,
-                        direction,
-                        out RaycastHit hit,
-                        distance,
-                        settings.occlusionLayers,
-                        QueryTriggerInteraction.Ignore);
-
-                if (hitSomething)
-                {
-                    blocked++;
-
-                    AcousticMaterial material =
-                        hit.collider.GetComponent<AcousticMaterial>();
-
-                    if (material != null)
-                    {
-                        LastMaterialParameter =
-                            material.MaterialParameter;
-                    }
-
-                    UnityEngine.Debug.DrawLine(
-                        origin,
-                        hit.point,
-                        Color.red);
-                }
-                else
-                {
-                    UnityEngine.Debug.DrawLine(
-                        origin,
-                        origin + direction * distance,
-                        Color.green);
-                }
+                fmod.SetDirectPosition(origin);
+                fmod.SetDiffraction(false, Vector3.zero);
             }
+        }
+        
+        private void OnDrawGizmos()
+        {
+            if (listener == null || debugSource == null)
+                return;
 
-            return blocked / (float)RayOffsets.Length;
+            Gizmos.color = Color.yellow;
+
+            Vector3 origin = debugSource.Position;
+            Vector3 target = listener.position;
+
+            Vector3 dir = (target - origin).normalized;
+
+            Gizmos.DrawLine(origin, target);
+
+            Vector3 right = Vector3.Cross(dir, Vector3.up);
+
+            for (int i = 0; i < raySteps; i++)
+            {
+                float angle = (i / (float)(raySteps - 1) - 0.5f) * 0.15f;
+
+                Vector3 spreadDir = (dir + right * angle).normalized;
+
+                Gizmos.DrawRay(origin, spreadDir * 3f);
+            }
         }
     }
 }
