@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0bf82c42c89bfe54f889935ba902339d, type: 3}
+  m_Name: SurfaceMaterialDatabase
+  m_EditorClassIdentifier: 
+  materials:
+  - materialName: Concrete
+    layer:
+      serializedVersion: 2
+      m_Bits: 4096
+    occlusionValue: 1
+  - materialName: Wood
+    layer:
+      serializedVersion: 2
+      m_Bits: 8192
+    occlusionValue: 0.5
+  - materialName: Glass
+    layer:
+      serializedVersion: 2
+      m_Bits: 16384
+    occlusionValue: 0.3
+  - materialName: Fabric
+    layer:
+      serializedVersion: 2
+      m_Bits: 32768
+    occlusionValue: 0.1
