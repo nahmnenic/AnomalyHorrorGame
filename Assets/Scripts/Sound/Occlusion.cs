@@ -1,4 +1,3 @@
-using System;
 using FMODUnity;
 using UnityEngine;
 
@@ -7,7 +6,7 @@ namespace Sound
     public class Occlusion : MonoBehaviour
     {
         [Header("Player")]
-        [SerializeField] private Transform _playerHead;
+        public Transform PlayerHead;
 
         [Header("Rays")]
         [SerializeField] private int _rayCount = 9;
@@ -18,6 +17,9 @@ namespace Sound
 
         private StudioEventEmitter _emitter;
         
+        [HideInInspector] public float CurrentOcclusion;
+        
+        
         private void Start()
         {
             _emitter = GetComponent<StudioEventEmitter>();
@@ -26,17 +28,17 @@ namespace Sound
         private void Update()
         {
             float occlusion = CalculateOcclusion();
-            
+            CurrentOcclusion = occlusion;
             _emitter.EventInstance.setParameterByName("Occlusion", occlusion);
         }
 
         private float DrawOcclusionRays()
         {
-            if (_playerHead == null) return 0;
+            if (PlayerHead == null) return 0;
 
             float totalOcclusion = 0;
 
-            Vector3 center = _playerHead.position;
+            Vector3 center = PlayerHead.position;
             Vector3 directionToHead = (center - transform.position).normalized;
             Vector3 right = Vector3.Cross(Vector3.up, directionToHead).normalized;
 
