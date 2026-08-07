@@ -97,12 +97,11 @@ public class InputManager : MonoBehaviour
             verticalInput = movementInput.y;
             horizontalalInput = movementInput.x;
             moveAmount = Mathf.Clamp01(Mathf.Abs(horizontalalInput) + Mathf.Abs(verticalInput));
-            if(moveAmount!=0 && !_soundController.IsPlaying()) _soundController.PlaySound();
         }
 
         private void HandleSprintingInput()
         {
-            if (shift_Input && moveAmount > 0.5f && _playerLococmotion.IsGrounded && verticalInput >= 0)
+            if (shift_Input && moveAmount > 0.5f && verticalInput >= 0)
             {
                 _playerLococmotion.IsSprinting = true;
             }
