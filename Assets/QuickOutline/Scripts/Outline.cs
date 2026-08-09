@@ -75,8 +75,8 @@ public class Outline : MonoBehaviour {
   private List<ListVector3> bakeValues = new List<ListVector3>();
 
   private Renderer[] renderers;
-  private Material outlineMaskMaterial;
-  private Material outlineFillMaterial;
+  private UnityEngine.Material outlineMaskMaterial;
+  private UnityEngine.Material outlineFillMaterial;
 
   private bool needsUpdate;
 
@@ -86,8 +86,8 @@ public class Outline : MonoBehaviour {
     renderers = GetComponentsInChildren<Renderer>();
 
     // Instantiate outline materials
-    outlineMaskMaterial = Instantiate(Resources.Load<Material>(@"Materials/OutlineMask"));
-    outlineFillMaterial = Instantiate(Resources.Load<Material>(@"Materials/OutlineFill"));
+    outlineMaskMaterial = Instantiate(Resources.Load<UnityEngine.Material>(@"Materials/OutlineMask"));
+    outlineFillMaterial = Instantiate(Resources.Load<UnityEngine.Material>(@"Materials/OutlineFill"));
 
     outlineMaskMaterial.name = "OutlineMask (Instance)";
     outlineFillMaterial.name = "OutlineFill (Instance)";
@@ -252,7 +252,7 @@ public class Outline : MonoBehaviour {
     return smoothNormals;
   }
 
-  void CombineSubmeshes(Mesh mesh, Material[] materials) {
+  void CombineSubmeshes(Mesh mesh, UnityEngine.Material[] materials) {
 
     // Skip meshes with a single submesh
     if (mesh.subMeshCount == 1) {

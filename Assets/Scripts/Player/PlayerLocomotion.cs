@@ -26,9 +26,6 @@ namespace Player
         public float CurrentSpeed => _currentSpeed;
         public float RunningSpeed => _runningSpeed;
 
-        /// <summary>
-        /// Реальная горизонтальная скорость игрока.
-        /// </summary>
         public float ActualSpeed
         {
             get
@@ -40,9 +37,6 @@ namespace Player
             }
         }
 
-        /// <summary>
-        /// Действительно ли игрок движется.
-        /// </summary>
         public bool IsMoving => ActualSpeed > 0.05f;
 
         [Header("FOV")]
@@ -51,43 +45,43 @@ namespace Player
 
         private float _defaultFOV;
 
-        [Header("Steps")]
+        [Header("Steps — Movement")]
         [SerializeField] private float _stepDistance = 1.7f;
 
-        [SerializeField] private Slider _leftSlider;
-        [SerializeField] private Slider _rightSlider;
+        [Header("Steps — Rotation")]
+        [SerializeField] private float _stepRotation = 140f;
+        [SerializeField] private float _rotationStepMinSpeed = 10f;
+
+        [Header("Step Progress")]
+        [SerializeField] private Slider _stepSlider;
 
         private float _distance;
+        private float _rotationProgress;
+        private float _rotationDirection;
+        private float _lastYRotation;
+
         private bool _leftLeg = true;
 
-        /// <summary>
-        /// Расстояние, пройденное текущей ногой.
-        /// </summary>
         public float StepDistance => _distance;
+        public float StepRotation => _rotationProgress;
 
-        /// <summary>
-        /// Прогресс текущего шага от 0 до 1.
-        /// </summary>
         public float StepProgress
         {
             get
             {
-                if (_stepDistance <= 0f)
-                    return 0f;
+                if (IsMoving)
+                {
+                    if (_stepDistance <= 0f) return 0f;
+                    return Mathf.Clamp01(_distance / _stepDistance);
+                }
 
-                return Mathf.Clamp01(_distance / _stepDistance);
+                if (_stepRotation <= 0f) return 0f;
+                return Mathf.Clamp01(_rotationProgress / _stepRotation);
             }
         }
 
-        /// <summary>
-        /// true = левая нога.
-        /// false = правая нога.
-        /// </summary>
         public bool IsLeftLeg => _leftLeg;
 
-        /// <summary>
-        /// true только в кадре, когда завершился шаг.
-        /// </summary>
         public bool IsFootstepMoment { get; private set; }
 
 
@@ -99,27 +93,22 @@ namespace Player
             _playerManager = GetComponent<PlayerManager>();
 
             _camera = Camera.main;
+            _lastYRotation = transform.eulerAngles.y;
 
-            if (_camera != null)
-            {
-                _defaultFOV = _camera.fieldOfView;
-            }
+            if (_camera != null) _defaultFOV = _camera.fieldOfView;
         }
 
 
         private void Update()
         {
-            // Сбрасываем событие шага каждый кадр.
             IsFootstepMoment = false;
-
             HandleSteps();
         }
 
 
         public void HandleAllMovement()
         {
-            if (_playerManager != null &&
-                _playerManager.isInteracting)
+            if (_playerManager != null && _playerManager.isInteracting)
             {
                 StopMovement();
                 return;
@@ -131,24 +120,12 @@ namespace Player
 
         private void HandleMovement()
         {
-            _moveDirection =
-                transform.forward * _inputManager.verticalInput;
-
-            _moveDirection +=
-                transform.right * _inputManager.horizontalalInput;
-
-            // Не позволяем движению зависеть от наклона объекта.
+            _moveDirection = transform.forward * _inputManager.verticalInput;
+            _moveDirection += transform.right * _inputManager.horizontalalInput;
             _moveDirection.y = 0f;
 
-            // Если диагональное движение превышает 1,
-            // ограничиваем его.
-            if (_moveDirection.sqrMagnitude > 1f)
-            {
-                _moveDirection.Normalize();
-            }
+            if (_moveDirection.sqrMagnitude > 1f) _moveDirection.Normalize();
 
-
-            // Определяем текущую скорость.
             if (IsSprinting)
             {
                 _currentSpeed = _sprintingSpeed;
@@ -162,17 +139,9 @@ namespace Player
                 _currentSpeed = _walkingSpeed;
             }
 
-
             _moveDirection *= _currentSpeed;
 
-
-            // Сохраняем вертикальную скорость Rigidbody.
-            _rb.velocity = new Vector3(
-                _moveDirection.x,
-                _rb.velocity.y,
-                _moveDirection.z
-            );
-
+            _rb.velocity = new Vector3(_moveDirection.x, _rb.velocity.y, _moveDirection.z);
 
             HandleFOV();
         }
@@ -180,12 +149,7 @@ namespace Player
 
         private void StopMovement()
         {
-            _rb.velocity = new Vector3(
-                0f,
-                _rb.velocity.y,
-                0f
-            );
-
+            _rb.velocity = new Vector3(0f, _rb.velocity.y, 0f);
             _currentSpeed = 0f;
 
             HandleFOV();
@@ -194,100 +158,100 @@ namespace Player
 
         private void HandleFOV()
         {
-            if (_camera == null)
-                return;
+            if (_camera == null) return;
 
-            float targetFOV =
-                IsSprinting && IsMoving
-                    ? _sprintingFov
-                    : _defaultFOV;
+            float targetFOV = IsSprinting && IsMoving ? _sprintingFov : _defaultFOV;
 
-
-            _camera.fieldOfView = Mathf.MoveTowards(
-                _camera.fieldOfView,
-                targetFOV,
-                _speedChange * Time.deltaTime
-            );
+            _camera.fieldOfView = Mathf.MoveTowards(_camera.fieldOfView, targetFOV, _speedChange * Time.deltaTime);
         }
 
 
         private void HandleSteps()
         {
-            if (!IsMoving)
-            {
-                ResetStepSliders();
-                return;
-            }
+            float deltaTime = Time.deltaTime;
 
-
-            // Скорость в units/sec × время = расстояние.
-            float distanceThisFrame =
-                ActualSpeed * Time.deltaTime;
-
-            _distance += distanceThisFrame;
-
-
-            // Игрок прошёл расстояние одного шага.
-            if (_distance >= _stepDistance)
-            {
-                // Сохраняем остаток расстояния.
-                _distance -= _stepDistance;
-
-                // Меняем ногу.
-                _leftLeg = !_leftLeg;
-
-                // Сообщаем HeadBob и другим системам,
-                // что произошёл шаг.
-                IsFootstepMoment = true;
-
-                EndStep();
-            }
-
-
-            UpdateStepSliders();
-        }
-
-
-        private void UpdateStepSliders()
-        {
-            float progress = StepProgress;
-
-
-            if (_leftLeg)
-            {
-                if (_leftSlider != null)
-                    _leftSlider.value = progress;
-
-                if (_rightSlider != null)
-                    _rightSlider.value = 0f;
-            }
+            if (IsMoving)
+                HandleMovementStep(deltaTime);
             else
-            {
-                if (_rightSlider != null)
-                    _rightSlider.value = progress;
+                HandleRotationStep(deltaTime);
 
-                if (_leftSlider != null)
-                    _leftSlider.value = 0f;
+            _lastYRotation = transform.eulerAngles.y;
+
+            UpdateStepSlider();
+        }
+
+
+        private void HandleMovementStep(float deltaTime)
+        {
+            _rotationProgress = 0f;
+            _distance += ActualSpeed * deltaTime;
+
+            while (_distance >= _stepDistance && _stepDistance > 0f)
+            {
+                _distance -= _stepDistance;
+                MakeStep();
             }
         }
 
 
-        private void ResetStepSliders()
+        private void HandleRotationStep(float deltaTime)
         {
-            if (_leftSlider != null)
-                _leftSlider.value = 0f;
+            _distance = 0f;
 
-            if (_rightSlider != null)
-                _rightSlider.value = 0f;
+            float currentYRotation = transform.eulerAngles.y;
+            float rotationDelta = Mathf.DeltaAngle(_lastYRotation, currentYRotation);
+
+            if (Mathf.Abs(rotationDelta) < _rotationStepMinSpeed * deltaTime) return;
+
+            float currentDirection = Mathf.Sign(rotationDelta);
+
+            if (_rotationDirection != 0f && currentDirection != _rotationDirection)
+                _rotationProgress = 0f;
+
+            _rotationDirection = currentDirection;
+            _rotationProgress += Mathf.Abs(rotationDelta);
+
+            if (_rotationProgress >= _stepRotation)
+            {
+                _rotationProgress -= _stepRotation;
+                MakeStep();
+            }
+        }
+
+
+        private void MakeStep()
+        {
+            _leftLeg = !_leftLeg;
+            IsFootstepMoment = true;
+
+            _rotationProgress = 0f;
+            _rotationDirection = 0f;
+
+            EndStep();
+        }
+
+
+        private void UpdateStepSlider()
+        {
+            if (_stepSlider != null) _stepSlider.value = StepProgress;
         }
 
 
         private void EndStep()
         {
-            if (_soundController != null)
-            {
-                _soundController.PlaySound();
-            }
+            if (_soundController != null) _soundController.PlaySound();
+        }
+
+
+        private void OnValidate()
+        {
+            _walkingSpeed = Mathf.Max(0f, _walkingSpeed);
+            _runningSpeed = Mathf.Max(0f, _runningSpeed);
+            _sprintingSpeed = Mathf.Max(0f, _sprintingSpeed);
+            _speedChange = Mathf.Max(0f, _speedChange);
+            _stepDistance = Mathf.Max(0.01f, _stepDistance);
+            _stepRotation = Mathf.Max(0.1f, _stepRotation);
+            _rotationStepMinSpeed = Mathf.Max(0f, _rotationStepMinSpeed);
         }
     }
 }
