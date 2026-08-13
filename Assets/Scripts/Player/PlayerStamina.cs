@@ -4,374 +4,376 @@ using UnityEngine;
 
 namespace Player
 {
+    /// <summary>
+    /// Система стамины и стресса игрока.
+    ///
+    /// Unity отвечает только за расчёт игровых параметров:
+    ///
+    /// Stamina 0..1  → FMOD stamina
+    /// Stress  0..1  → FMOD stress
+    /// Idle/Walk/Run → FMOD playerState
+    ///
+    /// Вся аудиологика, пороги отдышки, переходы и сглаживание
+    /// обрабатываются непосредственно в FMOD.
+    /// </summary>
     public class PlayerStamina : MonoBehaviour
     {
         [Header("FMOD")]
+        [Tooltip("FMOD Event дыхания.")]
         [SerializeField] private EventReference _breathEvent;
+
+        [Tooltip("Параметр состояния движения: Idle = 0, Walk = 1, Run = 2.")]
         [SerializeField] private string _fmodPlayerStateParam = "playerState";
+
+        [Tooltip("Параметр стамины 0..1.")]
         [SerializeField] private string _fmodStaminaParam = "stamina";
+
+        [Tooltip("Параметр стресса 0..1.")]
         [SerializeField] private string _fmodStressParam = "stress";
-        [SerializeField] private bool _quantizeStressForFmod;
+
 
         [Header("Stamina — расход")]
+        [Tooltip("Расход стамины в секунду при обычной ходьбе.")]
         [SerializeField] private float _walkDrainPerSec = 0.045f;
+
+        [Tooltip("Расход стамины в секунду при беге.")]
         [SerializeField] private float _runDrainPerSec = 0.16f;
-        [SerializeField] private float _sprintDrainPerSec = 0.25f;
+
+        [Tooltip("Расход стамины в секунду при спринте.")]
+        [SerializeField] private float _sprintDrainPerSec = 0.3f;
+
+        [Tooltip("Скорость, выше которой движение считается бегом.")]
+        [SerializeField] private float _runSpeedThreshold = 4f;
+
 
         [Header("Stamina — восстановление")]
+        [Tooltip("Восстановление стамины в секунду в покое.")]
         [SerializeField] private float _idleRecoverPerSec = 0.12f;
+
+        [Tooltip("Восстановление стамины в секунду при движении.")]
         [SerializeField] private float _moveRecoverPerSec = 0.03f;
+
+        [Tooltip("Задержка перед началом восстановления стамины.")]
         [SerializeField] private float _recoverDelay = 0.6f;
 
-        [Header("Stamina — порог одышки")]
-        [Range(0f, 1f)]
-        [SerializeField] private float _breathlessThreshold = 0.2f;
 
         [Header("Stress")]
+        [Tooltip("Скорость естественного снижения стресса.")]
         [SerializeField] private float _stressDecayPerSec = 0.15f;
+
+        [Tooltip("Скорость изменения стресса к целевому значению.")]
         [SerializeField] private float _stressRisePerSec = 2f;
 
-        [Header("Сглаживание FMOD")]
-        [SerializeField] private float _fmodSmoothSpeed = 4f;
 
-        [Header("FMOD 3D")]
-        [SerializeField] private float _fmod3DUpdateThreshold = 0.05f;
+        [Header("Running")]
+        [Tooltip("Учитывать расход стамины во время бега.")]
+        [SerializeField] private bool _enableRunDrain = false;
+
+        [Tooltip("Учитывать расход стамины во время спринта.")]
+        [SerializeField] private bool _enableSprintDrain = true;
+
 
         [Header("Debug")]
-        [SerializeField] private bool _showDebugLogs;
-        [SerializeField] private Color _debugColor = new Color(0.6f, 0.8f, 1f);
-        [SerializeField] private bool _showDebugHUD;
+        [SerializeField] private bool _showDebugLogs = false;
+        [SerializeField] private bool _showDebugHUD = false;
         [SerializeField] private Vector2 _hudPosition = new Vector2(16f, 16f);
 
+
+        // ============================================================
+        // PUBLIC STATE
+        // ============================================================
+
+        /// <summary>
+        /// Текущая стамина 0..1.
+        /// </summary>
         public float Stamina { get; private set; } = 1f;
+
+
+        /// <summary>
+        /// Текущий стресс 0..1.
+        /// </summary>
         public float Stress { get; private set; }
 
-        public bool IsBreathless => Stamina < _breathlessThreshold;
 
+        /// <summary>
+        /// true, если игрок сейчас находится под нагрузкой.
+        /// </summary>
+        public bool IsUnderLoad => _playerLocomotion != null &&
+                                   _playerLocomotion.IsMoving;
+
+
+        /// <summary>
+        /// Текущий уровень стресса:
+        /// 0 = низкий
+        /// 50 = средний
+        /// 100 = высокий
+        ///
+        /// Это значение можно использовать другими системами Unity.
+        /// На FMOD напрямую не отправляется.
+        /// </summary>
         public int StressLevel
         {
             get
             {
-                if (Stress >= 1f) return 100;
-                if (Stress >= 0.5f) return 50;
+                if (Stress >= 1f)
+                    return 100;
+
+                if (Stress >= 0.5f)
+                    return 50;
 
                 return 0;
             }
         }
 
-        private PlayerLocomotion _locomotion;
+
+        // ============================================================
+        // REFERENCES
+        // ============================================================
+
+        private PlayerLocomotion _playerLocomotion;
         private Rigidbody _rb;
+
+
+        // ============================================================
+        // INTERNAL STATE
+        // ============================================================
 
         private float _stressTarget;
         private bool _stressHeld;
-        private float _timeSinceLoad;
 
-        private float _fmodStaminaSmoothed = 1f;
-        private float _fmodStressSmoothed;
+        private float _timeSinceLoad;
 
         private EventInstance _breathInstance;
         private bool _instanceValid;
 
-        private Vector3 _lastFmod3DPos;
-        private bool _fmod3DPosInit;
 
-        private GUIStyle _hudBoxStyle;
-        private GUIStyle _hudLabelStyle;
-
+        // ============================================================
+        // UNITY
+        // ============================================================
 
         private void Awake()
         {
-            _locomotion = GetComponent<PlayerLocomotion>();
+            _playerLocomotion = GetComponent<PlayerLocomotion>();
             _rb = GetComponent<Rigidbody>();
-
-            if (_locomotion == null)
-                Debug.LogError("[PlayerStamina] PlayerLocomotion не найден.");
-
-            if (_rb == null)
-                Debug.LogError("[PlayerStamina] Rigidbody не найден.");
         }
 
 
         private void Start()
         {
             CreateBreathInstance();
-            DebugLog("PlayerStamina initialized", _debugColor);
+
+            DebugLog("PlayerStamina initialized.");
         }
 
 
         private void Update()
         {
-            float dt = Time.deltaTime;
+            float deltaTime = Time.deltaTime;
 
-            UpdateStamina(dt);
-            UpdateStress(dt);
-            PushToFmod(dt);
+            UpdateStamina(deltaTime);
+            UpdateStress(deltaTime);
+            PushToFmod();
         }
 
 
-        // =========================================================
+        // ============================================================
         // STAMINA
-        // =========================================================
+        // ============================================================
 
-        private void UpdateStamina(float dt)
+        private void UpdateStamina(float deltaTime)
         {
-            if (_locomotion == null)
+            if (_playerLocomotion == null)
                 return;
 
-            bool isMoving = _locomotion.IsMoving;
+            float speed = _playerLocomotion.ActualSpeed;
+            bool isMoving = speed > 0.05f;
 
-            if (isMoving && _locomotion.IsSprinting)
+            bool isSprinting = _playerLocomotion.IsSprinting;
+            bool isRunning = !isSprinting &&
+                             speed >= _runSpeedThreshold;
+
+            if (isSprinting && _enableSprintDrain)
             {
-                Stamina -= _sprintDrainPerSec * dt;
+                Stamina -= _sprintDrainPerSec * deltaTime;
                 _timeSinceLoad = 0f;
             }
-            else if (isMoving && _locomotion.CurrentSpeed >= _locomotion.RunningSpeed)
+            else if (isRunning && _enableRunDrain)
             {
-                Stamina -= _runDrainPerSec * dt;
+                Stamina -= _runDrainPerSec * deltaTime;
                 _timeSinceLoad = 0f;
             }
             else if (isMoving)
             {
-                Stamina -= _walkDrainPerSec * dt;
+                Stamina -= _walkDrainPerSec * deltaTime;
                 _timeSinceLoad = 0f;
             }
             else
             {
-                _timeSinceLoad += dt;
+                _timeSinceLoad += deltaTime;
 
                 if (_timeSinceLoad >= _recoverDelay)
-                    Stamina += _idleRecoverPerSec * dt;
+                {
+                    Stamina += _idleRecoverPerSec * deltaTime;
+                }
             }
 
             Stamina = Mathf.Clamp01(Stamina);
         }
 
 
-        // =========================================================
+        // ============================================================
         // STRESS
-        // =========================================================
+        // ============================================================
 
-        private void UpdateStress(float dt)
+        private void UpdateStress(float deltaTime)
         {
-            Stress = Mathf.MoveTowards(Stress, _stressTarget, _stressRisePerSec * dt);
+            if (_stressHeld)
+            {
+                Stress = Mathf.MoveTowards(Stress, _stressTarget, _stressRisePerSec * deltaTime);
+            }
+            else
+            {
+                Stress = Mathf.MoveTowards(Stress, _stressTarget, _stressRisePerSec * deltaTime);
 
-            if (!_stressHeld)
-                _stressTarget = Mathf.MoveTowards(_stressTarget, 0f, _stressDecayPerSec * dt);
+                _stressTarget = Mathf.MoveTowards(_stressTarget, 0f, _stressDecayPerSec * deltaTime);
+            }
 
             Stress = Mathf.Clamp01(Stress);
         }
 
 
-        // =========================================================
-        // PUBLIC API
-        // =========================================================
+        // ============================================================
+        // PUBLIC STRESS API
+        // ============================================================
 
+        /// <summary>
+        /// Добавляет всплеск стресса.
+        /// После этого стресс постепенно возвращается к нулю.
+        /// </summary>
         public void AddStress(float amount)
         {
             _stressTarget = Mathf.Clamp01(_stressTarget + Mathf.Abs(amount));
+
             _stressHeld = false;
 
-            DebugLog($"AddStress({amount:F2}) → target {_stressTarget:F2}", _debugColor);
+            DebugLog($"AddStress({amount:F2}) → target {_stressTarget:F2}");
         }
 
 
+        /// <summary>
+        /// Устанавливает стресс и удерживает его на этом уровне.
+        /// </summary>
         public void SetStress(float level)
         {
             _stressTarget = Mathf.Clamp01(level);
             _stressHeld = true;
 
-            DebugLog($"SetStress({level:F2}) held", _debugColor);
+            DebugLog(
+                $"SetStress({level:F2})"
+            );
         }
 
 
+        /// <summary>
+        /// Снимает удержание стресса.
+        /// После этого стресс начинает спадать.
+        /// </summary>
         public void ReleaseStress()
         {
             _stressHeld = false;
-            DebugLog("ReleaseStress — stress will decay", _debugColor);
+
+            DebugLog("ReleaseStress()");
         }
 
 
+        /// <summary>
+        /// Принудительно устанавливает стамину.
+        /// </summary>
         public void SetStamina(float value)
         {
             Stamina = Mathf.Clamp01(value);
         }
 
 
-        // =========================================================
+        // ============================================================
         // FMOD
-        // =========================================================
+        // ============================================================
 
         private void CreateBreathInstance()
         {
             if (_breathEvent.IsNull)
             {
-                DebugLog("Breath event is not assigned.", new Color(1f, 0.7f, 0.2f));
+                DebugLog("Breath Event is not assigned.");
                 return;
             }
 
-            _breathInstance = RuntimeManager.CreateInstance(_breathEvent);
-            _breathInstance.set3DAttributes(RuntimeUtils.To3DAttributes(transform.position));
+            _breathInstance = RuntimeManager.CreateInstance(
+                _breathEvent
+            );
+
             _breathInstance.start();
 
             _instanceValid = true;
 
-            DebugLog("Breath FMOD instance created and started.", _debugColor);
+            DebugLog("Breath FMOD instance started.");
         }
 
 
-        private void PushToFmod(float dt)
+        private void PushToFmod()
         {
-            float t = 1f - Mathf.Exp(-_fmodSmoothSpeed * dt);
-
-            _fmodStaminaSmoothed = Mathf.Lerp(_fmodStaminaSmoothed, Stamina, t);
-            _fmodStressSmoothed = Mathf.Lerp(_fmodStressSmoothed, Stress, t);
-
             if (!_instanceValid)
                 return;
 
-            float stressOut = _fmodStressSmoothed;
+            // Stamina 0..1
+            _breathInstance.setParameterByName(
+                _fmodStaminaParam,
+                Stamina
+            );
 
-            if (_quantizeStressForFmod)
-            {
-                if (_fmodStressSmoothed >= 1f)
-                    stressOut = 1f;
-                else if (_fmodStressSmoothed >= 0.5f)
-                    stressOut = 0.5f;
-                else
-                    stressOut = 0f;
-            }
+            // Stress 0..1
+            _breathInstance.setParameterByName(
+                _fmodStressParam,
+                Stress
+            );
 
-            UpdateFmodPosition();
-
-            _breathInstance.setParameterByName(_fmodPlayerStateParam, GetFmodPlayerState());
-            _breathInstance.setParameterByName(_fmodStaminaParam, _fmodStaminaSmoothed);
-            _breathInstance.setParameterByName(_fmodStressParam, stressOut);
-        }
-
-
-        private void UpdateFmodPosition()
-        {
-            Vector3 position = transform.position;
-
-            if (_fmod3DPosInit &&
-                (position - _lastFmod3DPos).sqrMagnitude <
-                _fmod3DUpdateThreshold * _fmod3DUpdateThreshold)
-            {
-                return;
-            }
-
-            _breathInstance.set3DAttributes(RuntimeUtils.To3DAttributes(position));
-
-            _lastFmod3DPos = position;
-            _fmod3DPosInit = true;
+            // Idle = 0
+            // Walk = 1
+            // Run = 2
+            _breathInstance.setParameterByName(
+                _fmodPlayerStateParam,
+                GetFmodPlayerState()
+            );
         }
 
 
         private float GetFmodPlayerState()
         {
-            if (_locomotion == null || !_locomotion.IsMoving)
+            if (_playerLocomotion == null || !_playerLocomotion.IsMoving)
                 return 0f;
 
-            if (_locomotion.IsSprinting)
+            if (_playerLocomotion.IsSprinting)
+                return 2f;
+
+            if (_playerLocomotion.ActualSpeed >= _playerLocomotion.RunningSpeed)
                 return 2f;
 
             return 1f;
         }
 
 
-        // =========================================================
+        // ============================================================
         // DEBUG HUD
-        // =========================================================
+        // ============================================================
+
+        private GUIStyle _hudBoxStyle;
+        private GUIStyle _hudLabelStyle;
+
 
         private void OnGUI()
         {
             if (!_showDebugHUD)
                 return;
 
-            CreateGUIStyles();
-
-            float x = _hudPosition.x;
-            float y = _hudPosition.y;
-            float width = 310f;
-            float lineHeight = 18f;
-            float height = 11 * lineHeight + 16f;
-
-            GUI.color = new Color(0f, 0f, 0f, 0.55f);
-            GUI.Box(new Rect(x, y, width, height), GUIContent.none, _hudBoxStyle);
-            GUI.color = Color.white;
-
-            float currentY = y + 8f;
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                "<color=#99CCFF><b>[ PlayerStamina ]</b></color>");
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                $"<color=#DDDDDD>Stamina:</color> {Stamina:F3}" +
-                (IsBreathless ? " <color=#FF4444>[BREATHLESS]</color>" : ""));
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                $"<color=#888888>→ FMOD:</color> {_fmodStaminaSmoothed:F3}");
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                $"<color=#DDDDDD>Stress:</color> {Stress:F3}" +
-                (_stressHeld ? " <color=#FFAA00>[HELD]</color>" : ""));
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                $"<color=#888888>Stress level:</color> {StressLevel}");
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                $"<color=#888888>→ FMOD:</color> {_fmodStressSmoothed:F3}");
-
-            float actualSpeed = _locomotion != null ? _locomotion.ActualSpeed : 0f;
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                $"<color=#DDDDDD>Actual speed:</color> {actualSpeed:F2} m/s");
-
-            float currentSpeed = _locomotion != null ? _locomotion.CurrentSpeed : 0f;
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                $"<color=#DDDDDD>Target speed:</color> {currentSpeed:F2} m/s");
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                $"<color=#DDDDDD>State:</color> " +
-                $"<color=#88DDFF>{GetStateName()}</color> " +
-                $"({GetFmodPlayerState():F0})");
-
-            DrawHUDLine(x, ref currentY, width, lineHeight,
-                $"<color=#888888>Recovery:</color> " +
-                $"{_timeSinceLoad:F2} / {_recoverDelay:F2}s");
-        }
-
-
-        private void DrawHUDLine(float x, ref float y, float width, float height, string text)
-        {
-            GUI.Label(
-                new Rect(x + 10f, y, width - 20f, height),
-                text,
-                _hudLabelStyle
-            );
-
-            y += height;
-        }
-
-
-        private string GetStateName()
-        {
-            if (_locomotion == null || !_locomotion.IsMoving)
-                return "Idle";
-
-            if (_locomotion.IsSprinting)
-                return "Sprint";
-
-            if (_locomotion.CurrentSpeed >= _locomotion.RunningSpeed)
-                return "Run";
-
-            return "Walk";
-        }
-
-
-        private void CreateGUIStyles()
-        {
             if (_hudBoxStyle == null)
             {
                 _hudBoxStyle = new GUIStyle(GUI.skin.box)
@@ -390,12 +392,87 @@ namespace Player
                     richText = true
                 };
             }
+
+            float x = _hudPosition.x;
+            float y = _hudPosition.y;
+            float width = 260f;
+            float lineHeight = 18f;
+
+            float height = 8 * lineHeight + 16f;
+
+            GUI.color = new Color(0f, 0f, 0f, 0.55f);
+
+            GUI.Box(
+                new Rect(x, y, width, height),
+                GUIContent.none,
+                _hudBoxStyle
+            );
+
+            GUI.color = Color.white;
+
+            float currentY = y + 8f;
+
+            GUI.Label(
+                new Rect(x + 10f, currentY, width - 20f, lineHeight),
+                "<color=#99CCFF><b>[ PlayerStamina ]</b></color>",
+                _hudLabelStyle
+            );
+
+            currentY += lineHeight + 2f;
+
+            GUI.Label(
+                new Rect(x + 10f, currentY, width - 20f, lineHeight),
+                $"<color=#DDDDDD>Stamina:</color> {Stamina:F3}",
+                _hudLabelStyle
+            );
+
+            currentY += lineHeight;
+
+            GUI.Label(
+                new Rect(x + 10f, currentY, width - 20f, lineHeight),
+                $"<color=#DDDDDD>Stress:</color> {Stress:F3}",
+                _hudLabelStyle
+            );
+
+            currentY += lineHeight;
+
+            GUI.Label(
+                new Rect(x + 10f, currentY, width - 20f, lineHeight),
+                $"<color=#DDDDDD>Stress Level:</color> {StressLevel}",
+                _hudLabelStyle
+            );
+
+            currentY += lineHeight;
+
+            GUI.Label(
+                new Rect(x + 10f, currentY, width - 20f, lineHeight),
+                $"<color=#DDDDDD>Speed:</color> {_playerLocomotion?.ActualSpeed:F2}",
+                _hudLabelStyle
+            );
+
+            currentY += lineHeight;
+
+            GUI.Label(
+                new Rect(x + 10f, currentY, width - 20f, lineHeight),
+                $"<color=#DDDDDD>Under Load:</color> {IsUnderLoad}",
+                _hudLabelStyle
+            );
+
+            currentY += lineHeight;
+
+            float playerState = GetFmodPlayerState();
+
+            GUI.Label(
+                new Rect(x + 10f, currentY, width - 20f, lineHeight),
+                $"<color=#DDDDDD>Player State:</color> {playerState:F0}",
+                _hudLabelStyle
+            );
         }
 
 
-        // =========================================================
-        // CLEANUP
-        // =========================================================
+        // ============================================================
+        // LIFECYCLE
+        // ============================================================
 
         private void OnDestroy()
         {
@@ -403,39 +480,45 @@ namespace Player
                 return;
 
             _breathInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+
             _breathInstance.release();
 
             _instanceValid = false;
         }
 
 
-        // =========================================================
+        // ============================================================
         // VALIDATION
-        // =========================================================
+        // ============================================================
 
         private void OnValidate()
         {
             _walkDrainPerSec = Mathf.Max(0f, _walkDrainPerSec);
             _runDrainPerSec = Mathf.Max(0f, _runDrainPerSec);
             _sprintDrainPerSec = Mathf.Max(0f, _sprintDrainPerSec);
+
+            _runSpeedThreshold = Mathf.Max(0f, _runSpeedThreshold);
+
             _idleRecoverPerSec = Mathf.Max(0f, _idleRecoverPerSec);
             _moveRecoverPerSec = Mathf.Max(0f, _moveRecoverPerSec);
+
             _recoverDelay = Mathf.Max(0f, _recoverDelay);
+
             _stressDecayPerSec = Mathf.Max(0f, _stressDecayPerSec);
             _stressRisePerSec = Mathf.Max(0.01f, _stressRisePerSec);
-            _fmodSmoothSpeed = Mathf.Max(0.1f, _fmodSmoothSpeed);
-            _fmod3DUpdateThreshold = Mathf.Max(0f, _fmod3DUpdateThreshold);
         }
 
 
-        private void DebugLog(string message, Color color)
+        // ============================================================
+        // DEBUG
+        // ============================================================
+
+        private void DebugLog(string message)
         {
             if (!_showDebugLogs)
                 return;
 
-            Debug.Log(
-                $"<color=#{ColorUtility.ToHtmlStringRGB(color)}>[PlayerStamina]</color> {message}"
-            );
+            Debug.Log($"<color=#99CCFF>[PlayerStamina]</color> {message}");
         }
     }
 }

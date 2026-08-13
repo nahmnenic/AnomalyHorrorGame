@@ -323,6 +323,7 @@ GameObject:
   - component: {fileID: 686460065648823492}
   - component: {fileID: 5218733452941006005}
   - component: {fileID: 3869373093092924965}
+  - component: {fileID: 4162820314505838171}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -445,8 +446,9 @@ MonoBehaviour:
   _speedChange: 30
   _sprintingFov: 70
   _stepDistance: 1.7
-  _leftSlider: {fileID: 0}
-  _rightSlider: {fileID: 0}
+  _stepRotation: 45
+  _rotationStepMinSpeed: 10
+  _stepSlider: {fileID: 0}
 --- !u!114 &3513509596282201338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -649,6 +651,42 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5323f836fa0b45dd835f627f9e69747a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4162820314505838171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703859887912056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27891cef1824a8bbfe7c9ec28921308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _breathEvent:
+    Guid:
+      Data1: -1040058018
+      Data2: 1274240104
+      Data3: 1953182852
+      Data4: -1288351705
+    Path: event:/char/vo/char_vo_breath
+  _fmodPlayerStateParam: playerState
+  _fmodStaminaParam: stamina
+  _fmodStressParam: stress
+  _walkDrainPerSec: 0.045
+  _runDrainPerSec: 0.16
+  _sprintDrainPerSec: 0.25
+  _runSpeedThreshold: 4
+  _idleRecoverPerSec: 0.12
+  _moveRecoverPerSec: 0.03
+  _recoverDelay: 0.6
+  _stressDecayPerSec: 0.15
+  _stressRisePerSec: 2
+  _enableRunDrain: 0
+  _enableSprintDrain: 1
+  _showDebugLogs: 0
+  _showDebugHUD: 0
+  _hudPosition: {x: 16, y: 16}
 --- !u!1 &6871000779097438100
 GameObject:
   m_ObjectHideFlags: 0
