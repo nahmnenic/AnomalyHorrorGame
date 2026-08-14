@@ -1763,9 +1763,6 @@
 		<relationship name="destination">
 			<destination>{8255edbc-433a-488d-94ff-913f8b5dbbc2}</destination>
 		</relationship>
-		<relationship name="triggerConditions">
-			<destination>{33009cb3-1b4a-463f-9da1-b7d65a084948}</destination>
-		</relationship>
 	</object>
 	<object class="TransitionRegion" id="{7cf853cd-1242-454e-9084-2512242a52e5}">
 		<property name="position">
@@ -1786,9 +1783,6 @@
 		<relationship name="destination">
 			<destination>{8255edbc-433a-488d-94ff-913f8b5dbbc2}</destination>
 		</relationship>
-		<relationship name="triggerConditions">
-			<destination>{d33e6167-f45a-4ad9-a810-b70609297944}</destination>
-		</relationship>
 	</object>
 	<object class="TransitionRegion" id="{6bd754cb-2756-4878-a8b3-f5b18fb8471d}">
 		<property name="position">
@@ -1808,9 +1802,6 @@
 		</relationship>
 		<relationship name="destination">
 			<destination>{8255edbc-433a-488d-94ff-913f8b5dbbc2}</destination>
-		</relationship>
-		<relationship name="triggerConditions">
-			<destination>{05222b21-ab8d-432e-9b9f-ff0a9011bf61}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusEffectChain" id="{2b49f4d5-8359-4079-8e19-99ea658247d9}">
@@ -2249,39 +2240,6 @@
 		</property>
 		<relationship name="parameter">
 			<destination>{9eb41657-c8b0-4df6-b321-c402a7140c8d}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterCondition" id="{33009cb3-1b4a-463f-9da1-b7d65a084948}">
-		<property name="minimum">
-			<value>3</value>
-		</property>
-		<property name="maximum">
-			<value>3</value>
-		</property>
-		<relationship name="parameter">
-			<destination>{b8476b63-70da-4cb5-9695-be09f185e176}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterCondition" id="{d33e6167-f45a-4ad9-a810-b70609297944}">
-		<property name="minimum">
-			<value>3</value>
-		</property>
-		<property name="maximum">
-			<value>3</value>
-		</property>
-		<relationship name="parameter">
-			<destination>{b8476b63-70da-4cb5-9695-be09f185e176}</destination>
-		</relationship>
-	</object>
-	<object class="ParameterCondition" id="{05222b21-ab8d-432e-9b9f-ff0a9011bf61}">
-		<property name="minimum">
-			<value>3</value>
-		</property>
-		<property name="maximum">
-			<value>3</value>
-		</property>
-		<relationship name="parameter">
-			<destination>{b8476b63-70da-4cb5-9695-be09f185e176}</destination>
 		</relationship>
 	</object>
 	<object class="MixerBusFader" id="{fe8f951f-a611-4eae-a3d7-d9d1f975b449}" />
