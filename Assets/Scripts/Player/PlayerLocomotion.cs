@@ -1,17 +1,28 @@
+using FMODUnity;
+using Sound.FloorMaterials;
 using UnityEngine;
-using UnityEngine.UI;
 
 namespace Player
 {
     public class PlayerLocomotion : MonoBehaviour
     {
         private PlayerManager _playerManager;
-        private SoundController _soundController;
         private InputManager _inputManager;
         private Rigidbody _rb;
         private Camera _camera;
+        private SurfaceDetector _surfaceDetector;
 
         private Vector3 _moveDirection;
+
+        [Header("Step Sound")]
+        [SerializeField] private StudioEventEmitter _stepSoundController;
+
+        [Header("Scuff Sound")]
+        [SerializeField] private StudioEventEmitter _scuffSoundController;
+        [SerializeField] private float _scuffCooldown = 0.5f;
+
+        private float _scuffCooldownTimer;
+        private bool _wasMoving;
 
         [Header("Movement Flags")]
         public bool IsSprinting;
@@ -52,9 +63,6 @@ namespace Player
         [SerializeField] private float _stepRotation = 140f;
         [SerializeField] private float _rotationStepMinSpeed = 10f;
 
-        [Header("Step Progress")]
-        [SerializeField] private Slider _stepSlider;
-
         private float _distance;
         private float _rotationProgress;
         private float _rotationDirection;
@@ -80,17 +88,15 @@ namespace Player
             }
         }
 
-        public bool IsLeftLeg => _leftLeg;
-
         public bool IsFootstepMoment { get; private set; }
 
 
         private void Awake()
         {
             _inputManager = GetComponent<InputManager>();
-            _soundController = GetComponentInChildren<SoundController>();
             _rb = GetComponent<Rigidbody>();
             _playerManager = GetComponent<PlayerManager>();
+            _surfaceDetector = GetComponent<SurfaceDetector>();
 
             _camera = Camera.main;
             _lastYRotation = transform.eulerAngles.y;
@@ -102,7 +108,11 @@ namespace Player
         private void Update()
         {
             IsFootstepMoment = false;
+
             HandleSteps();
+            HandleScuff();
+
+            if (_scuffCooldownTimer > 0f) _scuffCooldownTimer -= Time.deltaTime;
         }
 
 
@@ -140,7 +150,6 @@ namespace Player
             }
 
             _moveDirection *= _currentSpeed;
-
             _rb.velocity = new Vector3(_moveDirection.x, _rb.velocity.y, _moveDirection.z);
 
             HandleFOV();
@@ -161,7 +170,6 @@ namespace Player
             if (_camera == null) return;
 
             float targetFOV = IsSprinting && IsMoving ? _sprintingFov : _defaultFOV;
-
             _camera.fieldOfView = Mathf.MoveTowards(_camera.fieldOfView, targetFOV, _speedChange * Time.deltaTime);
         }
 
@@ -170,14 +178,10 @@ namespace Player
         {
             float deltaTime = Time.deltaTime;
 
-            if (IsMoving)
-                HandleMovementStep(deltaTime);
-            else
-                HandleRotationStep(deltaTime);
+            if (IsMoving) HandleMovementStep(deltaTime);
+            else HandleRotationStep(deltaTime);
 
             _lastYRotation = transform.eulerAngles.y;
-
-            UpdateStepSlider();
         }
 
 
@@ -205,8 +209,7 @@ namespace Player
 
             float currentDirection = Mathf.Sign(rotationDelta);
 
-            if (_rotationDirection != 0f && currentDirection != _rotationDirection)
-                _rotationProgress = 0f;
+            if (_rotationDirection != 0f && currentDirection != _rotationDirection) _rotationProgress = 0f;
 
             _rotationDirection = currentDirection;
             _rotationProgress += Mathf.Abs(rotationDelta);
@@ -227,19 +230,48 @@ namespace Player
             _rotationProgress = 0f;
             _rotationDirection = 0f;
 
-            EndStep();
+            PlayStepSound();
         }
 
 
-        private void UpdateStepSlider()
+        private void PlayStepSound()
         {
-            if (_stepSlider != null) _stepSlider.value = StepProgress;
+            if (_stepSoundController == null) return;
+
+            SetSurfaceParameter(_stepSoundController);
+            _stepSoundController.Play();
         }
 
 
-        private void EndStep()
+        private void HandleScuff()
         {
-            if (_soundController != null) _soundController.PlaySound();
+            bool isMoving = IsMoving;
+
+            if (_wasMoving && !isMoving && _scuffCooldownTimer <= 0f)
+            {
+                PlayScuffSound();
+                _scuffCooldownTimer = _scuffCooldown;
+            }
+
+            _wasMoving = isMoving;
+        }
+
+
+        private void PlayScuffSound()
+        {
+            if (_scuffSoundController == null) return;
+
+            SetSurfaceParameter(_scuffSoundController);
+            _scuffSoundController.Play();
+        }
+
+
+        private void SetSurfaceParameter(StudioEventEmitter emitter)
+        {
+            if (_surfaceDetector == null) return;
+
+            float surfaceValue = (float)_surfaceDetector.CurrentSurface;
+            emitter.SetParameter("surface", surfaceValue);
         }
 
 
@@ -252,6 +284,7 @@ namespace Player
             _stepDistance = Mathf.Max(0.01f, _stepDistance);
             _stepRotation = Mathf.Max(0.1f, _stepRotation);
             _rotationStepMinSpeed = Mathf.Max(0f, _rotationStepMinSpeed);
+            _scuffCooldown = Mathf.Max(0f, _scuffCooldown);
         }
     }
 }

@@ -81,6 +81,69 @@ MonoBehaviour:
   _isPlaying: 0
   Disposable: 0
   Light: 0
+--- !u!1 &710591360427774398
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4714227336305117985}
+  - component: {fileID: 308507235502568473}
+  m_Layer: 6
+  m_Name: ScuffSound
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4714227336305117985
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710591360427774398}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -0.804, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3241222704597857137}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &308507235502568473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 710591360427774398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -103219105
+      Data2: 1138397542
+      Data3: 1899679406
+      Data4: -351084744
+    Path: event:/char/mov/char_mov_scuff
+  Event: 
+  EventPlayTrigger: 0
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &999503411333110350
 GameObject:
   m_ObjectHideFlags: 0
@@ -152,10 +215,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6406997903740708401}
-  - component: {fileID: 3317901831901222401}
   - component: {fileID: 4256397572592750655}
   m_Layer: 6
-  m_Name: MoveStep
+  m_Name: StepSound
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -176,23 +238,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3241222704597857137}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &3317901831901222401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1630338551714157182}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0218f2b0658b9a649850baa34b382fb5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fmod: {fileID: 4256397572592750655}
-  Delay: 0
-  _isPlaying: 0
-  Disposable: 0
-  Light: 0
 --- !u!114 &4256397572592750655
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -208,10 +253,10 @@ MonoBehaviour:
   CollisionTag: 
   EventReference:
     Guid:
-      Data1: 956578798
-      Data2: 1202177501
-      Data3: 471491748
-      Data4: 1454079199
+      Data1: 1723284457
+      Data2: 1113189233
+      Data3: -1799904611
+      Data4: -1543385303
     Path: event:/char/mov/char_mov_step
   Event: 
   EventPlayTrigger: 0
@@ -312,6 +357,7 @@ GameObject:
   - component: {fileID: 279268492718187968}
   - component: {fileID: 558839879069918218}
   - component: {fileID: 4351536536758559237}
+  - component: {fileID: 4162820314505838171}
   - component: {fileID: 3513509596282201338}
   - component: {fileID: 7712808121554452977}
   - component: {fileID: 8148108433551518687}
@@ -323,7 +369,7 @@ GameObject:
   - component: {fileID: 686460065648823492}
   - component: {fileID: 5218733452941006005}
   - component: {fileID: 3869373093092924965}
-  - component: {fileID: 4162820314505838171}
+  - component: {fileID: 5861578563045912440}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -348,6 +394,7 @@ Transform:
   - {fileID: 4204147236060187511}
   - {fileID: 1494661717341843746}
   - {fileID: 6406997903740708401}
+  - {fileID: 4714227336305117985}
   - {fileID: 8100520694356501920}
   - {fileID: 7662586604407910426}
   - {fileID: 1608494072769436510}
@@ -439,6 +486,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c5e362560bdcf490ea056f2b60a87efb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _stepSoundController: {fileID: 4256397572592750655}
+  _scuffSoundController: {fileID: 308507235502568473}
+  _scuffCooldown: 0.5
   IsSprinting: 0
   _walkingSpeed: 2
   _runningSpeed: 4
@@ -446,9 +496,44 @@ MonoBehaviour:
   _speedChange: 30
   _sprintingFov: 70
   _stepDistance: 1.7
-  _stepRotation: 45
+  _stepRotation: 140
   _rotationStepMinSpeed: 10
-  _stepSlider: {fileID: 0}
+--- !u!114 &4162820314505838171
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703859887912056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e27891cef1824a8bbfe7c9ec28921308, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _breathEvent:
+    Guid:
+      Data1: -1040058018
+      Data2: 1274240104
+      Data3: 1953182852
+      Data4: -1288351705
+    Path: event:/char/vo/char_vo_breath
+  _fmodPlayerStateParam: playerState
+  _fmodStaminaParam: stamina
+  _fmodStressParam: stress
+  _walkDrainPerSec: 0.045
+  _runDrainPerSec: 0.16
+  _sprintDrainPerSec: 0.25
+  _runSpeedThreshold: 4
+  _idleRecoverPerSec: 0.12
+  _moveRecoverPerSec: 0.03
+  _recoverDelay: 0.6
+  _stressDecayPerSec: 0.15
+  _stressRisePerSec: 2
+  _enableRunDrain: 1
+  _enableSprintDrain: 1
+  _showDebugLogs: 1
+  _showDebugHUD: 1
+  _hudPosition: {x: 320, y: 16}
 --- !u!114 &3513509596282201338
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -651,7 +736,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5323f836fa0b45dd835f627f9e69747a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4162820314505838171
+--- !u!114 &5861578563045912440
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -660,33 +745,14 @@ MonoBehaviour:
   m_GameObject: {fileID: 2703859887912056894}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e27891cef1824a8bbfe7c9ec28921308, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ff49b5aa3a044d8a6b2e7ee717a74c9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _breathEvent:
-    Guid:
-      Data1: -1040058018
-      Data2: 1274240104
-      Data3: 1953182852
-      Data4: -1288351705
-    Path: event:/char/vo/char_vo_breath
-  _fmodPlayerStateParam: playerState
-  _fmodStaminaParam: stamina
-  _fmodStressParam: stress
-  _walkDrainPerSec: 0.045
-  _runDrainPerSec: 0.16
-  _sprintDrainPerSec: 0.25
-  _runSpeedThreshold: 4
-  _idleRecoverPerSec: 0.12
-  _moveRecoverPerSec: 0.03
-  _recoverDelay: 0.6
-  _stressDecayPerSec: 0.15
-  _stressRisePerSec: 2
-  _enableRunDrain: 0
-  _enableSprintDrain: 1
-  _showDebugLogs: 0
-  _showDebugHUD: 0
-  _hudPosition: {x: 16, y: 16}
+  _rayOrigin: {fileID: 3241222704597857137}
+  _rayDistance: 1.5
+  _surfaceMask:
+    serializedVersion: 2
+    m_Bits: 61440
 --- !u!1 &6871000779097438100
 GameObject:
   m_ObjectHideFlags: 0
