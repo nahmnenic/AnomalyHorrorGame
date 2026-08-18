@@ -308,6 +308,51 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InspectRotate"",
+                    ""type"": ""Value"",
+                    ""id"": ""28d7cee7-1176-4a50-9c01-acbb989fa3c9"",
+                    ""expectedControlType"": ""Vector2"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""InspectRotateButton"",
+                    ""type"": ""Button"",
+                    ""id"": ""d93bff19-f371-482b-a007-b0670ebe5526"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""InspectZoom"",
+                    ""type"": ""Value"",
+                    ""id"": ""71320f5b-5ec5-4f1b-bad1-813c770b55aa"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""InspectZoomIn"",
+                    ""type"": ""Value"",
+                    ""id"": ""572de4ea-da28-4a9e-b006-507057fdbb9c"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""InspectZoomOut"",
+                    ""type"": ""Value"",
+                    ""id"": ""6c45d4b8-d007-4ed2-bba4-6eddb6ddad97"",
+                    ""expectedControlType"": ""Axis"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": true
                 }
             ],
             ""bindings"": [
@@ -347,7 +392,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""f12ac650-1baa-4f53-b016-ed95b7c34701"",
-                    ""path"": ""<Gamepad>/buttonWest"",
+                    ""path"": ""<Gamepad>/buttonSouth"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Gamepad"",
@@ -374,6 +419,83 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""0ef739bd-bee1-4656-b59a-a4fc2f177a4b"",
+                    ""path"": ""<Mouse>/delta"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""InspectRotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""3ac0bc3a-dd64-4f51-95f0-48ad12e7197c"",
+                    ""path"": ""<Gamepad>/rightStick"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""InspectRotate"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""639dc813-be55-4638-99b1-8b086dd3b063"",
+                    ""path"": ""<Gamepad>/rightTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""InspectZoomIn"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""74348b59-6ad9-46df-a377-53be4d6c99ea"",
+                    ""path"": ""<Gamepad>/leftTrigger"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""InspectZoomOut"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""10ddbf8a-0946-4cf8-a2ef-06bbec251901"",
+                    ""path"": ""<Mouse>/leftButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""InspectRotateButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""5b1340db-2583-49ba-827c-d94fc07e0c53"",
+                    ""path"": ""<Gamepad>/rightShoulder"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Gamepad"",
+                    ""action"": ""InspectRotateButton"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c795a279-3cbd-4244-b4fa-3a59fecd9f41"",
+                    ""path"": ""<Mouse>/scroll/y"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""InspectZoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -882,6 +1004,11 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_PlayerActions_Interaction = m_PlayerActions.FindAction("Interaction", throwIfNotFound: true);
         m_PlayerActions_Switch = m_PlayerActions.FindAction("Switch", throwIfNotFound: true);
         m_PlayerActions_Escape = m_PlayerActions.FindAction("Escape", throwIfNotFound: true);
+        m_PlayerActions_InspectRotate = m_PlayerActions.FindAction("InspectRotate", throwIfNotFound: true);
+        m_PlayerActions_InspectRotateButton = m_PlayerActions.FindAction("InspectRotateButton", throwIfNotFound: true);
+        m_PlayerActions_InspectZoom = m_PlayerActions.FindAction("InspectZoom", throwIfNotFound: true);
+        m_PlayerActions_InspectZoomIn = m_PlayerActions.FindAction("InspectZoomIn", throwIfNotFound: true);
+        m_PlayerActions_InspectZoomOut = m_PlayerActions.FindAction("InspectZoomOut", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1016,6 +1143,11 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_Interaction;
     private readonly InputAction m_PlayerActions_Switch;
     private readonly InputAction m_PlayerActions_Escape;
+    private readonly InputAction m_PlayerActions_InspectRotate;
+    private readonly InputAction m_PlayerActions_InspectRotateButton;
+    private readonly InputAction m_PlayerActions_InspectZoom;
+    private readonly InputAction m_PlayerActions_InspectZoomIn;
+    private readonly InputAction m_PlayerActions_InspectZoomOut;
     public struct PlayerActionsActions
     {
         private @InputSystem m_Wrapper;
@@ -1024,6 +1156,11 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @Interaction => m_Wrapper.m_PlayerActions_Interaction;
         public InputAction @Switch => m_Wrapper.m_PlayerActions_Switch;
         public InputAction @Escape => m_Wrapper.m_PlayerActions_Escape;
+        public InputAction @InspectRotate => m_Wrapper.m_PlayerActions_InspectRotate;
+        public InputAction @InspectRotateButton => m_Wrapper.m_PlayerActions_InspectRotateButton;
+        public InputAction @InspectZoom => m_Wrapper.m_PlayerActions_InspectZoom;
+        public InputAction @InspectZoomIn => m_Wrapper.m_PlayerActions_InspectZoomIn;
+        public InputAction @InspectZoomOut => m_Wrapper.m_PlayerActions_InspectZoomOut;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1045,6 +1182,21 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Escape.started += instance.OnEscape;
             @Escape.performed += instance.OnEscape;
             @Escape.canceled += instance.OnEscape;
+            @InspectRotate.started += instance.OnInspectRotate;
+            @InspectRotate.performed += instance.OnInspectRotate;
+            @InspectRotate.canceled += instance.OnInspectRotate;
+            @InspectRotateButton.started += instance.OnInspectRotateButton;
+            @InspectRotateButton.performed += instance.OnInspectRotateButton;
+            @InspectRotateButton.canceled += instance.OnInspectRotateButton;
+            @InspectZoom.started += instance.OnInspectZoom;
+            @InspectZoom.performed += instance.OnInspectZoom;
+            @InspectZoom.canceled += instance.OnInspectZoom;
+            @InspectZoomIn.started += instance.OnInspectZoomIn;
+            @InspectZoomIn.performed += instance.OnInspectZoomIn;
+            @InspectZoomIn.canceled += instance.OnInspectZoomIn;
+            @InspectZoomOut.started += instance.OnInspectZoomOut;
+            @InspectZoomOut.performed += instance.OnInspectZoomOut;
+            @InspectZoomOut.canceled += instance.OnInspectZoomOut;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -1061,6 +1213,21 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @Escape.started -= instance.OnEscape;
             @Escape.performed -= instance.OnEscape;
             @Escape.canceled -= instance.OnEscape;
+            @InspectRotate.started -= instance.OnInspectRotate;
+            @InspectRotate.performed -= instance.OnInspectRotate;
+            @InspectRotate.canceled -= instance.OnInspectRotate;
+            @InspectRotateButton.started -= instance.OnInspectRotateButton;
+            @InspectRotateButton.performed -= instance.OnInspectRotateButton;
+            @InspectRotateButton.canceled -= instance.OnInspectRotateButton;
+            @InspectZoom.started -= instance.OnInspectZoom;
+            @InspectZoom.performed -= instance.OnInspectZoom;
+            @InspectZoom.canceled -= instance.OnInspectZoom;
+            @InspectZoomIn.started -= instance.OnInspectZoomIn;
+            @InspectZoomIn.performed -= instance.OnInspectZoomIn;
+            @InspectZoomIn.canceled -= instance.OnInspectZoomIn;
+            @InspectZoomOut.started -= instance.OnInspectZoomOut;
+            @InspectZoomOut.performed -= instance.OnInspectZoomOut;
+            @InspectZoomOut.canceled -= instance.OnInspectZoomOut;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -1271,6 +1438,11 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnInteraction(InputAction.CallbackContext context);
         void OnSwitch(InputAction.CallbackContext context);
         void OnEscape(InputAction.CallbackContext context);
+        void OnInspectRotate(InputAction.CallbackContext context);
+        void OnInspectRotateButton(InputAction.CallbackContext context);
+        void OnInspectZoom(InputAction.CallbackContext context);
+        void OnInspectZoomIn(InputAction.CallbackContext context);
+        void OnInspectZoomOut(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

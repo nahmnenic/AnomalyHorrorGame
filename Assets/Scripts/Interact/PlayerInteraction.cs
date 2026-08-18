@@ -15,6 +15,7 @@ namespace Interact
         [SerializeField] private Transform _interactionPoint;
         [SerializeField] private Transform _interactionPointParent;
         private Collider[] _interactionResult = new Collider[32];
+        private bool _interactionBlocked;
 
         [Header("Raycast")] 
         [SerializeField] private float _maxDistance = 100f;
@@ -29,6 +30,9 @@ namespace Interact
 
         private void Update()
         {
+            if (_interactionBlocked)
+                return;
+
             IInteractable nearest = FindNearestInteractable();
             UpdateFocus(nearest);
         }
@@ -95,9 +99,29 @@ namespace Interact
             }
         }
         
+        public void RefreshFocus()
+        {
+            UpdateFocus(FindNearestInteractable());
+        }
+        
         public void Hide()
         {
             _promt.Hide();
+        }
+        
+        public void SetInteractionBlocked(bool blocked)
+        {
+            _interactionBlocked = blocked;
+
+            if (blocked)
+            {
+                Focused = null;
+                _promt.Hide();
+            }
+            else
+            {
+                RefreshFocus();
+            }
         }
         
         private void OnDisplayNameChanged()

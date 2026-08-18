@@ -70,7 +70,7 @@ namespace Interact
             GetComponent<EventWithDelayComponent>().StartActions();
         }
         
-        public void Interact()
+        public virtual void Interact()
         {
             if (AntiSpam)
             {
