@@ -29,6 +29,24 @@ namespace Interact.UI
             _canvasRect = _canvas.GetComponent<RectTransform>();
             Hide();
         }
+        
+        private void OnEnable()
+        {
+            if (InputDeviceManager.Instance == null)
+                return;
+
+            InputDeviceManager.Instance.OnInputDeviceChanged += SwitchDevice;
+
+            SwitchDevice(InputDeviceManager.Instance.UsingGamepad);
+        }
+
+        private void OnDisable()
+        {
+            if (InputDeviceManager.Instance == null)
+                return;
+
+            InputDeviceManager.Instance.OnInputDeviceChanged -= SwitchDevice;
+        }
 
         private void LateUpdate()
         {
