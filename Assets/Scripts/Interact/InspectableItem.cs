@@ -6,6 +6,7 @@ namespace Interact
     {
         [Header("Inspect")]
         [SerializeField] private float _rotationSpeed = 5f;
+        public string ItemName;
 
         public float RotationSpeed => _rotationSpeed;
 

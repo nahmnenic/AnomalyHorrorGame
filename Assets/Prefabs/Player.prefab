@@ -371,6 +371,8 @@ GameObject:
   - component: {fileID: 3869373093092924965}
   - component: {fileID: 5861578563045912440}
   - component: {fileID: 8446545676503645090}
+  - component: {fileID: 8381069060979418025}
+  - component: {fileID: 2542530699292721748}
   m_Layer: 6
   m_Name: Player
   m_TagString: Player
@@ -555,6 +557,7 @@ MonoBehaviour:
   e_Input: 0
   esc_Input: 0
   q_Input: 0
+  rMouse_Input: 0
   inspectRotateInput: {x: 0, y: 0}
   inspectRotateButton: 0
   inspectZoomInput: 0
@@ -775,13 +778,41 @@ MonoBehaviour:
   _uiManager: {fileID: 686460065648823492}
   _playerInteraction: {fileID: 4461746442068767276}
   _inspectPoint: {fileID: 8732103455944936504}
+  _inspectUI: {fileID: 0}
   _moveSpeed: 8
   _returnSpeed: 8
-  _rotationSpeed: 5
+  _rotationSpeed: 0.2
   _zoomSpeed: 0.1
   _gamepadZoomSpeed: 1
-  _minDistance: 1
-  _maxDistance: 3
+  _zoomSmoothSpeed: 8
+  _minDistance: 1.4
+  _maxDistance: 2.2
+--- !u!114 &8381069060979418025
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703859887912056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 713254485c9c4bf42babab9f0a32b878, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zoomFov: 0
+  _zoomSpeed: 0
+--- !u!114 &2542530699292721748
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2703859887912056894}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7db5d4d6682c470b8d6ed25438a3c5cc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6083456666503128202
 GameObject:
   m_ObjectHideFlags: 0

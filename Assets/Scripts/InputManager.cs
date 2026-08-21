@@ -13,6 +13,7 @@ public class InputManager : MonoBehaviour
     private PlayerInteractionDoor _doorInteraction;
     private RoomController _roomController;
     private UIManager _uiManager;
+    private PlayerZoom _playerZoom;
 
     public Vector2 movementInput;
     public float moveAmount;
@@ -23,12 +24,22 @@ public class InputManager : MonoBehaviour
     public bool e_Input;
     public bool esc_Input;
     public bool q_Input;
+    public bool rMouse_Input;
 
     public Vector2 inspectRotateInput;
     public bool inspectRotateButton;
     public float inspectZoomInput;
     public float inspectZoomInInput;
     public float inspectZoomOutInput;
+    
+    private enum ActiveAction
+    {
+        None,
+        Sprint,
+        Zoom
+    }
+
+    private ActiveAction _activeAction = ActiveAction.None;
     
     public bool IsInspecting { get; private set; }
 
@@ -45,6 +56,7 @@ public class InputManager : MonoBehaviour
         _playerInteraction = GetComponent<PlayerInteraction>();
         _doorInteraction = GetComponent<PlayerInteractionDoor>();
         _uiManager = GetComponent<UIManager>();
+        _playerZoom = GetComponent<PlayerZoom>();
     }
 
     private void Start()
@@ -61,8 +73,29 @@ public class InputManager : MonoBehaviour
 
             _inputSystem.PlayerMovement.Movement.performed += i => movementInput = i.ReadValue<Vector2>();
 
-            _inputSystem.PlayerActions.Shift.performed += i => shift_Input = true;
-            _inputSystem.PlayerActions.Shift.canceled += i => shift_Input = false;
+            _inputSystem.PlayerActions.Shift.performed += i =>
+            {
+                shift_Input = true;
+                if (_activeAction == ActiveAction.None) _activeAction = ActiveAction.Sprint;
+            };
+            
+            _inputSystem.PlayerActions.Shift.canceled += i =>
+            {
+                shift_Input = false;
+                if (_activeAction == ActiveAction.Sprint) _activeAction = ActiveAction.None;
+            };
+
+            _inputSystem.PlayerActions.PlayerZoom.performed += i =>
+            {
+                rMouse_Input = true;
+                if (_activeAction == ActiveAction.None) _activeAction = ActiveAction.Zoom;
+            };
+
+            _inputSystem.PlayerActions.PlayerZoom.canceled += i =>
+            {
+                rMouse_Input = false;
+                if (_activeAction == ActiveAction.Zoom) _activeAction = ActiveAction.None;
+            };
 
             _inputSystem.PlayerActions.Interaction.performed += i => e_Input = true;
             _inputSystem.PlayerActions.Switch.performed += i => q_Input = true;
@@ -110,6 +143,7 @@ public class InputManager : MonoBehaviour
             return;
         }
 
+        HandleZoomInput();
         HandleMovementInput();
         HandleSprintingInput();
         HandleSwitchInput();
@@ -132,14 +166,13 @@ public class InputManager : MonoBehaviour
 
     private void HandleSprintingInput()
     {
-        if (shift_Input && moveAmount > 0.5f && verticalInput >= 0)
-        {
-            _playerLococmotion.IsSprinting = true;
-        }
-        else
-        {
-            _playerLococmotion.IsSprinting = false;
-        }
+        _playerLococmotion.IsSprinting = _activeAction == ActiveAction.Sprint && moveAmount > 0.5f && verticalInput >= 0;
+    }
+
+    private void HandleZoomInput()
+    {
+        _playerLococmotion.IsWalking = _activeAction == ActiveAction.Zoom;
+        _playerZoom.IsZooming = _activeAction == ActiveAction.Zoom;
     }
 
     private void HandleInteractionInput()

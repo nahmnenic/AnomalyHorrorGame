@@ -26,6 +26,7 @@ namespace Player
 
         [Header("Movement Flags")]
         public bool IsSprinting;
+        public bool IsWalking;
 
         [Header("Movement Speed")]
         [SerializeField] private float _walkingSpeed = 2f;
@@ -54,6 +55,7 @@ namespace Player
         [SerializeField] private float _speedChange = 30f;
         [SerializeField] private float _sprintingFov = 70f;
 
+        private PlayerFOVController _fovController;
         private float _defaultFOV;
 
         [Header("Steps — Movement")]
@@ -97,6 +99,7 @@ namespace Player
             _rb = GetComponent<Rigidbody>();
             _playerManager = GetComponent<PlayerManager>();
             _surfaceDetector = GetComponent<SurfaceDetector>();
+            _fovController = GetComponent<PlayerFOVController>();
 
             _camera = Camera.main;
             _lastYRotation = transform.eulerAngles.y;
@@ -140,6 +143,10 @@ namespace Player
             {
                 _currentSpeed = _sprintingSpeed;
             }
+            else if (IsWalking)
+            {
+                _currentSpeed = _walkingSpeed;
+            }
             else if (_inputManager.moveAmount >= 0.5f)
             {
                 _currentSpeed = _runningSpeed;
@@ -167,10 +174,13 @@ namespace Player
 
         private void HandleFOV()
         {
-            if (_camera == null) return;
-
-            float targetFOV = IsSprinting && IsMoving ? _sprintingFov : _defaultFOV;
-            _camera.fieldOfView = Mathf.MoveTowards(_camera.fieldOfView, targetFOV, _speedChange * Time.deltaTime);
+            if (!IsSprinting)
+            {
+                _fovController.Sprinting = false;
+                return;
+            }
+            _fovController.Sprinting = true;
+            _fovController.ChangeParametersFov(_sprintingFov, _speedChange);
         }
 
 

@@ -353,6 +353,15 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""PlayerZoom"",
+                    ""type"": ""Button"",
+                    ""id"": ""eba18136-3bc3-4480-8644-8bf03da5536d"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -496,6 +505,17 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": ""Keyboard"",
                     ""action"": ""InspectZoom"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""9abd6b62-2bc8-48b8-aca7-71b25d418ebf"",
+                    ""path"": ""<Mouse>/rightButton"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard"",
+                    ""action"": ""PlayerZoom"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -1009,6 +1029,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         m_PlayerActions_InspectZoom = m_PlayerActions.FindAction("InspectZoom", throwIfNotFound: true);
         m_PlayerActions_InspectZoomIn = m_PlayerActions.FindAction("InspectZoomIn", throwIfNotFound: true);
         m_PlayerActions_InspectZoomOut = m_PlayerActions.FindAction("InspectZoomOut", throwIfNotFound: true);
+        m_PlayerActions_PlayerZoom = m_PlayerActions.FindAction("PlayerZoom", throwIfNotFound: true);
         // UI
         m_UI = asset.FindActionMap("UI", throwIfNotFound: true);
         m_UI_Navigate = m_UI.FindAction("Navigate", throwIfNotFound: true);
@@ -1148,6 +1169,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
     private readonly InputAction m_PlayerActions_InspectZoom;
     private readonly InputAction m_PlayerActions_InspectZoomIn;
     private readonly InputAction m_PlayerActions_InspectZoomOut;
+    private readonly InputAction m_PlayerActions_PlayerZoom;
     public struct PlayerActionsActions
     {
         private @InputSystem m_Wrapper;
@@ -1161,6 +1183,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         public InputAction @InspectZoom => m_Wrapper.m_PlayerActions_InspectZoom;
         public InputAction @InspectZoomIn => m_Wrapper.m_PlayerActions_InspectZoomIn;
         public InputAction @InspectZoomOut => m_Wrapper.m_PlayerActions_InspectZoomOut;
+        public InputAction @PlayerZoom => m_Wrapper.m_PlayerActions_PlayerZoom;
         public InputActionMap Get() { return m_Wrapper.m_PlayerActions; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -1197,6 +1220,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @InspectZoomOut.started += instance.OnInspectZoomOut;
             @InspectZoomOut.performed += instance.OnInspectZoomOut;
             @InspectZoomOut.canceled += instance.OnInspectZoomOut;
+            @PlayerZoom.started += instance.OnPlayerZoom;
+            @PlayerZoom.performed += instance.OnPlayerZoom;
+            @PlayerZoom.canceled += instance.OnPlayerZoom;
         }
 
         private void UnregisterCallbacks(IPlayerActionsActions instance)
@@ -1228,6 +1254,9 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
             @InspectZoomOut.started -= instance.OnInspectZoomOut;
             @InspectZoomOut.performed -= instance.OnInspectZoomOut;
             @InspectZoomOut.canceled -= instance.OnInspectZoomOut;
+            @PlayerZoom.started -= instance.OnPlayerZoom;
+            @PlayerZoom.performed -= instance.OnPlayerZoom;
+            @PlayerZoom.canceled -= instance.OnPlayerZoom;
         }
 
         public void RemoveCallbacks(IPlayerActionsActions instance)
@@ -1443,6 +1472,7 @@ public partial class @InputSystem: IInputActionCollection2, IDisposable
         void OnInspectZoom(InputAction.CallbackContext context);
         void OnInspectZoomIn(InputAction.CallbackContext context);
         void OnInspectZoomOut(InputAction.CallbackContext context);
+        void OnPlayerZoom(InputAction.CallbackContext context);
     }
     public interface IUIActions
     {

@@ -103,7 +103,7 @@ namespace Interact
             _uiManager.BlockMove = true;
             _playerInteraction.SetInteractionBlocked(true);
             
-            _inspectUI.Show(_currentItem.DisplayName);
+            _inspectUI.Show(_currentItem.ItemName);
 
             StartCoroutine(MoveToInspectPoint());
         }
